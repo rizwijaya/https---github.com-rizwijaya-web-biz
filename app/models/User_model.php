@@ -74,7 +74,7 @@ class User_model {
         return $this->db->single();
     }
 
-    public function login($username, $password) {
+    public function login($username, $password) { //Login query
         $this->db->query('SELECT * FROM users WHERE username = :username');
 
         //Bind value
