@@ -1,0 +1,125 @@
+       <!-- Card stats -->
+       </div>
+       </div>
+       </div>
+       <!-- Page content -->
+       <div class="container-fluid mt--6">
+         <div class="card mb-4">
+           <!-- Table dimulai -->
+           <div class="card-header border-0">
+             <h3 class="mb-0">Data Kendaraan</h3>
+             <?php Flasher::flash(); ?>
+             <!-- Button trigger modal -->
+             <button type="button" class="btn btn-primary mb-0 mt-3" data-toggle="modal" data-target="#tambah_data">Tambah Data</button>
+            </div>
+           <!-- Isi Tabel -->
+           <div class="table-responsive">
+             <table class="table align-items-center table-flush">
+               <thead class="thead-light">
+                 <tr>
+                   <th scope="col" class="sort" data-sort="no">No</th>
+                   <th scope="col" class="sort" data-sort="gambar">Gambar</th>
+                   <th scope="col" class="sort" data-sort="type">Type</th>
+                   <th scope="col" class="sort" data-sort="merk">Merk</th>
+                   <th scope="col" class="sort" data-sort="no_plat">Plat Nomor</th>
+                   <th scope="col" class="sort" data-sort="status">Status</th>
+                   <th scope="col" class="sort" data-sort="aksi">Aksi</th>
+                 </tr>
+               </thead>
+               <tbody class="list">
+                 <?php
+                  $no = 1;
+                  foreach ($data['mobil'] as $mb) : ?>
+                   <tr>
+                     <th scope="row"><?php echo $no++ ?></th>
+                     <td>
+                       <img width="100px" src="<?= BASEURL.'/foto_mobil/'.$mb['gambar']?>">
+                     </td>
+                     <td><?= $mb['kode_type'] ?></td>
+                     <td><?= $mb['merk'] ?></td>
+                     <td><?= $mb['no_plat'] ?></td>
+                     <td><?php
+                          if ($mb['status'] == "0") {
+                            echo "<span class='badge badge-dot mr-4'><i class='bg-warning'></i><span class='status'>Tidak Tersedia</span></span>";
+                          } else {
+                            echo "<span class='badge badge-dot mr-4'><i class='bg-success'></i><span class='status'>Tersedia</span></span>";
+                          }
+                          ?></td>
+                     <td>
+                       <a href="" class="btn btn-sm btn-success"><i class="fas fa-eye"></i></a>
+                       <a href="" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                       <a href="" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                     </td>
+                   </tr>
+                 <?php endforeach; ?>
+               </tbody>
+             </table>
+           </div>
+           <!-- Ini table nya -->
+           <!-- Modal -->
+           <div class="modal fade" id="tambah_data" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="judulModal">Tambah Data Kendaraan</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                   </button>
+                 </div>
+                 <div class="modal-body">
+                   <form action="<?= BASEURL; ?>/mobil/tambah_mobil" method="post" enctype="multipart/form-data">
+                     <div class="form-group">
+                       <label class="form-control-label" for="merk">Merk</label>
+                       <input type="text" class="form-control" id="merk" name="merk" required="">
+                     </div>
+                     <div class="row">
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="form-control-label" for="type">Type Mobil</label>
+                           <select class="form-control" id="kode_type" name="kode_type" required="">
+                             <option value="">Pilih Type Kendaraan</option>
+                             <?php foreach ($data['type'] as $tp) : ?>
+                               <option value="<?= $tp['kode_type'] ?>"><?= $tp['nama_type'] ?></option>
+                             <?php endforeach; ?>
+                           </select>
+                         </div>
+                         <div class="form-group">
+                           <label class="form-control-label" for="no_plat">Plat Nomor</label>
+                           <input type="text" class="form-control" id="no_plat" name="no_plat" required="">
+                         </div>
+                         <div class="form-group">
+                           <label class="form-control-label" for="status">Status</label>
+                           <select class="form-control" name="status" id="status">
+                             <option value="">Pilih Status</option>
+                             <option value="1">Tersedia</option>
+                             <option value="0">Tidak Tersedia</option>
+                           </select>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <label class="form-control-label" for="warna">Warna</label>
+                           <input type="text" class="form-control" id="warna" name="warna" required="">
+                         </div>
+                         <div class="form-group">
+                           <label class="form-control-label" for="tahun">Tahun</label>
+                           <input type="text" class="form-control" id="tahun" name="tahun">
+                         </div>
+                         <label>Upload Gambar</label>
+                         <div class="custom-file">
+                           <input type="file" class="custom-file-input form-control" id="gambar" name="gambar" required="">
+                           <label class="custom-file-label" for="gambar">Pilih File</label>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                       <button type="reset" class="btn btn-danger">reset</button>
+                       <button type="submit" name="submit" id="submit" class="btn btn-primary">Tambah Data</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
