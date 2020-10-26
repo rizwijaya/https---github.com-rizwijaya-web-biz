@@ -11,18 +11,16 @@ class User_model {
     //Find user by email. Email is passed in by the Controller.
     public function findUserByEmail($email) 
     {
-        //Prepared statement
-        $this->db->query('SELECT * FROM users WHERE email=:email');
+        $q = "SELECT * FROM users WHERE email ='$email'";
+        $this->db->query($q);
+        return $this->db->single();
+    }
 
-        //Email param will be binded with the email variable
-        $this->db->bind(':email', $email);
-
-        //Check if email is already registered
-        if($this->db->rowCount() > 0) {
-            return true;
-        } else {
-            return false;
-        }
+    public function findUserByUsername($username) 
+    {
+        $q = "SELECT * FROM users WHERE username ='$username'";
+        $this->db->query($q);
+        return $this->db->single();
     }
 
     public function insertUser($data)

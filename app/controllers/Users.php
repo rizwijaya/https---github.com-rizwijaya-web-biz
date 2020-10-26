@@ -20,7 +20,7 @@ class Users extends Controller
             'email' => '',
             'usernameError' => '',
             'passwordError' => '',
-            'confirmPasswordError',
+            'confirmPasswordError' => '',
             'namaError' => '',
             'emailError' =>''
         ];
@@ -39,7 +39,7 @@ class Users extends Controller
                     'email' => trim($_POST['email']),
                     'usernameError' => '',
                     'passwordError' => '',
-                    'confirmPasswordError',
+                    'confirmPasswordError' => '',
                     'namaError' => '',
                     'emailError' =>''
                 ];
@@ -49,44 +49,49 @@ class Users extends Controller
 
                 //Validate username on letters/numbers
                 if (empty($data['username'])) {
-                    $data['usernameError'] = 'Please enter username.';
+                    $data['usernameError'] = 'Silakan masukkan username.';
                 } elseif (!preg_match($nameValidation, $data['username'])) {
-                    $data['usernameError'] = 'Name can only contain letters and numbers.';
+                    $data['usernameError'] = 'Username hanya boleh berisi huruf dan angka.';
+                } else {
+                    $username = $this->model('User_model')->findUserByUsername($data['username']);
+                    if(!empty($username)) {
+                        $data['usernameError'] = 'Username Tidak Tersedia.'; 
+                    }
                 }
 
                 
                 // Validate password on length, numeric values,
                 if(empty($data['password'])){
-                $data['passwordError'] = 'Please enter password.';
-                } elseif(strlen($data['password']) < 6){
-                $data['passwordError'] = 'Password must be at least 8 characters';
+                $data['passwordError'] = 'Silakan masukkan kata sandi.';
+                } elseif(strlen($data['password']) < 8){
+                $data['passwordError'] = 'Kata sandi minimal harus 8 karakter';
                 } elseif (preg_match($passwordValidation, $data['password'])) {
-                $data['passwordError'] = 'Password must be have at least one numeric value.';
+                $data['passwordError'] = 'Kata sandi harus memiliki setidaknya satu huruf besar.';
                 }
-
+ 
                 //Validate confirm password
                 if (empty($data['confirmPassword'])) {
-                    $data['confirmPasswordError'] = 'Please enter password.';
+                    $data['confirmPasswordError'] = 'Silakan masukkan kata sandi.';
                 } else {
                     if ($data['password'] != $data['confirmPassword']) {
-                    $data['confirmPasswordError'] = 'Passwords do not match, please try again.';
+                    $data['confirmPasswordError'] = 'Kata sandi tidak cocok, silakan coba lagi.';
                     }
                 }
 
                 //Validate nama
                 if (empty($data['nama'])) {
-                    $data['namaError'] = 'Please enter name.';
+                    $data['namaError'] = 'Silahkan masukkan nama.';
                 }
         
                 //Validate email
                 if (empty($data['email'])) {
-                    $data['emailError'] = 'Please enter email address.';
+                    $data['emailError'] = 'Silakan masukkan alamat email.';
                 } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-                    $data['emailError'] = 'Please enter the correct format.';
+                    $data['emailError'] = 'Silahkan masukkan format yang benar.';
                 } else {
-                    //Check if email exists. (Fungsi Belum Jalan harus difix)
-                    if ($this->model('User_model')->findUserByEmail($data['email'])) {
-                    $data['emailError'] = 'Email is already taken.';
+                    $email = $this->model('User_model')->findUserByEmail($data['email']);
+                    if(!empty($email)) {
+                        $data['emailError'] = 'Email Tidak Tersedia.'; 
                     }
                 }
             // Make sure that errors are empty
@@ -138,12 +143,12 @@ class Users extends Controller
             ];
             //Validate username
             if (empty($data['username'])) {
-                $data['usernameError'] = 'Please enter a username.';
+                $data['usernameError'] = 'Silahkan masukan username.';
             }
 
             //Validate password
             if (empty($data['password'])) {
-                $data['passwordError'] = 'Please enter a password.';
+                $data['passwordError'] = 'Silahkan masukan password.';
             }
 
             //Check if all errors are empty
@@ -152,7 +157,7 @@ class Users extends Controller
                 if ($loggedInUser) {
                     $this->createUserSession($loggedInUser);
                 } else {
-                    $data['passwordError'] = 'Password or username is incorrect. Please try again.';
+                    $data['passwordError'] = 'Kata sandi atau nama pengguna salah. Silakan coba lagi.';
                     $this->view('templates/pelanggan/header');
                     $this->view('home/login', $data);
                     $this->view('templates/pelanggan/footer');
