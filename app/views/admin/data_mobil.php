@@ -8,10 +8,10 @@
            <!-- Table dimulai -->
            <div class="card-header border-0">
              <h3 class="mb-0">Data Kendaraan</h3>
-             <?php Flasher::flash(); ?>
+             <?php Flasher::flash_modal(); ?>
              <!-- Button trigger modal -->
              <button type="button" class="btn btn-primary mb-0 mt-3" data-toggle="modal" data-target="#tambah_data">Tambah Data</button>
-            </div>
+           </div>
            <!-- Isi Tabel -->
            <div class="table-responsive">
              <table class="table align-items-center table-flush">
@@ -33,7 +33,7 @@
                    <tr>
                      <th scope="row"><?php echo $no++ ?></th>
                      <td>
-                       <img width="100px" src="<?= BASEURL.'/foto_mobil/'.$mb['gambar']?>">
+                       <img width="100px" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>">
                      </td>
                      <td><?= $mb['kode_type'] ?></td>
                      <td><?= $mb['merk'] ?></td>
@@ -46,9 +46,9 @@
                           }
                           ?></td>
                      <td>
-                       <a href="" class="btn btn-sm btn-success"><i class="fas fa-eye"></i></a>
-                       <a href="" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
-                       <a href="" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                       <a href="<?= BASEURL; ?>/mobil/detail/<?= $mb['id_mobil']; ?>" class="btn btn-sm btn-success"><i class="fas fa-eye"></i></a>
+                       <a href="<?= BASEURL; ?>/mobil/delete/<?= $mb['id_mobil']; ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                       <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#update_modal<?= $mb['id_mobil']; ?>"><i class="fas fa-edit"></i></button>
                      </td>
                    </tr>
                  <?php endforeach; ?>
@@ -56,7 +56,7 @@
              </table>
            </div>
            <!-- Ini table nya -->
-           <!-- Modal -->
+           <!-- Modal Tambah Data -->
            <div class="modal fade" id="tambah_data" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
              <div class="modal-dialog">
                <div class="modal-content">
@@ -122,4 +122,90 @@
                </div>
              </div>
            </div>
-         </div>
+            <!--End Modal Tambah -->
+            <!-- Modal Update Data -->
+            <?php foreach ($data['mobil'] as $mb) : ?>
+             <div class="modal fade" id="update_modal<?= $mb['id_mobil']; ?>" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+               <div class="modal-dialog">
+                 <div class="modal-content">
+                   <div class="modal-header">
+                     <h5 class="modal-title" id="judulModal">Update Data Kendaraan</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                     </button>
+                   </div>
+                   <div class="modal-body">
+                     <div aria-hidden="true" <?= $id = $mb['id_mobil'];
+                                              $data['update_mobil'] = $this->model('rental_model')->update($id);
+                                              $data['update_type'] = $this->model('rental_model')->getalltype('type');
+                                              foreach ($data['update_mobil'] as $upmb) : ?>>
+                       <form action="<?= BASEURL; ?>/mobil/update" method="post" enctype="multipart/form-data">
+                         <input type="hidden" class="form-control" id="id_mobil" name="id_mobil" value="<?= $upmb['id_mobil'] ?>">
+                         <div class="form-group">
+                           <label class="form-control-label" for="merk"">Merk</label>
+                       <input type=" text" class="form-control" id="merk" name="merk" value="<?= $upmb['merk'] ?>" required="">
+                         </div>
+                         <div class="row">
+                           <div class="col-md-6">
+                             <div class="form-group">
+                               <label class="form-control-label" for="type">Type Kendaraan</label>
+                               <input type="hidden" name="id_mobil" value="<?= $upmb['id_mobil'] ?>">
+                               <select class="form-control" id="kode_type" name="kode_type" required="">
+                                 <option value="<?= $upmb['kode_type'] ?>"><?= $upmb['kode_type'] ?></option>
+                                 <?php foreach ($data['update_type'] as $uptp) : ?>
+                                   <option value="<?= $uptp['kode_type'] ?>"><?= $uptp['nama_type'] ?></option>
+                                 <?php endforeach; ?>
+                               </select>
+                             </div>
+                             <div class="form-group">
+                               <label class="form-control-label" for="no_plat">Plat Nomor</label>
+                               <input type="text" class="form-control" id="no_plat" name="no_plat" value="<?= $upmb['no_plat'] ?>" required="">
+                             </div>
+                             <div class="form-group">
+                               <label class="form-control-label" for="status">Status</label>
+                               <select class="form-control" name="status" id="status">
+                                 <option <?php if ($upmb['status'] == "1") {
+                                                  echo "selected='selected'";
+                                                }
+                                                echo $upmb['status']; ?> value="1">Tersedia</option>
+                                 <option <?php if ($upmb['status'] == "0") {
+                                                  echo "selected='selected'";
+                                                }
+                                                echo $upmb['status']; ?> value="0">Tidak Tersedia</option>
+                               </select>
+                             </div>
+                           </div>
+                           <div class="col-md-6">
+                             <div class="form-group">
+                               <label class="form-control-label" for="warna"">Warna</label>
+                           <input type=" text" class="form-control" id="warna" name="warna" value="<?= $upmb['warna'] ?>" required="">
+                             </div>
+                             <div class="form-group">
+                               <label class="form-control-label" for="tahun">Tahun</label>
+                               <input type="text" class="form-control" id="tahun" name="tahun" value="<?= $upmb['tahun'] ?>" required="">
+                             </div>
+                             <label>Upload Gambar</label>
+                             <div class="custom-file">
+                               <input type="file" class="custom-file-input form-control" id="gambar" name="gambar">
+                               <label class="custom-file-label" for="gambar">Pilih File</label>
+                             </div>
+                           </div>
+                         </div>
+                         <div class="modal-footer">
+                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                           <button type="reset" class="btn btn-danger">reset</button>
+                           <button type="submit" name="submit" id="submit" class="btn btn-primary">Tambah Data</button>
+                         </div>
+                       </form>
+                     <?php endforeach; ?>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+          <?php endforeach; ?>
+       <!--End Update Modal -->
+        </div> <!-- Div Class Container Content-->
+
+          
+      
