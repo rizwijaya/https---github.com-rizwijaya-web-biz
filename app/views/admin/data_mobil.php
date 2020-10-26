@@ -7,11 +7,17 @@
          <div class="card mb-4">
            <!-- Table dimulai -->
            <div class="card-header border-0">
+             <div class="row align-items-center">
+             <div class="col">
              <h3 class="mb-0">Data Kendaraan</h3>
              <?php Flasher::flash_modal(); ?>
+             </div>
              <!-- Button trigger modal -->
-             <button type="button" class="btn btn-primary mb-0 mt-3" data-toggle="modal" data-target="#tambah_data">Tambah Data</button>
-           </div>
+             <div class="col text-right">
+             <button type="button" class="btn btn-primary mb-0" data-toggle="modal" data-target="#tambah_data">Tambah Data</button>
+             </div>
+             </div>
+            </div>
            <!-- Isi Tabel -->
            <div class="table-responsive">
              <table class="table align-items-center table-flush">
@@ -47,7 +53,7 @@
                           ?></td>
                      <td>
                        <a href="<?= BASEURL; ?>/mobil/detail/<?= $mb['id_mobil']; ?>" class="btn btn-sm btn-success"><i class="fas fa-eye"></i></a>
-                       <a href="<?= BASEURL; ?>/mobil/delete/<?= $mb['id_mobil']; ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                       <a href="<?= BASEURL; ?>/mobil/delete/<?= $mb['id_mobil']; ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash" onclick="return confirm('Yakin untuk menghapus?')"></i></a>
                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#update_modal<?= $mb['id_mobil']; ?>"><i class="fas fa-edit"></i></button>
                      </td>
                    </tr>
@@ -193,7 +199,6 @@
                          </div>
                          <div class="modal-footer">
                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                           <button type="reset" class="btn btn-danger">reset</button>
                            <button type="submit" name="submit" id="submit" class="btn btn-primary">Tambah Data</button>
                          </div>
                        </form>

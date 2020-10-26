@@ -91,4 +91,11 @@ class Rental_model {
 
         return $this->db->rowCount();
     }
+
+    function getFotoById($id)
+    {
+        $q = "SELECT gambar FROM mobil WHERE id_mobil ='$id'";
+        $this->db->query($q);
+        return $this->db->single();
+    }
 }

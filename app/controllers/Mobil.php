@@ -13,11 +13,13 @@ class mobil extends Controller
         /*if($_SESSION['id_grup'] != 1 || $_SESSION['id_grup'] != 2) {
             header('location:' . BASEURL . '/home/redirecting');
         }*/
-        
+        $data['title'] = "Data Kendaraan";
+        $data['menu'] = "Kendaraan";
+        $data['submenu'] = "Data Kendaraan";
         $data['mobil'] = $this->model('rental_model')->getallmobil();
         $data['type'] = $this->model('rental_model')->getalltype();
         $this->view('templates/admin/header');
-        $this->view('templates/admin/sidebar');
+        $this->view('templates/admin/sidebar',$data);
         $this->view('admin/data_mobil',$data);
         $this->view('templates/admin/footer');
        //echo 'Ini halaman admin/data_mobil';
@@ -58,9 +60,14 @@ class mobil extends Controller
 
     public function delete($id)
     {
+        //Ambil data foto kendaraan dengan Id
+       $data = $this->model('rental_model')->getFotoById($id);
+        //Mengecek Apakah ada foto kendaraan
+        if(is_file("foto_mobil/".$data['gambar'])) {
+            unlink("foto_mobil/".$data['gambar']); //Hapus jika ada foto
+        }
         //Ambil data mobil dari database gambar, selanjutnya hapus
         if ($this->model('rental_model')->hapusDataMobil($id) > 0) {
-        
             Flasher::setFlash_modal('Data Kendaraan telah berhasil dihapus.', 'Data Kendaraan Dihapus!', 'success');
             header('location: ' . BASEURL . '/mobil/data_mobil');
             exit;
@@ -74,19 +81,25 @@ class mobil extends Controller
     public function update()
     {
         $temp = $_FILES['gambar']['tmp_name'];
-        if($temp) {
+        if($temp) { //Mengecek apakah form terdapat gambar
             //Inisialisasi Data Gambar
             $name = rand(0,9999).$_FILES['gambar']['name'];
             $size = $_FILES['gambar']['size'];
             $type = $_FILES['gambar']['type'];
             $folder = "foto_mobil/";
+            //Ambil data foto kendaraan lama dengan Id
+            $oldgambar = $this->model('rental_model')->getFotoById($_POST['id_mobil']);
             //Melakukan pengecekan ukuran file dan format
             if ($size < 2048000 and ($type =='image/jpeg' or $type == 'image/png' or $type == 'image/jpg')) {
                 move_uploaded_file($temp, $folder . $name); //Melakukan upload foto ke folder/nama
+                //Mengecek Apakah ada foto kendaraan Lama
+                if(is_file("foto_mobil/".$oldgambar['gambar'])) {
+                    unlink("foto_mobil/".$oldgambar['gambar']); //Hapus foto kendaraan lama
+                }
                 $this->model('Rental_model')->update_foto_mobil($name, $_POST); //Input ke database foto mobil
                 //Notifikasi sukses update
                 Flasher::setFlash_modal('Data Kendaraan telah berhasil diperbarui.', 'Data Kendaraan Diperbarui!', 'success');
-                //header('location: ' . BASEURL . '/mobil/data_mobil');
+                header('location: ' . BASEURL . '/mobil/data_mobil');
                 exit;
             }
             else{
