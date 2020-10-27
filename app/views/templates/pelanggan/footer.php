@@ -1,30 +1,30 @@
    <!--latest Posts-->
    <section class="sptb2 border-top">
       <div class="container">
-        <h6 class="fs-18 mb-4">Latest Posts</h6>
+        <h6 class="fs-18 mb-4">Posting Terbaru</h6>
         <hr class="deep-purple  accent-2 mb-4 mt-0 d-inline-block mx-auto">
         <div class="row">
           <div class="col-md-12 col-lg-4">
             <div class="d-flex mt-0 mb-5 mb-lg-0 border bg-white p-4 box-shadow2"> <img class="w-8 h-8 mr-4" src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/4(2).png" alt="img">
               <div class="media-body">
-                <h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">Best New Car</a></h4> <span class="fs-12 text-muted"><i class="fa fa-calendar"></i> 20th Jun 2019</span>
-                <div class="h6 mb-0 mt-1 font-weight-normal"><span class="font-weight-semibold">Price:</span> $245 <del>$354</del></div>
+                <h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">Mobil Baru Terbaik</a></h4> <span class="fs-12 text-muted"><i class="fa fa-calendar"></i> 20 Jun 2020</span>
+                <div class="h6 mb-0 mt-1 font-weight-normal"><span class="font-weight-semibold">Harga:</span> $245 <del>$354</del></div>
               </div>
             </div>
           </div>
           <div class="col-md-12 col-lg-4">
             <div class="d-flex mt-0 mb-5 mb-lg-0 border bg-white p-4 box-shadow2"> <img class="w-8 h-8 mr-4" src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/1(2).png" alt="img">
               <div class="media-body">
-                <h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">New Featured Car</a></h4> <span class="fs-12 text-muted"><i class="fa fa-calendar"></i> 18th May 2019</span>
-                <div class="h6 mb-0 mt-1 font-weight-normal"><span class="font-weight-semibold">Price:</span> $247 <del>$458</del></div>
+                <h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">Mobil Baru Unggulan</a></h4> <span class="fs-12 text-muted"><i class="fa fa-calendar"></i> 18 May 2020</span>
+                <div class="h6 mb-0 mt-1 font-weight-normal"><span class="font-weight-semibold">Harga:</span> $247 <del>$458</del></div>
               </div>
             </div>
           </div>
           <div class="col-md-12 col-lg-4">
             <div class="d-flex mt-0 mb-0 border bg-white p-4 box-shadow2"> <img class="w-8 h-8 mr-4" src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/2(2).png" alt="img">
               <div class="media-body">
-                <h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">Fuel Effeciency Car</a></h4> <span class="fs-12 text-muted"><i class="fa fa-calendar"></i> 14th Aug 2019</span>
-                <div class="h6 mb-0 mt-1 font-weight-normal"><span class="font-weight-semibold">Price:</span> $214 <del>$562</del></div>
+                <h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">Efisiensi Bahan Bakar Mobil</a></h4> <span class="fs-12 text-muted"><i class="fa fa-calendar"></i> 14 Aug 2020</span>
+                <div class="h6 mb-0 mt-1 font-weight-normal"><span class="font-weight-semibold">Harga:</span> $214 <del>$562</del></div>
               </div>
             </div>
           </div>
@@ -54,10 +54,10 @@
                 <h6>Contact</h6>
                 <hr class="deep-purple  text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
                 <ul class="list-unstyled mb-0">
-                  <li> <a href="#"><i class="fa fa-car mr-3 text-primary"></i> New York, NY 10012, US</a> </li>
-                  <li> <a href="#"><i class="fa fa-envelope mr-3 text-primary"></i> info12323@example.com</a></li>
-                  <li> <a href="#"><i class="fa fa-phone mr-3 text-primary"></i> + 01 234 567 88</a> </li>
-                  <li> <a href="#"><i class="fa fa-print mr-3 text-primary"></i> + 01 234 567 89</a> </li>
+                  <li> <a href="#"><i class="fa fa-car mr-3 text-primary"></i> Madiun, Jawa Timur Indonesia</a> </li>
+                  <li> <a href="#"><i class="fa fa-envelope mr-3 text-primary"></i> bizcar@business.com</a></li>
+                  <li> <a href="#"><i class="fa fa-phone mr-3 text-primary"></i> + 628 122 342 2345</a> </li>
+                  <li> <a href="#"><i class="fa fa-print mr-3 text-primary"></i> + 628 234 222 3333</a> </li>
                 </ul>
               </div>
               <div class="col-lg-4 col-md-12">

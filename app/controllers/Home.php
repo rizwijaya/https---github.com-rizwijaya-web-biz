@@ -4,21 +4,21 @@ class Home extends Controller {
     
     public function index()
     {
-       if($_SESSION) {
+      /* if($_SESSION) {
             $this->redirecting();
-        }
-
+        }*/
+        $data['mobil'] = $this->model('rental_model')->getallmobil();
         $this->view('templates/pelanggan/header');
-        $this->view('home/index');
+        $this->view('home/index', $data);
         $this->view('templates/pelanggan/footer');
     }
 
     public function redirecting()
     {
         //var_dump($_SESSION); die;
-        if(!$_SESSION) {
+      /*  if(!$_SESSION) {
             header('location:' . BASEURL . '/home');
-        }
+        }*/
         switch($_SESSION['id_grup']) {
             case 1:
                 header('location:' . BASEURL . '/admin');
@@ -38,9 +38,6 @@ class Home extends Controller {
 
     public function login()
     {
-        if($_SESSION) {
-            $this->redirecting();
-        }
         $data = NULL;
         $this->view('templates/pelanggan/header');
         $this->view('home/login', $data);
@@ -49,9 +46,6 @@ class Home extends Controller {
 
     public function register()
     {
-        if($_SESSION) {
-            $this->redirecting();
-        }
         $data = NULL;
         $this->view('templates/pelanggan/header');
         $this->view('home/register', $data);

@@ -2,6 +2,18 @@
 
 class mobil extends Controller 
 {
+    public function index() 
+    {
+        $data['title'] = "Data Kendaraan";
+        $data['menu'] = "Kendaraan";
+        $data['submenu'] = "Data Kendaraan";
+        $data['mobil'] = $this->model('rental_model')->getallmobil();
+        $data['type'] = $this->model('rental_model')->getalltype();
+        $this->view('templates/admin/header');
+        $this->view('templates/admin/sidebar',$data);
+        $this->view('admin/data_mobil',$data);
+        $this->view('templates/admin/footer');
+    }
     public function data_mobil() 
     {
       /*  if(!$_SESSION) {

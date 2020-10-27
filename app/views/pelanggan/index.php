@@ -6,8 +6,8 @@
             <div class="row">
               <div class="col-xl-7 col-lg-7 col-md-12">
                 <div class="text-white mt-lg-7 mb-5">
-                  <h1 class="mb-3 display-3">Pesan <span class="font-weight-bold">Mobil Anda</span><br>Untuk Perjalanan Aman</h1>
-                  <p class="fs-18 mb-6">Nikmati perjalanan nyaman dan aman dengan mobil impian anda.</p><a href="#" class="btn btn-primary btn-lg mr-2">Info Lainnya</a> <a href="#" class="btn btn-success btn-lg">Hubungi Kami</a>
+                  <h1 class="mb-3 display-3">Pesan <span class="font-weight-bold">Kendaraan Anda</span><br>Untuk Perjalanan Aman</h1>
+                  <p class="fs-18 mb-6">Nikmati perjalanan nyaman dan aman dengan kendaraan impian anda.</p><a href="#" class="btn btn-primary btn-lg mr-2">Info Lainnya</a> <a href="#" class="btn btn-success btn-lg">Hubungi Kami</a>
                 </div>
               </div>
               <div class="col-xl-5 col-lg-5 col-md-12">
@@ -50,8 +50,8 @@
     <section class="sptb bg-white">
       <div class="container">
         <div class="section-title center-block text-center">
-          <h2>Top Car Brands</h2>
-          <p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
+          <h2>Merek Kendaraan Teratas</h2>
+          <p>Terdapat banyak merek kendaraan teratas yang kami sediakan.</p>
         </div>
         <div class="row">
           <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
@@ -60,7 +60,7 @@
                 <div class="cat-item text-center"> <a href="#"></a>
                   <div class="cat-img text-shadow1"> <img src="<?= BASEURL; ?>/assets_dashboard/images/logosBrand/28.png" alt="img" class="cover-image h-8 w-8"> </div>
                   <div class="cat-desc">
-                    <h5 class="mb-1">Marquette</h5>
+                    <h5 class="mb-1">Wolf</h5>
                   </div>
                 </div>
               </div>
@@ -96,7 +96,7 @@
                 <div class="cat-item text-center"> <a href="#"></a>
                   <div class="cat-img text-shadow1"> <img src="<?= BASEURL; ?>/assets_dashboard/images/logosBrand/30.png" alt="img" class="cover-image h-8 w-8"> </div>
                   <div class="cat-desc">
-                    <h5 class="mb-1">Perspiciatis</h5>
+                    <h5 class="mb-1">Hyundai</h5>
                   </div>
                 </div>
               </div>
@@ -120,7 +120,7 @@
                 <div class="cat-item text-center"> <a href="#"></a>
                   <div class="cat-img text-shadow1"> <img src="<?= BASEURL; ?>/assets_dashboard/images/logosBrand/42.png" alt="img" class="cover-image h-8 w-8"> </div>
                   <div class="cat-desc">
-                    <h5 class="mb-1">Steuben</h5>
+                    <h5 class="mb-1">Mitsubishi</h5>
                   </div>
                 </div>
               </div>
@@ -134,8 +134,8 @@
     <section class="sptb pb-8">
       <div class="container">
         <div class="section-title center-block text-center">
-          <h2>Avaliable Car Types</h2>
-          <p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
+          <h2>Jenis Kendaraan yang Tersedia</h2>
+          <p>Terdapat berbagai macam jenis kendaraan yang kami sewakan.</p>
         </div>
         <div class="row">
           <div class="col-xl-4 col-lg-6 col-md-6">
@@ -144,7 +144,7 @@
                 <div class="item-card-desc"> <a href="#"></a>
                   <div class="item-card-img"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h4.png" alt="img" class="br-tr-7 br-tl-7"> </div>
                   <div class="item-card-text">
-                    <h4 class="mb-3 fs-30"><strong>Classic</strong> Cars</h4>
+                    <h4 class="mb-3 fs-30">Mobil<strong> Classic</strong></h4>
                     <div class="badge badge-primary badge-pill px-5 py-2 fs-16">45</div>
                   </div>
                 </div>
@@ -157,7 +157,7 @@
                 <div class="item-card-desc"> <a href="#"></a>
                   <div class="item-card-img"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h7.png" alt="img" class="br-tr-7 br-tl-7"> </div>
                   <div class="item-card-text">
-                    <h4 class="mb-3 fs-30"><strong>Sports</strong> Cars</h4>
+                    <h4 class="mb-3 fs-30">Mobil<strong> Sports</strong></h4>
                     <div class="badge badge-danger badge-pill px-5 py-2 fs-16">23</div>
                   </div>
                 </div>
@@ -170,7 +170,7 @@
                 <div class="item-card-desc"> <a href="#"></a>
                   <div class="item-card-img"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/l1.png" alt="img" class="br-tr-7 br-tl-7"> </div>
                   <div class="item-card-text">
-                    <h4 class="mb-3 fs-30"><strong>Convertible</strong> Cars</h4>
+                    <h4 class="mb-3 fs-30">Mobil<strong> Convertible</strong></h4>
                     <div class="badge badge-success badge-pill px-5 py-2 fs-16">48</div>
                   </div>
                 </div>
@@ -183,7 +183,7 @@
                 <div class="item-card-desc"> <a href="#"></a>
                   <div class="item-card-img"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h5.png" alt="img" class="br-tr-7 br-tl-7"> </div>
                   <div class="item-card-text">
-                    <h4 class="mb-3 fs-30"><strong>Modal</strong> Cars</h4>
+                    <h4 class="mb-3 fs-30">Mobil<strong> Modal</strong></h4>
                     <div class="badge badge-info badge-pill px-5 py-2 fs-16">15</div>
                   </div>
                 </div>
@@ -196,7 +196,7 @@
                 <div class="item-card-desc"> <a href="#"></a>
                   <div class="item-card-img"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/v2.png" alt="img" class="br-tr-7 br-tl-7"> </div>
                   <div class="item-card-text">
-                    <h4 class="mb-3 fs-30"><strong>Luxary</strong> Cars</h4>
+                    <h4 class="mb-3 fs-30">Mobil<strong> Luxary</strong></h4>
                     <div class="badge badge-warning badge-pill px-5 py-2 fs-16">12</div>
                   </div>
                 </div>
@@ -209,7 +209,7 @@
                 <div class="item-card-desc"> <a href="#"></a>
                   <div class="item-card-img"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/v9.png" alt="img" class="br-tr-7 br-tl-7"> </div>
                   <div class="item-card-text">
-                    <h4 class="mb-3 fs-30"><strong>Mini</strong> Cars </h4>
+                    <h4 class="mb-3 fs-30">Mobil<strong> Mini</strong></h4>
                     <div class="badge badge-pink badge-pill px-5 py-2 fs-16">23</div>
                   </div>
                 </div>
@@ -220,24 +220,24 @@
       </div>
     </section>
     <!--/Location-->
-    <!--Call to action-->
-    <section>
+        <!--Call to action-->
+        <section>
       <div class="about-1 cover-image sptb bg-background-color text-white" data-image-src="<?= BASEURL; ?>/assets_dashboard/images/banner/banner2.jpg" style="background: url(&quot;<?= BASEURL; ?>/assets_dashboard/images/banner/banner2.jpg&quot;) center center;">
         <div class="content-text mb-0">
           <div class="container">
             <div class="section-title center-block text-center">
-              <h2>What We Does?</h2>
-              <p class="text-white-50">Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
+              <h2>Apa itu Jasa Rental Bizcar?</h2>
+              <p class="text-white-50">Bizcar adalah Layanan Rental Kendaraan Murah dan Aman di Indonesia. </p>
             </div>
             <div class="row">
               <div class="col-lg-6">
-                <p class="fs-16"> If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
+                <p class="fs-16"> Kami Hadir menjadi pilihan yang terbaik dalam solusi transportasi anda. Tenaga sopir yang ramah dan sangat terampil di bidangnya, membuat anda akan selalu merasa nyaman bersama Rental Bizcar juga menetapkan harga yang sangat bersahabat. Terdapat juga berbagai varian kendaraan seperti berikut.</p>
                 <ul class="list-group mb-4">
-                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Classic Cars</li>
-                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Sports Cars</li>
-                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Convertible Cars</li>
-                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Luxary Cars</li>
-                </ul> <a class="btn btn-primary btn-lg" href="#">Book a Car</a> <a class="btn btn-success btn-lg" href="#">Register Now</a>
+                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Mobil Classic</li>
+                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Mobil Sports</li>
+                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Mobil Towing</li>
+                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Mobil Mini</li>
+                </ul> <a class="btn btn-primary btn-lg" href="#">Pilih Kendaraan</a> <a class="btn btn-success btn-lg" href="#">Daftar Sekarang</a>
               </div>
               <div class="col-lg-6">
                 <div class="border-5 br-7 mt-5 mt-lg-0">
@@ -282,8 +282,8 @@
     <section class="sptb bg-white">
       <div class="container">
         <div class="section-title center-block text-center">
-          <h2>Featured Products</h2>
-          <p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
+          <h2>Produk Pilihan</h2>
+          <p>Produk Pilihan oleh banyak pengguna bizcar</p>
         </div>
         <div id="feature-carousel" class="owl-carousel owl-carousel-icons auction-content owl-loaded owl-drag">
           <div class="owl-stage-outer">
@@ -737,8 +737,8 @@
     <section class="sptb">
       <div class="container">
         <div class="section-title center-block text-center">
-          <h2>Popular Cars By Body Types</h2>
-          <p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
+          <h2>Kendaraan Terbaik</h2>
+          <p>Kendaraan Terbaik dan Terpopuler berdasarkan tipe.</p>
         </div>
         <div class="row">
           <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6"> <a href="#" class="car-body-shapes card text-center p-4 bg-primary">
@@ -815,13 +815,14 @@
             </a> </div>
         </div>
       </div>
-    </section> <!-- Section-->
+    </section> 
+    <!-- Section-->
     <!--Section-->
     <section class="sptb bg-patterns bg-white">
       <div class="container">
         <div class="section-title center-block text-center">
-          <h2>Latest Cars</h2>
-          <p>Mauris ut cursus nunc. Morbi eleifend, ligula at consectetur vehicula</p>
+          <h2>Mobil Terbaru</h2>
+          <p>Mobil terbaru yang kami sediakan, pembelian ditahun 2020</p>
         </div>
         <div id="myCarousel2" class="owl-carousel owl-carousel-icons5 owl-loaded owl-drag">
           <!-- Wrapper for carousel items -->
@@ -1204,18 +1205,18 @@
           <div class="col-md-6">
             <div class="bg-light border p-0 box-shadow2">
               <div class="card-body bg-white">
-                <h6 class="fs-18 mb-4">Do You Want to sell A Car?</h6>
+                <h6 class="fs-18 mb-4">Apakah anda membutuhkan Kendaraan?</h6>
                 <hr class="deep-purple  accent-2 mb-4 mt-0 d-inline-block mx-auto">
-                <p>it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</p><a href="#" class="btn btn-primary text-white">Sell a Car</a>
+                <p>Kami memberikan solusi jika anda membutuhkan kendaraan untuk berpergian maupun dalam keadaan darurat (terdesak).</p><a href="#" class="btn btn-primary text-white">Login</a>
               </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="bg-light border p-0 mt-5 mt-md-0 box-shadow2">
               <div class="card-body bg-white">
-                <h6 class="fs-18 mb-4">Are You Looking For A Car?</h6>
+                <h6 class="fs-18 mb-4">Kenapa memilih kami?</h6>
                 <hr class="deep-purple  accent-2 border-success mb-4 mt-0 d-inline-block mx-auto">
-                <p>it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</p><a href="#" class="btn btn-success text-white">Buy a Car</a>
+                <p>Karena kami terbaik di bidang jasa sewa dan telah berpengalaman cukup lama dalam bidang ini.</p><a href="#" class="btn btn-success text-white">Register</a>
               </div>
             </div>
           </div>
@@ -1233,8 +1234,8 @@
                 <div class="service-card text-center">
                   <div class="bg-light icon-bg icon-service text-purple about box-shadow2"> <img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/badge.png" alt="img"> </div>
                   <div class="servic-data mt-3">
-                    <h4 class="font-weight-semibold mb-2">Worlds No 1</h4>
-                    <p class="text-muted mb-0">Nam libero tempore, cum soluta nobis est eligendi cumque facere possimus</p>
+                    <h4 class="font-weight-semibold mb-2">Supir Berpengalaman</h4>
+                    <p class="text-muted mb-0">Supir yang kami berikan kepada Anda telah berpengalaman dan mengenal wilayah tujuan anda.</p>
                   </div>
                 </div>
               </div>
@@ -1246,8 +1247,8 @@
                 <div class="service-card text-center">
                   <div class="bg-light icon-bg icon-service text-purple about box-shadow2"> <img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/car.png" alt="img"> </div>
                   <div class="servic-data mt-3">
-                    <h4 class="font-weight-semibold mb-2">Cars Sold</h4>
-                    <p class="text-muted mb-0">Nam libero tempore, cum soluta nobis est eligendi cumque facere possimus</p>
+                    <h4 class="font-weight-semibold mb-2">Kondisi Mobil Terawat</h4>
+                    <p class="text-muted mb-0">Perawatan rutin selalu kami lakukan, yaitu perawatan mobil harian, mingguan bulanan.</p>
                   </div>
                 </div>
               </div>
@@ -1259,8 +1260,8 @@
                 <div class="service-card text-center">
                   <div class="bg-light icon-bg icon-service text-purple about box-shadow2"> <img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/discount.png" alt="img"> </div>
                   <div class="servic-data mt-3">
-                    <h4 class="font-weight-semibold mb-2">Offers</h4>
-                    <p class="text-muted mb-0">Nam libero tempore, cum soluta nobis est eligendi cumque facere possimus</p>
+                    <h4 class="font-weight-semibold mb-2">Harga Rental Murah</h4>
+                    <p class="text-muted mb-0">Kami menawarkan tarif murah dengan kualitas terbaik di golongannya.</p>
                   </div>
                 </div>
               </div>
@@ -1272,8 +1273,8 @@
                 <div class="service-card text-center">
                   <div class="bg-light icon-bg icon-service text-purple about box-shadow2"> <img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/double-arrow.png" alt="img"> </div>
                   <div class="servic-data mt-3">
-                    <h4 class="font-weight-semibold mb-2">Compare</h4>
-                    <p class="text-muted mb-0">Nam libero tempore, cum soluta nobis est eligendi cumque facere possimus</p>
+                    <h4 class="font-weight-semibold mb-2">Proses Sewa Mudah</h4>
+                    <p class="text-muted mb-0">Proses sewa sangat mudah, dapat dilakukan melalui website resmi kami tanpa harus data ke tempat.</p>
                   </div>
                 </div>
               </div>

@@ -4,12 +4,10 @@ class Pegawai extends Controller
 {
     public function index() 
     {
-        if($_SESSION) {
-            $this->redirecting();
-        }
+        $data['title'] = "Dashboard";
        //echo 'Ini halaman Pegawai';
         $this->view('templates/admin/header');
-        $this->view('templates/admin/sidebar');
+        $this->view('templates/admin/sidebar', $data);
         $this->view('pegawai/dashboard');
         $this->view('templates/admin/footer');
     } 
@@ -17,9 +15,11 @@ class Pegawai extends Controller
     public function dashboard() 
     {
        //echo 'Ini halaman Pegawai';
-        $this->view('templates/admin/header');
-        $this->view('templates/admin/sidebar');
-        $this->view('pegawai/dashboard');
-        $this->view('templates/admin/footer');
+       $data['title'] = 'Dashboard';
+      //echo 'Ini halaman Pegawai';
+       $this->view('templates/admin/header');
+       $this->view('templates/admin/sidebar', $data);
+       $this->view('pegawai/dashboard');
+       $this->view('templates/admin/footer');
     }
 }

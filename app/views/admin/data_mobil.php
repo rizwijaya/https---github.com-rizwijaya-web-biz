@@ -199,7 +199,7 @@
                          </div>
                          <div class="modal-footer">
                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                           <button type="submit" name="submit" id="submit" class="btn btn-primary">Tambah Data</button>
+                           <button type="submit" name="submit" id="submit" class="btn btn-primary">Update Data</button>
                          </div>
                        </form>
                      <?php endforeach; ?>
