@@ -46,8 +46,67 @@
       </div>
     </div>
     <!--Section-->
+    <!--Featured Products-->
+    <section class="sptb bg-patterns bg-white">
+      <div class="container">
+        <div class="section-title center-block text-center">
+          <h2>Produk Pilihan</h2>
+          <p>Produk Pilihan oleh banyak pengguna bizcar</p>
+        </div>
+        <div id="feature-carousel" class="owl-carousel owl-carousel-icons auction-content owl-loaded owl-drag">
+          <div class="owl-stage-outer">
+            <div class="owl-stage" style="transform: translate3d(-2001px, 0px, 0px); transition: all 0.25s ease 0s; width: 4404px;">
+            <?php foreach($data['mobil'] as $mb) : ?> 
+              <div class="owl-item cloned" style="width: 375.333px; margin-right: 25px;">
+                <div class="item">
+                  <div class="card mb-0">
+                    <div class="item-card2-img"> <a class="link" href="#"></a> <img width="373.33px" height="221.97px" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>" alt="img" class="cover-image">
+                      <div class="item-tag-overlaytext"> <span class="text-white bg-success"> Rent</span> </div>
+                      <div class="item-card2-icons"> <a href="#" class="item-card2-icons-l bg-primary"> <i class="car car-volkswagen"></i></a> <a href="#" class="item-card2-icons-r wishlist active"><i class="fa fa fa-heart"></i></a> </div>
+                    </div>
+                    <div class="card-body pb-0">
+                      <div class="item-card2">
+                        <div class="item-card2-desc">
+                          <div class="item-card2-text"> <a href="#" class="text-dark">
+                              <h4 class="mb-0"><?php echo $mb['merk']; ?></h4>
+                            </a> </div>
+                          <div class="d-flex pb-0 pt-0"> <a href="">
+                              <p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i>Madiun, Indonesia</p>
+                            </a> <span class="ml-3 pb-0 pt-0 mb-2 mt-2 font-weight-bold"><?php echo $mb['no_plat']; ?></span> </div>
+                         <!-- <p class="">Lorem Ipsum available, quis int nostrum exercitationem </p> -->
+                        </div>
+                      </div>
+                      <div class="item-card2-footer mt-4 mb-4">
+                        <div class="item-card2-footer-u">
+                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">4.0/5</span>
+                            <div class="rating-stars d-inline-flex ml-auto"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
+                              <div class="rating-stars-container">
+                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
+                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
+                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
+                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
+                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
+                              </div> (5 Reviews)
+                            </div>
+                          </div>
+                        </div> <a class="btn btn-danger mt-3 d-block" href="#">Pesan Sekarang</a>
+                      </div>
+                    </div>
+                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Automatic"><i class="fa fa-car text-muted"></i> <span class="text-default">Auto</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">4000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach; ?>
+            </div>
+          </div>
+          <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div>
+          <div class="owl-dots disabled"></div>
+        </div>
+      </div>
+    </section>
+    <!--/Featured Products-->
     <!--Section-->
-    <section class="sptb bg-white">
+    <section class="sptb bg-8">
       <div class="container">
         <div class="section-title center-block text-center">
           <h2>Merek Kendaraan Teratas</h2>
@@ -129,7 +188,65 @@
         </div>
       </div>
     </section>
-    <!--Section-->
+    <!--Section--> 
+     <!--Call to action-->
+     <section>
+      <div class="about-1 cover-image sptb bg-background-color text-white" data-image-src="<?= BASEURL; ?>/assets_dashboard/images/banner/banner2.jpg" style="background: url(&quot;<?= BASEURL; ?>/assets_dashboard/images/banner/banner2.jpg&quot;) center center;">
+        <div class="content-text mb-0">
+          <div class="container">
+            <div class="section-title center-block text-center">
+              <h2>Apa itu Jasa Rental Bizcar?</h2>
+              <p class="text-white-50">Bizcar adalah Layanan Rental Kendaraan Murah dan Aman di Indonesia. </p>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <p class="fs-16"> Kami Hadir menjadi pilihan yang terbaik dalam solusi transportasi anda. Tenaga sopir yang ramah dan sangat terampil di bidangnya, membuat anda akan selalu merasa nyaman bersama Rental Bizcar juga menetapkan harga yang sangat bersahabat. Terdapat juga berbagai varian kendaraan seperti berikut.</p>
+                <ul class="list-group mb-4">
+                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Mobil Classic</li>
+                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Mobil Sports</li>
+                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Mobil Towing</li>
+                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Mobil Mini</li>
+                </ul> <a class="btn btn-primary btn-lg" href="#">Pilih Kendaraan</a> <a class="btn btn-success btn-lg" href="#">Daftar Sekarang</a>
+              </div>
+              <div class="col-lg-6">
+                <div class="border-5 br-7 mt-5 mt-lg-0">
+                  <div class="owl-carousel testimonial-owl-carousel3 owl-loaded owl-drag">
+                    <div class="owl-stage-outer">
+                      <div class="owl-stage" style="transform: translate3d(-1773px, 0px, 0px); transition: all 0.25s ease 0s; width: 4137px;">
+                        <div class="owl-item cloned" style="width: 566px; margin-right: 25px;">
+                          <div class="item"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h2.jpg" alt="img"> </div>
+                        </div>
+                        <div class="owl-item cloned" style="width: 566px; margin-right: 25px;">
+                          <div class="item"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h3.jpg" alt="img"> </div>
+                        </div>
+                        <div class="owl-item" style="width: 566px; margin-right: 25px;">
+                          <div class="item"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h1.jpg" alt="img"> </div>
+                        </div>
+                        <div class="owl-item active" style="width: 566px; margin-right: 25px;">
+                          <div class="item"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h2.jpg" alt="img"> </div>
+                        </div>
+                        <div class="owl-item" style="width: 566px; margin-right: 25px;">
+                          <div class="item"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h3.jpg" alt="img"> </div>
+                        </div>
+                        <div class="owl-item cloned" style="width: 566px; margin-right: 25px;">
+                          <div class="item"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h1.jpg" alt="img"> </div>
+                        </div>
+                        <div class="owl-item cloned" style="width: 566px; margin-right: 25px;">
+                          <div class="item"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h2.jpg" alt="img"> </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div>
+                    <div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Call to action-->  
     <!--Section-->
     <section class="sptb pb-8">
       <div class="container">
@@ -219,979 +336,48 @@
         </div>
       </div>
     </section>
-    <!--/Location-->
-        <!--Call to action-->
-        <section>
-      <div class="about-1 cover-image sptb bg-background-color text-white" data-image-src="<?= BASEURL; ?>/assets_dashboard/images/banner/banner2.jpg" style="background: url(&quot;<?= BASEURL; ?>/assets_dashboard/images/banner/banner2.jpg&quot;) center center;">
-        <div class="content-text mb-0">
-          <div class="container">
-            <div class="section-title center-block text-center">
-              <h2>Apa itu Jasa Rental Bizcar?</h2>
-              <p class="text-white-50">Bizcar adalah Layanan Rental Kendaraan Murah dan Aman di Indonesia. </p>
-            </div>
-            <div class="row">
-              <div class="col-lg-6">
-                <p class="fs-16"> Kami Hadir menjadi pilihan yang terbaik dalam solusi transportasi anda. Tenaga sopir yang ramah dan sangat terampil di bidangnya, membuat anda akan selalu merasa nyaman bersama Rental Bizcar juga menetapkan harga yang sangat bersahabat. Terdapat juga berbagai varian kendaraan seperti berikut.</p>
-                <ul class="list-group mb-4">
-                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Mobil Classic</li>
-                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Mobil Sports</li>
-                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Mobil Towing</li>
-                  <li class="mt-1 mb-2 fs-16"><i class="fa fa-angle-right mr-1" aria-hidden="true"></i> Mobil Mini</li>
-                </ul> <a class="btn btn-primary btn-lg" href="#">Pilih Kendaraan</a> <a class="btn btn-success btn-lg" href="#">Daftar Sekarang</a>
-              </div>
-              <div class="col-lg-6">
-                <div class="border-5 br-7 mt-5 mt-lg-0">
-                  <div class="owl-carousel testimonial-owl-carousel3 owl-loaded owl-drag">
-                    <div class="owl-stage-outer">
-                      <div class="owl-stage" style="transform: translate3d(-1773px, 0px, 0px); transition: all 0.25s ease 0s; width: 4137px;">
-                        <div class="owl-item cloned" style="width: 566px; margin-right: 25px;">
-                          <div class="item"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h2.jpg" alt="img"> </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 566px; margin-right: 25px;">
-                          <div class="item"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h3.jpg" alt="img"> </div>
-                        </div>
-                        <div class="owl-item" style="width: 566px; margin-right: 25px;">
-                          <div class="item"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h1.jpg" alt="img"> </div>
-                        </div>
-                        <div class="owl-item active" style="width: 566px; margin-right: 25px;">
-                          <div class="item"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h2.jpg" alt="img"> </div>
-                        </div>
-                        <div class="owl-item" style="width: 566px; margin-right: 25px;">
-                          <div class="item"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h3.jpg" alt="img"> </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 566px; margin-right: 25px;">
-                          <div class="item"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h1.jpg" alt="img"> </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 566px; margin-right: 25px;">
-                          <div class="item"> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h2.jpg" alt="img"> </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div>
-                    <div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--Call to action-->
-    <!--Featured Products-->
-    <section class="sptb bg-white">
-      <div class="container">
-        <div class="section-title center-block text-center">
-          <h2>Produk Pilihan</h2>
-          <p>Produk Pilihan oleh banyak pengguna bizcar</p>
-        </div>
-        <div id="feature-carousel" class="owl-carousel owl-carousel-icons auction-content owl-loaded owl-drag">
-          <div class="owl-stage-outer">
-            <div class="owl-stage" style="transform: translate3d(-2001px, 0px, 0px); transition: all 0.25s ease 0s; width: 4404px;">
-              <div class="owl-item cloned" style="width: 375.333px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="item-card2-img"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/b1.jpg" alt="img" class="cover-image">
-                      <div class="item-tag-overlaytext"> <span class="text-white bg-success"> Rent</span> </div>
-                      <div class="item-card2-icons"> <a href="#" class="item-card2-icons-l bg-primary"> <i class="car car-volkswagen"></i></a> <a href="#" class="item-card2-icons-r wishlist active"><i class="fa fa fa-heart"></i></a> </div>
-                    </div>
-                    <div class="card-body pb-0">
-                      <div class="item-card2">
-                        <div class="item-card2-desc">
-                          <div class="item-card2-text"> <a href="#" class="text-dark">
-                              <h4 class="mb-0">Marquette Polo</h4>
-                            </a> </div>
-                          <div class="d-flex pb-0 pt-0"> <a href="">
-                              <p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i>Florida, Uk</p>
-                            </a> <span class="ml-3 pb-0 pt-0 mb-2 mt-2 font-weight-bold">$35/day</span> </div>
-                          <p class="">Lorem Ipsum available, quis int nostrum exercitationem </p>
-                        </div>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-4">
-                        <div class="item-card2-footer-u">
-                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">4.0/5</span>
-                            <div class="rating-stars d-inline-flex ml-auto"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
-                              <div class="rating-stars-container">
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                              </div> (5 Reviews)
-                            </div>
-                          </div>
-                        </div> <a class="btn btn-danger mt-3 d-block" href="#">Book Now</a>
-                      </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Automatic"><i class="fa fa-car text-muted"></i> <span class="text-default">Auto</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">4000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item cloned" style="width: 375.333px; margin-right: 25px;">
-                <div class="item  sold-out">
-                  <div class="ribbon ribbon-top-left text-danger"><span class="bg-danger">Booked</span></div>
-                  <div class="card mb-0">
-                    <div class="item-card2-img"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/v1.jpg" alt="img" class="cover-image">
-                      <div class="item-tag-overlaytext"> <span class="text-white bg-success"> Rent</span> </div>
-                      <div class="item-card2-icons"> <a href="#" class="item-card2-icons-l bg-primary"> <i class="car car-ferrari"></i></a> <a href="#" class="item-card2-icons-r wishlist"><i class="fa fa fa-heart-o"></i></a> </div>
-                    </div>
-                    <div class="card-body pb-0">
-                      <div class="item-card2">
-                        <div class="item-card2-desc">
-                          <div class="item-card2-text"> <a href="#" class="text-dark">
-                              <h4 class="mb-0">Instigator</h4>
-                            </a> </div>
-                          <div class="d-flex pb-0 pt-0"> <a href="">
-                              <p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i>Florida, Uk</p>
-                            </a> <span class="ml-3 pb-0 pt-0 mb-2 mt-2 font-weight-bold">$43/day</span> </div>
-                          <p class="">Lorem Ipsum available, quis int nostrum exercitationem </p>
-                        </div>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-4">
-                        <div class="item-card2-footer-u">
-                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">4.0/5</span>
-                            <div class="rating-stars d-inline-flex ml-auto"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
-                              <div class="rating-stars-container">
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                              </div> (5 Reviews)
-                            </div>
-                          </div>
-                        </div> <a class="btn btn-danger mt-3 d-block" href="#">Book Now</a>
-                      </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Manual"><i class="fa fa-car text-muted"></i> <span class="text-default">Manual</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">2000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item cloned" style="width: 375.333px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="power-ribbon power-ribbon-top-left text-warning"><span class="bg-warning"><i class="fa fa-bolt"></i></span></div>
-                    <div class="item-card2-img"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/f3.jpg" alt="img" class="cover-image">
-                      <div class="item-tag-overlaytext"> <span class="text-white bg-success"> Rent</span> </div>
-                      <div class="item-card2-icons"> <a href="#" class="item-card2-icons-l bg-primary"> <i class="car car-honda"></i></a> <a href="#" class="item-card2-icons-r wishlist active"><i class="fa fa fa-heart-o"></i></a> </div>
-                    </div>
-                    <div class="card-body pb-0">
-                      <div class="item-card2">
-                        <div class="item-card2-desc">
-                          <div class="item-card2-text"> <a href="#" class="text-dark">
-                              <h4 class="mb-0">Cheyenne</h4>
-                            </a> </div>
-                          <div class="d-flex pb-0 pt-0"> <a href="">
-                              <p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i>Florida, Uk</p>
-                            </a> <span class="ml-3 pb-0 pt-0 mb-2 mt-2 font-weight-bold">$45/day</span> </div>
-                          <p class="">Lorem Ipsum available, quis int nostrum exercitationem </p>
-                        </div>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-4">
-                        <div class="item-card2-footer-u">
-                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">4.0/5</span>
-                            <div class="rating-stars d-inline-flex ml-auto"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
-                              <div class="rating-stars-container">
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                              </div> (5 Reviews)
-                            </div>
-                          </div>
-                        </div> <a class="btn btn-danger mt-3 d-block" href="#">Book Now</a>
-                      </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Manual"><i class="fa fa-car text-muted"></i> <span class="text-default">Manual</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">2000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item" style="width: 375.333px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="power-ribbon power-ribbon-top-left text-warning"><span class="bg-warning"><i class="fa fa-bolt"></i></span></div>
-                    <div class="item-card2-img"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/v5.jpg" alt="img" class="cover-image">
-                      <div class="item-tag-overlaytext"> <span class="text-white bg-success"> Rent</span> <span class="text-white bg-danger"> Sharing</span> </div>
-                      <div class="item-card2-icons"> <a href="#" class="item-card2-icons-l bg-primary"> <i class="car car-honda"></i></a> <a href="#" class="item-card2-icons-r wishlist active"><i class="fa fa fa-heart-o"></i></a> </div>
-                    </div>
-                    <div class="card-body pb-0">
-                      <div class="item-card2">
-                        <div class="item-card2-desc">
-                          <div class="item-card2-text"> <a href="#" class="text-dark">
-                              <h4 class="mb-0">Cheyenne</h4>
-                            </a> </div>
-                          <div class="d-flex"> <a href="">
-                              <p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i>Florida, USA</p>
-                            </a> <span class="ml-3 pb-0 pt-0 mb-2 mt-2 font-weight-bold">$78.00/day</span> </div>
-                          <p class="">Lorem Ipsum available, quis int nostrum exercitationem </p>
-                        </div>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-4">
-                        <div class="item-card2-footer-u">
-                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">4.0/5</span>
-                            <div class="rating-stars d-inline-flex ml-auto"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
-                              <div class="rating-stars-container">
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                              </div> (5 Reviews)
-                            </div>
-                          </div>
-                        </div> <a class="btn btn-danger mt-3 d-block" href="#">Book Now</a>
-                      </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Automatic"><i class="fa fa-car text-muted"></i> <span class="text-default">Auto</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">2300</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item" style="width: 375.333px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="power-ribbon power-ribbon-top-left text-warning"><span class="bg-warning"><i class="fa fa-bolt"></i></span></div>
-                    <div class="item-card2-img"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/photo/dummy.jpg" alt="img" class="cover-image">
-                      <div class="item-tag-overlaytext"> <span class="text-white bg-gray"> Rent</span> </div>
-                      <div class="item-card2-icons"> <a href="#" class="item-card2-icons-l bg-primary"> <i class="car car-toyota"></i></a> <a href="#" class="item-card2-icons-r wishlist active"><i class="fa fa fa-heart"></i></a> </div>
-                    </div>
-                    <div class="card-body pb-0">
-                      <div class="item-card2">
-                        <div class="item-card2-desc">
-                          <div class="item-card2-text"> <a href="#" class="text-dark">
-                              <h4 class="mb-0">Temperament</h4>
-                            </a> </div>
-                          <div class="d-flex pb-0 pt-0"> <a href="">
-                              <p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i>Florida, Uk</p>
-                            </a> <span class="ml-3 pb-0 pt-0 mb-2 mt-2 font-weight-bold">$20/day</span> </div>
-                          <p class="">Lorem Ipsum available, quis int nostrum exercitationem </p>
-                        </div>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-4">
-                        <div class="item-card2-footer-u">
-                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">4.0/5</span>
-                            <div class="rating-stars d-inline-flex ml-auto"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
-                              <div class="rating-stars-container">
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                              </div> (5 Reviews)
-                            </div>
-                          </div>
-                        </div> <a class="btn btn-danger mt-3 d-block" href="#">Book Now</a>
-                      </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Manual"><i class="fa fa-car text-muted"></i> <span class="text-default">Manual</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">3000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item active" style="width: 375.333px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="item-card2-img"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/b1.jpg" alt="img" class="cover-image">
-                      <div class="item-tag-overlaytext"> <span class="text-white bg-success"> Rent</span> </div>
-                      <div class="item-card2-icons"> <a href="#" class="item-card2-icons-l bg-primary"> <i class="car car-volkswagen"></i></a> <a href="#" class="item-card2-icons-r wishlist active"><i class="fa fa fa-heart"></i></a> </div>
-                    </div>
-                    <div class="card-body pb-0">
-                      <div class="item-card2">
-                        <div class="item-card2-desc">
-                          <div class="item-card2-text"> <a href="#" class="text-dark">
-                              <h4 class="mb-0">Marquette Polo</h4>
-                            </a> </div>
-                          <div class="d-flex pb-0 pt-0"> <a href="">
-                              <p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i>Florida, Uk</p>
-                            </a> <span class="ml-3 pb-0 pt-0 mb-2 mt-2 font-weight-bold">$35/day</span> </div>
-                          <p class="">Lorem Ipsum available, quis int nostrum exercitationem </p>
-                        </div>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-4">
-                        <div class="item-card2-footer-u">
-                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">4.0/5</span>
-                            <div class="rating-stars d-inline-flex ml-auto"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
-                              <div class="rating-stars-container">
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                              </div> (5 Reviews)
-                            </div>
-                          </div>
-                        </div> <a class="btn btn-danger mt-3 d-block" href="#">Book Now</a>
-                      </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Automatic"><i class="fa fa-car text-muted"></i> <span class="text-default">Auto</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">4000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item active" style="width: 375.333px; margin-right: 25px;">
-                <div class="item  sold-out">
-                  <div class="ribbon ribbon-top-left text-danger"><span class="bg-danger">Booked</span></div>
-                  <div class="card mb-0">
-                    <div class="item-card2-img"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/v1.jpg" alt="img" class="cover-image">
-                      <div class="item-tag-overlaytext"> <span class="text-white bg-success"> Rent</span> </div>
-                      <div class="item-card2-icons"> <a href="#" class="item-card2-icons-l bg-primary"> <i class="car car-ferrari"></i></a> <a href="#" class="item-card2-icons-r wishlist"><i class="fa fa fa-heart-o"></i></a> </div>
-                    </div>
-                    <div class="card-body pb-0">
-                      <div class="item-card2">
-                        <div class="item-card2-desc">
-                          <div class="item-card2-text"> <a href="#" class="text-dark">
-                              <h4 class="mb-0">Instigator</h4>
-                            </a> </div>
-                          <div class="d-flex pb-0 pt-0"> <a href="">
-                              <p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i>Florida, Uk</p>
-                            </a> <span class="ml-3 pb-0 pt-0 mb-2 mt-2 font-weight-bold">$43/day</span> </div>
-                          <p class="">Lorem Ipsum available, quis int nostrum exercitationem </p>
-                        </div>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-4">
-                        <div class="item-card2-footer-u">
-                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">4.0/5</span>
-                            <div class="rating-stars d-inline-flex ml-auto"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
-                              <div class="rating-stars-container">
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                              </div> (5 Reviews)
-                            </div>
-                          </div>
-                        </div> <a class="btn btn-danger mt-3 d-block" href="#">Book Now</a>
-                      </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Manual"><i class="fa fa-car text-muted"></i> <span class="text-default">Manual</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">2000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item active" style="width: 375.333px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="power-ribbon power-ribbon-top-left text-warning"><span class="bg-warning"><i class="fa fa-bolt"></i></span></div>
-                    <div class="item-card2-img"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/f3.jpg" alt="img" class="cover-image">
-                      <div class="item-tag-overlaytext"> <span class="text-white bg-success"> Rent</span> </div>
-                      <div class="item-card2-icons"> <a href="#" class="item-card2-icons-l bg-primary"> <i class="car car-honda"></i></a> <a href="#" class="item-card2-icons-r wishlist active"><i class="fa fa fa-heart-o"></i></a> </div>
-                    </div>
-                    <div class="card-body pb-0">
-                      <div class="item-card2">
-                        <div class="item-card2-desc">
-                          <div class="item-card2-text"> <a href="#" class="text-dark">
-                              <h4 class="mb-0">Cheyenne</h4>
-                            </a> </div>
-                          <div class="d-flex pb-0 pt-0"> <a href="">
-                              <p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i>Florida, Uk</p>
-                            </a> <span class="ml-3 pb-0 pt-0 mb-2 mt-2 font-weight-bold">$45/day</span> </div>
-                          <p class="">Lorem Ipsum available, quis int nostrum exercitationem </p>
-                        </div>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-4">
-                        <div class="item-card2-footer-u">
-                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">4.0/5</span>
-                            <div class="rating-stars d-inline-flex ml-auto"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
-                              <div class="rating-stars-container">
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                              </div> (5 Reviews)
-                            </div>
-                          </div>
-                        </div> <a class="btn btn-danger mt-3 d-block" href="#">Book Now</a>
-                      </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Manual"><i class="fa fa-car text-muted"></i> <span class="text-default">Manual</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">2000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item cloned" style="width: 375.333px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="power-ribbon power-ribbon-top-left text-warning"><span class="bg-warning"><i class="fa fa-bolt"></i></span></div>
-                    <div class="item-card2-img"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/v5.jpg" alt="img" class="cover-image">
-                      <div class="item-tag-overlaytext"> <span class="text-white bg-success"> Rent</span> <span class="text-white bg-danger"> Sharing</span> </div>
-                      <div class="item-card2-icons"> <a href="#" class="item-card2-icons-l bg-primary"> <i class="car car-honda"></i></a> <a href="#" class="item-card2-icons-r wishlist active"><i class="fa fa fa-heart-o"></i></a> </div>
-                    </div>
-                    <div class="card-body pb-0">
-                      <div class="item-card2">
-                        <div class="item-card2-desc">
-                          <div class="item-card2-text"> <a href="#" class="text-dark">
-                              <h4 class="mb-0">Cheyenne</h4>
-                            </a> </div>
-                          <div class="d-flex"> <a href="">
-                              <p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i>Florida, USA</p>
-                            </a> <span class="ml-3 pb-0 pt-0 mb-2 mt-2 font-weight-bold">$78.00/day</span> </div>
-                          <p class="">Lorem Ipsum available, quis int nostrum exercitationem </p>
-                        </div>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-4">
-                        <div class="item-card2-footer-u">
-                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">4.0/5</span>
-                            <div class="rating-stars d-inline-flex ml-auto"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
-                              <div class="rating-stars-container">
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                              </div> (5 Reviews)
-                            </div>
-                          </div>
-                        </div> <a class="btn btn-danger mt-3 d-block" href="#">Book Now</a>
-                      </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Automatic"><i class="fa fa-car text-muted"></i> <span class="text-default">Auto</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">2300</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item cloned" style="width: 375.333px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="power-ribbon power-ribbon-top-left text-warning"><span class="bg-warning"><i class="fa fa-bolt"></i></span></div>
-                    <div class="item-card2-img"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/photo/dummy.jpg" alt="img" class="cover-image">
-                      <div class="item-tag-overlaytext"> <span class="text-white bg-gray"> Rent</span> </div>
-                      <div class="item-card2-icons"> <a href="#" class="item-card2-icons-l bg-primary"> <i class="car car-toyota"></i></a> <a href="#" class="item-card2-icons-r wishlist active"><i class="fa fa fa-heart"></i></a> </div>
-                    </div>
-                    <div class="card-body pb-0">
-                      <div class="item-card2">
-                        <div class="item-card2-desc">
-                          <div class="item-card2-text"> <a href="#" class="text-dark">
-                              <h4 class="mb-0">Temperament</h4>
-                            </a> </div>
-                          <div class="d-flex pb-0 pt-0"> <a href="">
-                              <p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i>Florida, Uk</p>
-                            </a> <span class="ml-3 pb-0 pt-0 mb-2 mt-2 font-weight-bold">$20/day</span> </div>
-                          <p class="">Lorem Ipsum available, quis int nostrum exercitationem </p>
-                        </div>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-4">
-                        <div class="item-card2-footer-u">
-                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">4.0/5</span>
-                            <div class="rating-stars d-inline-flex ml-auto"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
-                              <div class="rating-stars-container">
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                              </div> (5 Reviews)
-                            </div>
-                          </div>
-                        </div> <a class="btn btn-danger mt-3 d-block" href="#">Book Now</a>
-                      </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Manual"><i class="fa fa-car text-muted"></i> <span class="text-default">Manual</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">3000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item cloned" style="width: 375.333px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="item-card2-img"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/b1.jpg" alt="img" class="cover-image">
-                      <div class="item-tag-overlaytext"> <span class="text-white bg-success"> Rent</span> </div>
-                      <div class="item-card2-icons"> <a href="#" class="item-card2-icons-l bg-primary"> <i class="car car-volkswagen"></i></a> <a href="#" class="item-card2-icons-r wishlist active"><i class="fa fa fa-heart"></i></a> </div>
-                    </div>
-                    <div class="card-body pb-0">
-                      <div class="item-card2">
-                        <div class="item-card2-desc">
-                          <div class="item-card2-text"> <a href="#" class="text-dark">
-                              <h4 class="mb-0">Marquette Polo</h4>
-                            </a> </div>
-                          <div class="d-flex pb-0 pt-0"> <a href="">
-                              <p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i>Florida, Uk</p>
-                            </a> <span class="ml-3 pb-0 pt-0 mb-2 mt-2 font-weight-bold">$35/day</span> </div>
-                          <p class="">Lorem Ipsum available, quis int nostrum exercitationem </p>
-                        </div>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-4">
-                        <div class="item-card2-footer-u">
-                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">4.0/5</span>
-                            <div class="rating-stars d-inline-flex ml-auto"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
-                              <div class="rating-stars-container">
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                                <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                              </div> (5 Reviews)
-                            </div>
-                          </div>
-                        </div> <a class="btn btn-danger mt-3 d-block" href="#">Book Now</a>
-                      </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Automatic"><i class="fa fa-car text-muted"></i> <span class="text-default">Auto</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">4000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div>
-          <div class="owl-dots disabled"></div>
-        </div>
-      </div>
-    </section>
-    <!--/Featured Products-->
-    <!-- Section-->
-    <section class="sptb">
-      <div class="container">
-        <div class="section-title center-block text-center">
-          <h2>Kendaraan Terbaik</h2>
-          <p>Kendaraan Terbaik dan Terpopuler berdasarkan tipe.</p>
-        </div>
-        <div class="row">
-          <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6"> <a href="#" class="car-body-shapes card text-center p-4 bg-primary">
-              <div class="car-body-img"><img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/1(1).png" alt="img"></div>
-              <div class="servic-data">
-                <h4 class="font-weight-semibold mb-0 text-white">SUV</h4>
-              </div>
-            </a> </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6"> <a href="#" class="car-body-shapes card text-center p-4 bg-secondary">
-              <div class="car-body-img"><img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/2(1).png" alt="img"></div>
-              <div class="servic-data">
-                <h4 class="font-weight-semibold mb-0 text-white">MUV</h4>
-              </div>
-            </a> </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6"> <a href="#" class="car-body-shapes card text-center p-4 bg-info">
-              <div class="car-body-img"><img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/3(1).png" alt="img"></div>
-              <div class="servic-data">
-                <h4 class="font-weight-semibold mb-0 text-white">Car Roof</h4>
-              </div>
-            </a> </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6"> <a href="#" class="car-body-shapes card text-center p-4 bg-success">
-              <div class="car-body-img"><img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/4(1).png" alt="img"></div>
-              <div class="servic-data">
-                <h4 class="font-weight-semibold mb-0 text-white">Alto</h4>
-              </div>
-            </a> </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6"> <a href="#" class="car-body-shapes card text-center p-4 bg-danger">
-              <div class="car-body-img"><img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/5(1).png" alt="img"></div>
-              <div class="servic-data">
-                <h4 class="font-weight-semibold mb-0 text-white">Ringer Ace</h4>
-              </div>
-            </a> </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6"> <a href="#" class="car-body-shapes card text-center p-4 bg-purple">
-              <div class="car-body-img"><img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/6(1).png" alt="img"></div>
-              <div class="servic-data">
-                <h4 class="font-weight-semibold mb-0 text-white">Convertible</h4>
-              </div>
-            </a> </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6"> <a href="#" class="car-body-shapes card text-center p-4 mb-5 bg-blue">
-              <div class="car-body-img"><img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/7.png" alt="img"></div>
-              <div class="servic-data">
-                <h4 class="font-weight-semibold mb-0 text-white">Pick-up</h4>
-              </div>
-            </a> </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6"> <a href="#" class="car-body-shapes card text-center mb-lg-0 p-4 bg-pink">
-              <div class="car-body-img"><img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/8.png" alt="img"></div>
-              <div class="servic-data">
-                <h4 class="font-weight-semibold mb-0 text-white">Luxary</h4>
-              </div>
-            </a> </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6"> <a href="#" class="car-body-shapes card text-center mb-lg-0 p-4 bg-indigo">
-              <div class="car-body-img"><img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/9.png" alt="img"></div>
-              <div class="servic-data">
-                <h4 class="font-weight-semibold mb-0 text-white">Coupe</h4>
-              </div>
-            </a> </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6"> <a href="#" class="car-body-shapes card text-center mb-lg-0 p-4 bg-orange">
-              <div class="car-body-img"><img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/10.png" alt="img"></div>
-              <div class="servic-data">
-                <h4 class="font-weight-semibold mb-0 text-white">Sport Car</h4>
-              </div>
-            </a> </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6"> <a href="#" class="car-body-shapes card text-center mb-sm-0 p-4 bg-lime">
-              <div class="car-body-img"><img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/11.png" alt="img"></div>
-              <div class="servic-data">
-                <h4 class="font-weight-semibold mb-0 text-white">Mini Van</h4>
-              </div>
-            </a> </div>
-          <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6"> <a href="#" class="car-body-shapes card text-center mb-0 p-4 bg-dark">
-              <div class="car-body-img"><img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/12.png" alt="img"></div>
-              <div class="servic-data">
-                <h4 class="font-weight-semibold mb-0 text-white">Van</h4>
-              </div>
-            </a> </div>
-        </div>
-      </div>
-    </section> 
-    <!-- Section-->
+    <!--Location-->
     <!--Section-->
     <section class="sptb bg-patterns bg-white">
       <div class="container">
         <div class="section-title center-block text-center">
           <h2>Mobil Terbaru</h2>
-          <p>Mobil terbaru yang kami sediakan, pembelian ditahun 2020</p>
+          <p>Mobil terbaru yang kami sediakan, performa mobil maksimal.</p>
         </div>
         <div id="myCarousel2" class="owl-carousel owl-carousel-icons5 owl-loaded owl-drag">
           <!-- Wrapper for carousel items -->
           <div class="owl-stage-outer">
             <div class="owl-stage" style="transform: translate3d(-1801px, 0px, 0px); transition: all 0.25s ease 0s; width: 3904px;">
+            <?php foreach($data['mobil'] as $mb) : ?> 
               <div class="owl-item cloned" style="width: 275.25px; margin-right: 25px;">
                 <div class="item">
                   <div class="card mb-0">
-                    <div class="arrow-ribbon bg-primary">Rent</div>
-                    <div class="item-card7-imgs"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h3.jpg" alt="img" class="cover-image">
+                    <div class="arrow-ribbon bg-secondary">Tersedia</div>
+                    <div class="item-card7-imgs"> <a class="link" href="#"></a> <img height="170px" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>" alt="img" class="cover-image">
                       <div class="item-tag">
-                        <h4 class="mb-0 fs-13">$752.99</h4>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="item-card7-desc">
-                        <div class="item-card7-text"> <a href="#" class="text-dark">
-                            <h4 class="">Syracuse</h4>
-                          </a> </div>
-                        <ul class="item-cards7-ic mb-0 mt-2">
-                          <li><a href="#"><span class="text-muted"><i class="icon icon-eye mr-1"></i> 22 Views</span></a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> USA</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 5 hours ago</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 14 675 65430</a></li>
-                        </ul>
-                        <p class="mb-0">Omnis iste natus error sit dolore dg voluptatem accusantium</p>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block" href="#"> BOOK NOW</a> </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-4" data-toggle="tooltip" data-placement="bottom" data-original-title="Automatic"><i class="fa fa-car text-muted"></i> <span class="text-default">Auto</span></a> <a href="#" class="mr-4" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">4000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item cloned" style="width: 275.25px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="arrow-ribbon bg-purple">Offer</div>
-                    <div class="item-card7-imgs"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/v4.jpg" alt="img" class="cover-image">
-                      <div class="item-tag">
-                        <h4 class="mb-0 fs-13">$752.99</h4>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="item-card7-desc">
-                        <div class="item-card7-text"> <a href="#" class="text-dark">
-                            <h4 class="">Interstate A6</h4>
-                          </a> </div>
-                        <ul class="item-cards7-ic mb-0 mt-2">
-                          <li><a href="#"><span class="text-muted"><i class="icon icon-eye mr-1"></i> 22 Views</span></a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> USA</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 5 hours ago</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 14 675 65430</a></li>
-                        </ul>
-                        <p class="mb-0">Omnis iste natus error sit dolore dg voluptatem accusantium</p>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block" href="#"> BOOK NOW</a> </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Manual"><i class="fa fa-car text-muted"></i> <span class="text-default">Manual</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">2000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Disel</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item cloned" style="width: 275.25px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="arrow-ribbon bg-success">Offer</div>
-                    <div class="item-card7-imgs"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/f2.jpg" alt="img" class="cover-image">
-                      <div class="item-tag">
-                        <h4 class="mb-0 fs-13">$552.99</h4>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="item-card7-desc">
-                        <div class="item-card7-text"> <a href="#" class="text-dark">
-                            <h4 class="">Steuben B-Class</h4>
-                          </a> </div>
-                        <ul class="item-cards7-ic mb-0 mt-2">
-                          <li><a href="#"><span class="text-muted"><i class="icon icon-eye mr-1"></i> 12 Views</span></a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> UK</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 1 hours ago</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 14 675 65430</a></li>
-                        </ul>
-                        <p class="mb-0">Omnis iste natus error sit dolore dg voluptatem accusantium</p>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block" href="#"> BOOK NOW</a> </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Automatic"><i class="fa fa-car text-muted"></i> <span class="text-default">Auto</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">1000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item cloned" style="width: 275.25px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="arrow-ribbon bg-secondary">Rent</div>
-                    <div class="item-card7-imgs"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/j3.jpg" alt="img" class="cover-image">
-                      <div class="item-tag">
-                        <h4 class="mb-0 fs-13">$322.99</h4>
+                        <h4 class="mb-0 fs-13"><?php echo $mb['no_plat'] ?></h4>
                       </div>
                     </div>
                     <div class="card-body">
                       <div class="item-card7-desc">
                         <div class="item-card7-text  d-flex"> <a href="#" class="text-dark">
-                            <h4 class="">Ranchette</h4>
+                            <h4 class=""><?php echo $mb['merk'] ?></h4>
                           </a> </div>
                         <ul class="item-cards7-ic mb-0 mt-2">
-                          <li><a href="#"><span class="text-muted"><i class="icon icon-eye mr-1"></i> 22 Views</span></a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> USA</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 5 hours ago</a></li>
+                          <li><a href="#"><span class="text-muted"><i class="icon icon-eye mr-1"></i><?php echo $mb['warna'] ?></span></a></li>
+                          <li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> Madiun</a></li>
+                          <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> <?php echo $mb['tahun'] ?></a></li>
                           <li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 14 675 65430</a></li>
                         </ul>
-                        <p class="mb-0">Omnis iste natus error sit dolore dg voluptatem accusantium</p>
+                        <!-- <p class="mb-0">Mobil terbaik dengan performa luar biasa dan maksimal.</p> -->
                       </div>
-                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block" href="#"> BOOK NOW</a> </div>
+                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block" href="#"> Pesan Sekarang</a> </div>
                     </div>
                     <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Manual"><i class="fa fa-car text-muted"></i> <span class="text-default">Manual</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">4000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
                   </div>
                 </div>
               </div>
-              <div class="owl-item" style="width: 275.25px; margin-right: 25px;">
-                <div class="item sold-out">
-                  <div class="ribbon ribbon-top-left text-danger"><span class="bg-danger">Booked</span></div>
-                  <div class="card mb-0">
-                    <div class="item-card7-imgs"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/b3.jpg" alt="img" class="cover-image">
-                      <div class="item-tag">
-                        <h4 class="mb-0 fs-13">$398.99</h4>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="item-card7-desc">
-                        <div class="item-card7-text"> <a href="#" class="text-dark">
-                            <h4 class="">Steuben</h4>
-                          </a> </div>
-                        <ul class="item-cards7-ic mb-0 mt-2">
-                          <li><a href="#"><span class="text-muted"><i class="icon icon-eye mr-1"></i> 22 Views</span></a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> USA</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 5 hours ago</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 14 675 65430</a></li>
-                        </ul>
-                        <p class="mb-0">Omnis iste natus error sit dolore dg voluptatem accusantium</p>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block" href="#"> BOOK NOW</a> </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Automatic"><i class="fa fa-car text-muted"></i> <span class="text-default">Auto</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">4000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item" style="width: 275.25px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="arrow-ribbon bg-primary">Rent</div>
-                    <div class="item-card7-imgs"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h3.jpg" alt="img" class="cover-image">
-                      <div class="item-tag">
-                        <h4 class="mb-0 fs-13">$752.99</h4>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="item-card7-desc">
-                        <div class="item-card7-text"> <a href="#" class="text-dark">
-                            <h4 class="">Syracuse</h4>
-                          </a> </div>
-                        <ul class="item-cards7-ic mb-0 mt-2">
-                          <li><a href="#"><span class="text-muted"><i class="icon icon-eye mr-1"></i> 22 Views</span></a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> USA</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 5 hours ago</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 14 675 65430</a></li>
-                        </ul>
-                        <p class="mb-0">Omnis iste natus error sit dolore dg voluptatem accusantium</p>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block" href="#"> BOOK NOW</a> </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-4" data-toggle="tooltip" data-placement="bottom" data-original-title="Automatic"><i class="fa fa-car text-muted"></i> <span class="text-default">Auto</span></a> <a href="#" class="mr-4" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">4000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item active" style="width: 275.25px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="arrow-ribbon bg-purple">Offer</div>
-                    <div class="item-card7-imgs"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/v4.jpg" alt="img" class="cover-image">
-                      <div class="item-tag">
-                        <h4 class="mb-0 fs-13">$752.99</h4>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="item-card7-desc">
-                        <div class="item-card7-text"> <a href="#" class="text-dark">
-                            <h4 class="">Interstate A6</h4>
-                          </a> </div>
-                        <ul class="item-cards7-ic mb-0 mt-2">
-                          <li><a href="#"><span class="text-muted"><i class="icon icon-eye mr-1"></i> 22 Views</span></a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> USA</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 5 hours ago</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 14 675 65430</a></li>
-                        </ul>
-                        <p class="mb-0">Omnis iste natus error sit dolore dg voluptatem accusantium</p>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block" href="#"> BOOK NOW</a> </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Manual"><i class="fa fa-car text-muted"></i> <span class="text-default">Manual</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">2000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Disel</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item active" style="width: 275.25px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="arrow-ribbon bg-success">Offer</div>
-                    <div class="item-card7-imgs"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/f2.jpg" alt="img" class="cover-image">
-                      <div class="item-tag">
-                        <h4 class="mb-0 fs-13">$552.99</h4>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="item-card7-desc">
-                        <div class="item-card7-text"> <a href="#" class="text-dark">
-                            <h4 class="">Steuben B-Class</h4>
-                          </a> </div>
-                        <ul class="item-cards7-ic mb-0 mt-2">
-                          <li><a href="#"><span class="text-muted"><i class="icon icon-eye mr-1"></i> 12 Views</span></a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> UK</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 1 hours ago</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 14 675 65430</a></li>
-                        </ul>
-                        <p class="mb-0">Omnis iste natus error sit dolore dg voluptatem accusantium</p>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block" href="#"> BOOK NOW</a> </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Automatic"><i class="fa fa-car text-muted"></i> <span class="text-default">Auto</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">1000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item active" style="width: 275.25px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="arrow-ribbon bg-secondary">Rent</div>
-                    <div class="item-card7-imgs"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/j3.jpg" alt="img" class="cover-image">
-                      <div class="item-tag">
-                        <h4 class="mb-0 fs-13">$322.99</h4>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="item-card7-desc">
-                        <div class="item-card7-text  d-flex"> <a href="#" class="text-dark">
-                            <h4 class="">Ranchette</h4>
-                          </a> </div>
-                        <ul class="item-cards7-ic mb-0 mt-2">
-                          <li><a href="#"><span class="text-muted"><i class="icon icon-eye mr-1"></i> 22 Views</span></a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> USA</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 5 hours ago</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 14 675 65430</a></li>
-                        </ul>
-                        <p class="mb-0">Omnis iste natus error sit dolore dg voluptatem accusantium</p>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block" href="#"> BOOK NOW</a> </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Manual"><i class="fa fa-car text-muted"></i> <span class="text-default">Manual</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">4000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item cloned active" style="width: 275.25px; margin-right: 25px;">
-                <div class="item sold-out">
-                  <div class="ribbon ribbon-top-left text-danger"><span class="bg-danger">Booked</span></div>
-                  <div class="card mb-0">
-                    <div class="item-card7-imgs"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/b3.jpg" alt="img" class="cover-image">
-                      <div class="item-tag">
-                        <h4 class="mb-0 fs-13">$398.99</h4>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="item-card7-desc">
-                        <div class="item-card7-text"> <a href="#" class="text-dark">
-                            <h4 class="">Steuben</h4>
-                          </a> </div>
-                        <ul class="item-cards7-ic mb-0 mt-2">
-                          <li><a href="#"><span class="text-muted"><i class="icon icon-eye mr-1"></i> 22 Views</span></a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> USA</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 5 hours ago</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 14 675 65430</a></li>
-                        </ul>
-                        <p class="mb-0">Omnis iste natus error sit dolore dg voluptatem accusantium</p>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block" href="#"> BOOK NOW</a> </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Automatic"><i class="fa fa-car text-muted"></i> <span class="text-default">Auto</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">4000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item cloned" style="width: 275.25px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="arrow-ribbon bg-primary">Rent</div>
-                    <div class="item-card7-imgs"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/h3.jpg" alt="img" class="cover-image">
-                      <div class="item-tag">
-                        <h4 class="mb-0 fs-13">$752.99</h4>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="item-card7-desc">
-                        <div class="item-card7-text"> <a href="#" class="text-dark">
-                            <h4 class="">Syracuse</h4>
-                          </a> </div>
-                        <ul class="item-cards7-ic mb-0 mt-2">
-                          <li><a href="#"><span class="text-muted"><i class="icon icon-eye mr-1"></i> 22 Views</span></a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> USA</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 5 hours ago</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 14 675 65430</a></li>
-                        </ul>
-                        <p class="mb-0">Omnis iste natus error sit dolore dg voluptatem accusantium</p>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block" href="#"> BOOK NOW</a> </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-4" data-toggle="tooltip" data-placement="bottom" data-original-title="Automatic"><i class="fa fa-car text-muted"></i> <span class="text-default">Auto</span></a> <a href="#" class="mr-4" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">4000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item cloned" style="width: 275.25px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="arrow-ribbon bg-purple">Offer</div>
-                    <div class="item-card7-imgs"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/v4.jpg" alt="img" class="cover-image">
-                      <div class="item-tag">
-                        <h4 class="mb-0 fs-13">$752.99</h4>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="item-card7-desc">
-                        <div class="item-card7-text"> <a href="#" class="text-dark">
-                            <h4 class="">Interstate A6</h4>
-                          </a> </div>
-                        <ul class="item-cards7-ic mb-0 mt-2">
-                          <li><a href="#"><span class="text-muted"><i class="icon icon-eye mr-1"></i> 22 Views</span></a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> USA</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 5 hours ago</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 14 675 65430</a></li>
-                        </ul>
-                        <p class="mb-0">Omnis iste natus error sit dolore dg voluptatem accusantium</p>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block" href="#"> BOOK NOW</a> </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Manual"><i class="fa fa-car text-muted"></i> <span class="text-default">Manual</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">2000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Disel</span></a> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item cloned" style="width: 275.25px; margin-right: 25px;">
-                <div class="item">
-                  <div class="card mb-0">
-                    <div class="arrow-ribbon bg-success">Offer</div>
-                    <div class="item-card7-imgs"> <a class="link" href="#"></a> <img src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/f2.jpg" alt="img" class="cover-image">
-                      <div class="item-tag">
-                        <h4 class="mb-0 fs-13">$552.99</h4>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="item-card7-desc">
-                        <div class="item-card7-text"> <a href="#" class="text-dark">
-                            <h4 class="">Steuben B-Class</h4>
-                          </a> </div>
-                        <ul class="item-cards7-ic mb-0 mt-2">
-                          <li><a href="#"><span class="text-muted"><i class="icon icon-eye mr-1"></i> 12 Views</span></a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> UK</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> 1 hours ago</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 14 675 65430</a></li>
-                        </ul>
-                        <p class="mb-0">Omnis iste natus error sit dolore dg voluptatem accusantium</p>
-                      </div>
-                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block" href="#"> BOOK NOW</a> </div>
-                    </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Automatic"><i class="fa fa-car text-muted"></i> <span class="text-default">Auto</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">1000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
-                  </div>
-                </div>
-              </div>
+              <?php endforeach; ?>
             </div>
           </div>
         </div>
