@@ -185,9 +185,9 @@ class Users extends Controller
         $_SESSION['email'] = $user->email;
         if($_SESSION['id_grup'] == '1') //Redirect Ke halaman Admin
         {
-            header('location:' . BASEURL . '/admin');
+            header('location:' . BASEURL . '/dashboard');
         } elseif ($_SESSION['id_grup'] == '2'){ //Redirect Ke halaman Pegawai
-            header('location:' . BASEURL . '/pegawai');
+            header('location:' . BASEURL . '/dashboard');
         } else { //Redirect Ke halaman Pelanggan
             header('location:' . BASEURL . '/pelanggan');
         }

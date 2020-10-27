@@ -63,7 +63,7 @@
               <div class="outsidebg"></div>
               <ul class="horizontalMenu-list">
               <li aria-haspopup="true"><span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span><a href="<?= BASEURL ?>/home/">Home</a>
-                <li aria-haspopup="true"><a href="<?= BASEURL ?>/admin/dashboard">Admin</a></li>
+                <li aria-haspopup="true"><a href="<?= BASEURL ?>/dashboard">Admin</a></li>
                 <li aria-haspopup="true"><a href="#">Sewa</a></li>
                 <li aria-haspopup="true"><span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span><a href="#">Type</a></li>
                 <li aria-haspopup="true"><span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span><a href="#">Kendaraan <span class="fa fa-caret-down m-0"></span></a>

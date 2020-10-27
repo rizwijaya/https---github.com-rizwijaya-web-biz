@@ -2,6 +2,13 @@
 
 class Pelanggan extends Controller 
 {
+    public function __construct()
+    {
+        if(!$_SESSION) {
+            header('location:' . BASEURL . '/home/redirecting');
+        }
+    }
+
     public function index()
     {
         $data['mobil'] = $this->model('rental_model')->getallmobil();
@@ -15,9 +22,5 @@ class Pelanggan extends Controller
         $this->view('templates/pelanggan/header');
         $this->view('home/index');
         $this->view('templates/pelanggan/footer');
-    }
-    public function data_pelanggan()
-    {
-        echo 'Ini halaman pelanggan/data_pelanggan';
     }
 }

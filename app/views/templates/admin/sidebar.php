@@ -4,7 +4,7 @@
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
-        <a class="navbar-brand" href="<?= BASEURL; ?>/admin/dashboard">
+        <a class="navbar-brand" href="<?= BASEURL; ?>/dashboard">
           <img src="<?= BASEURL; ?>/assets_manage/img/brand/blue.png" class="navbar-brand-img" alt="...">
         </a>
         <div class="ml-auto">
@@ -24,7 +24,7 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="<?= BASEURL; ?>/admin/dashboard">
+              <a class="nav-link active" href="<?= BASEURL; ?>/dashboard">
                 <i class="ni ni-shop text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
@@ -35,18 +35,19 @@
                 <span class="nav-link-text">Data Mobil</span>
               </a>
             </li>
-            <li class="nav-item">
+            <?php if($data['id_grup'] == '1')
+            echo '<li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/mobil/data_type">
                 <i class="ni ni-single-copy-04 text-pink"></i>
                 <span class="nav-link-text">Data Type</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= BASEURL; ?>/pelanggan/data_pelanggan">
+              <a class="nav-link" href="<?= BASEURL; ?>/dashboard/data_pelanggan">
                 <i class="ni ni-archive-2 text-green"></i>
                 <span class="nav-link-text">Data Pelanggan</span>
               </a>
-            </li>
+            </li>' ?>
             <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/payment">
                 <i class="ni ni-align-left-2 text-default"></i>
@@ -54,11 +55,18 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= BASEURL; ?>/admin/laporan">
+              <a class="nav-link" href="<?= BASEURL; ?>/dashboard/laporan">
                 <i class="ni ni-chart-pie-35 text-info"></i>
                 <span class="nav-link-text">Transaksi</span>
               </a>
             </li>
+            <?php if($data['id_grup'] == '1')
+            echo '<li class="nav-item">
+              <a class="nav-link" href="<?= BASEURL; ?>/dashboard/tambah_user">
+                <i class="ni ni-ungroup text-orange"></i>
+                <span class="nav-link-text">Tambah Pengguna</span>
+              </a>
+            </li>' ?>
           </ul>
           <!-- Divider -->
           <hr class="my-3">

@@ -2,8 +2,19 @@
 
 class mobil extends Controller 
 {
+    public function __construct()
+    {
+        if(!$_SESSION) {
+            header('location:' . BASEURL . '/home/redirecting');
+        }
+        if($_SESSION['id_grup'] == 3) {
+            header('location:' . BASEURL . '/home/redirecting');
+        }
+    }
+    
     public function index() 
     {
+        $data['id_grup'] = $_SESSION['id_grup'];
         $data['title'] = "Data Kendaraan";
         $data['menu'] = "Kendaraan";
         $data['submenu'] = "Data Kendaraan";
@@ -16,15 +27,7 @@ class mobil extends Controller
     }
     public function data_mobil() 
     {
-      /*  if(!$_SESSION) {
-            header('location:' . BASEURL . '/home/redirecting');
-        }
-        if($_SESSION['id_grup'] == 3 ) {
-            header('location:' . BASEURL . '/home/redirecting');
-        }
-        /*if($_SESSION['id_grup'] != 1 || $_SESSION['id_grup'] != 2) {
-            header('location:' . BASEURL . '/home/redirecting');
-        }*/
+        $data['id_grup'] = $_SESSION['id_grup'];
         $data['title'] = "Data Kendaraan";
         $data['menu'] = "Kendaraan";
         $data['submenu'] = "Data Kendaraan";
