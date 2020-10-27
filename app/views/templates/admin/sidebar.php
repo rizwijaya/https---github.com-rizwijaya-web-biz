@@ -35,8 +35,8 @@
                 <span class="nav-link-text">Data Mobil</span>
               </a>
             </li>
-            <?php if($data['id_grup'] == '1')
-            echo '<li class="nav-item">
+            <?php if($data['id_grup'] == '1') { ?>
+            <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/mobil/data_type">
                 <i class="ni ni-single-copy-04 text-pink"></i>
                 <span class="nav-link-text">Data Type</span>
@@ -47,7 +47,8 @@
                 <i class="ni ni-archive-2 text-green"></i>
                 <span class="nav-link-text">Data Pelanggan</span>
               </a>
-            </li>' ?>
+            </li>
+            <?php } ?>
             <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/payment">
                 <i class="ni ni-align-left-2 text-default"></i>
@@ -60,13 +61,14 @@
                 <span class="nav-link-text">Transaksi</span>
               </a>
             </li>
-            <?php if($data['id_grup'] == '1')
-            echo '<li class="nav-item">
+            <?php if($data['id_grup'] == '1') { ?>
+            <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/dashboard/tambah_user">
                 <i class="ni ni-ungroup text-orange"></i>
                 <span class="nav-link-text">Tambah Pengguna</span>
               </a>
-            </li>' ?>
+            </li>
+            <?php } ?>
           </ul>
           <!-- Divider -->
           <hr class="my-3">
