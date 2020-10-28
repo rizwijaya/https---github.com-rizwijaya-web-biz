@@ -24,7 +24,7 @@ class Rental_model {
     {
         $query = "INSERT INTO mobil
                     VALUES
-                ('', :kode_type, :merk, :no_plat, :warna, :tahun, :status, :gambar)";
+                ('', :kode_type, :merk, :no_plat, :warna, :tahun, :status, :harga, :lokasi, :denda, :ac, :transmission, :kilometer, :video_player, :gambar)";
 
         $this->db->query($query);
         $this->db->bind('kode_type', $data['kode_type']);
@@ -33,6 +33,13 @@ class Rental_model {
         $this->db->bind('warna', $data['warna']);
         $this->db->bind('tahun', $data['tahun']);
         $this->db->bind('status', $data['status']);
+        $this->db->bind('harga', $data['harga']);
+        $this->db->bind('lokasi', $data['lokasi']);
+        $this->db->bind('denda', $data['denda']);
+        $this->db->bind('ac', $data['ac']);
+        $this->db->bind('transmission', $data['transmission']);
+        $this->db->bind('kilometer', $data['kilometer']);
+        $this->db->bind('video_player', $data['video_player']);
         $this->db->bind('gambar', $name);
 
         $this->db->execute();
@@ -55,7 +62,14 @@ class Rental_model {
                     no_plat = :no_plat, 
                     warna = :warna,
                     tahun = :tahun, 
-                    status = :status
+                    status = :status,
+                    harga = :harga,
+                    lokasi = :lokasi,
+                    denda = :denda,
+                    ac = :ac,
+                    transmission = :transmission,
+                    kilometer = :kilometer,
+                    video_player = :video_player
                 WHERE id_mobil= :id_mobil";
 
         $this->db->query($query);
@@ -65,6 +79,13 @@ class Rental_model {
         $this->db->bind('warna', $data['warna']);
         $this->db->bind('tahun', $data['tahun']);
         $this->db->bind('status', $data['status']);
+        $this->db->bind('harga', $data['harga']);
+        $this->db->bind('lokasi', $data['lokasi']);
+        $this->db->bind('denda', $data['denda']);
+        $this->db->bind('ac', $data['ac']);
+        $this->db->bind('transmission', $data['transmission']);
+        $this->db->bind('kilometer', $data['kilometer']);
+        $this->db->bind('video_player', $data['video_player']);
         $this->db->bind('id_mobil', $data['id_mobil']);
 
         $this->db->execute();

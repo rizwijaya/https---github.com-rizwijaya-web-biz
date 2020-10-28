@@ -173,7 +173,7 @@ class Users extends Controller
             ];
         }
         $this->view('templates/pelanggan/header');
-        $this->view('home/index');
+        $this->view('home/login', $data);
         $this->view('templates/pelanggan/footer');
     }
 

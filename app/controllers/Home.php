@@ -41,7 +41,7 @@ class Home extends Controller {
         if($_SESSION) {
             $this->redirecting();
         }
-
+        
         $data = NULL;
         $this->view('templates/pelanggan/header');
         $this->view('home/login', $data);

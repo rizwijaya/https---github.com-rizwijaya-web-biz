@@ -28,6 +28,7 @@
                    <th scope="col" class="sort" data-sort="type">Type</th>
                    <th scope="col" class="sort" data-sort="merk">Merk</th>
                    <th scope="col" class="sort" data-sort="no_plat">Plat Nomor</th>
+                   <th scope="col" class="sort" data-sort="harga">Harga</th>
                    <th scope="col" class="sort" data-sort="status">Status</th>
                    <th scope="col" class="sort" data-sort="aksi">Aksi</th>
                  </tr>
@@ -44,6 +45,7 @@
                      <td><?= $mb['kode_type'] ?></td>
                      <td><?= $mb['merk'] ?></td>
                      <td><?= $mb['no_plat'] ?></td>
+                     <td>Rp <?= $mb['harga'] ?></td>
                      <td><?php
                           if ($mb['status'] == "0") {
                             echo "<span class='badge badge-dot mr-4'><i class='bg-warning'></i><span class='status'>Tidak Tersedia</span></span>";
@@ -115,6 +117,60 @@
                          <div class="custom-file">
                            <input type="file" class="custom-file-input form-control" id="gambar" name="gambar" required="">
                            <label class="custom-file-label" for="gambar">Pilih File</label>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-4">
+                       <div class="form-group">
+                           <label class="form-control-label" for="harga">Harga</label>
+                           <input type="number" class="form-control" id="harga" name="harga" required="">
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                       <div class="form-group">
+                           <label class="form-control-label" for="denda">Denda</label>
+                           <input type="number" class="form-control" id="denda" name="denda" required="">
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                       <div class="form-group">
+                           <label class="form-control-label" for="lokasi">Lokasi</label>
+                           <input type="text" class="form-control" id="lokasi" name="lokasi" required="">
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-3">
+                       <div class="form-group">
+                       <label class="form-control-label" for="ac">AC</label>
+                           <select class="form-control" name="ac" id="ac">
+                             <option value="">Pilih</option>
+                             <option value="1">Ya</option>
+                             <option value="0">Tidak</option>
+                           </select>
+                         </div>
+                       </div>
+                       <div class="col-md-3">
+                       <div class="form-group">
+                           <label class="form-control-label" for="transmission">Transmission</label>
+                           <input type="text" class="form-control" id="transmission" name="transmission" required="" placeholder="Auto/Manual">
+                         </div>
+                       </div>
+                       <div class="col-md-3">
+                       <div class="form-group">
+                           <label class="form-control-label" for="kilometer">Kilometer</label>
+                           <input type="number" class="form-control" id="kilometer" name="kilometer" required="">
+                         </div>
+                       </div>
+                       <div class="col-md-3">
+                       <div class="form-group">
+                       <label class="form-control-label" for="video_player">Video Player</label>
+                           <select class="form-control" name="video_player" id="video_player">
+                             <option value="">Pilih</option>
+                             <option value="1">Ya</option>
+                             <option value="0">Tidak</option>
+                           </select>
                          </div>
                        </div>
                      </div>
@@ -197,6 +253,70 @@
                              </div>
                            </div>
                          </div>
+                         <div class="row">
+                       <div class="col-md-4">
+                       <div class="form-group">
+                           <label class="form-control-label" for="harga">Harga</label>
+                           <input type="number" class="form-control" id="harga" name="harga" value="<?= $upmb['harga'] ?>" required="">
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                       <div class="form-group">
+                           <label class="form-control-label" for="denda">Denda</label>
+                           <input type="number" class="form-control" id="denda" name="denda" value="<?= $upmb['denda'] ?>" required="">
+                         </div>
+                       </div>
+                       <div class="col-md-4">
+                       <div class="form-group">
+                           <label class="form-control-label" for="lokasi">Lokasi</label>
+                           <input type="text" class="form-control" id="lokasi" name="lokasi" value="<?= $upmb['lokasi'] ?>" required="">
+                         </div>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="col-md-3">
+                       <div class="form-group">
+                       <label class="form-control-label" for="ac">AC</label>
+                           <select class="form-control" name="ac" id="ac">
+                           <option <?php if ($upmb['ac'] == "1") {
+                                                  echo "selected='selected'";
+                                                }
+                                                echo $upmb['ac']; ?> value="1">Ya</option>
+                                 <option <?php if ($upmb['ac'] == "0") {
+                                                  echo "selected='selected'";
+                                                }
+                                                echo $upmb['ac']; ?> value="0">Tidak</option>
+                           </select>
+                         </div>
+                       </div>
+                       <div class="col-md-3">
+                       <div class="form-group">
+                           <label class="form-control-label" for="transmission">Transmission</label>
+                           <input type="text" class="form-control" id="transmission" name="transmission" required="" value="<?= $upmb['transmission'] ?>">
+                         </div>
+                       </div>
+                       <div class="col-md-3">
+                       <div class="form-group">
+                           <label class="form-control-label" for="kilometer">Kilometer</label>
+                           <input type="number" class="form-control" id="kilometer" name="kilometer" value="<?= $upmb['kilometer'] ?>" required="">
+                         </div>
+                       </div>
+                       <div class="col-md-3">
+                       <div class="form-group">
+                       <label class="form-control-label" for="video_player">Video Player</label>
+                           <select class="form-control" name="video_player" id="video_player">
+                           <option <?php if ($upmb['video_player'] == "1") {
+                                                  echo "selected='selected'";
+                                                }
+                                                echo $upmb['video_player']; ?> value="1">Ya</option>
+                                 <option <?php if ($upmb['video_player'] == "0") {
+                                                  echo "selected='selected'";
+                                                }
+                                                echo $upmb['video_player']; ?> value="0">Tidak</option> 
+                           </select>
+                         </div>
+                       </div>
+                     </div>
                          <div class="modal-footer">
                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                            <button type="submit" name="submit" id="submit" class="btn btn-primary">Update Data</button>

@@ -61,7 +61,7 @@
                 <div class="item <?php if($mb['status'] == '0') echo 'sold-out' ?>">
                   <?php if($mb['status'] == '0') echo '<div class="ribbon ribbon-top-left text-danger"><span class="bg-danger">Dipesan</span></div>' ?>
                   <div class="card mb-0">
-                    <div class="item-card2-img"> <a class="link" <?php if($mb['status'] == '1') echo 'href="#"' ?>></a> <img width="373.33px" height="221.97px" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>" alt="img" class="cover-image">
+                    <div class="item-card2-img"> <a class="link" <?php if($mb['status'] == '1') echo 'href="#"' ?>></a> <img width="373.33px" height="221.98px" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>" alt="img" class="cover-image">
                     <?php if($mb['status'] == '1') echo '<div class="item-tag-overlaytext"> <span class="text-white bg-success"> Tersedia</span> </div>' ?>
                       <div class="item-card2-icons"> <a class="item-card2-icons-l bg-primary"> <i class="fa fa-car"></i></a> <a class="item-card2-icons-r wishlist active"><i class="fa fa fa-heart"></i></a> </div>
                     </div>
@@ -360,9 +360,9 @@
                   <?php if($mb['status'] == '0') echo '<div class="ribbon ribbon-top-left text-danger"><span class="bg-danger">Dipesan</span></div>' ?>
                   <div class="card mb-0">
                   <?php if($mb['status'] == '1') echo '<div class="arrow-ribbon bg-secondary">'.$mb['warna'].'</div>'; ?>
-                    <div class="item-card7-imgs"> <a class="link" <?php if($mb['status'] == '1') echo 'href="#"' ?>></a> <img height="170px" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>" alt="img" class="cover-image">
+                    <div class="item-card7-imgs"> <a class="link" <?php if($mb['status'] == '1') echo 'href="#"' ?>></a> <img width="273.25px" height="162.46px" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>" alt="img" class="cover-image">
                       <div class="item-tag">
-                        <h4 class="mb-0 fs-13"><?php echo $mb['harga'] ?></h4>
+                        <h4 class="mb-0 fs-13">Rp <?php echo $mb['harga'] ?></h4>
                       </div>
                     </div>
                     <div class="card-body">
