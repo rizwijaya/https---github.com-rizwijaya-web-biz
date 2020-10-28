@@ -57,28 +57,29 @@
           <div class="owl-stage-outer">
             <div class="owl-stage" style="transform: translate3d(-2001px, 0px, 0px); transition: all 0.25s ease 0s; width: 4404px;">
             <?php foreach($data['mobil'] as $mb) : ?> 
-              <div class="owl-item cloned" style="width: 375.333px; margin-right: 25px;">
-                <div class="item">
+              <div class="owl-item" style="width: 375.333px; margin-right: 25px;">
+                <div class="item <?php if($mb['status'] == '0') echo 'sold-out' ?>">
+                  <?php if($mb['status'] == '0') echo '<div class="ribbon ribbon-top-left text-danger"><span class="bg-danger">Dipesan</span></div>' ?>
                   <div class="card mb-0">
-                    <div class="item-card2-img"> <a class="link" href="#"></a> <img width="373.33px" height="221.97px" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>" alt="img" class="cover-image">
-                      <div class="item-tag-overlaytext"> <span class="text-white bg-success"> Rent</span> </div>
-                      <div class="item-card2-icons"> <a href="#" class="item-card2-icons-l bg-primary"> <i class="car car-volkswagen"></i></a> <a href="#" class="item-card2-icons-r wishlist active"><i class="fa fa fa-heart"></i></a> </div>
+                    <div class="item-card2-img"> <a class="link" <?php if($mb['status'] == '1') echo 'href="#"' ?>></a> <img width="373.33px" height="221.97px" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>" alt="img" class="cover-image">
+                    <?php if($mb['status'] == '1') echo '<div class="item-tag-overlaytext"> <span class="text-white bg-success"> Tersedia</span> </div>' ?>
+                      <div class="item-card2-icons"> <a class="item-card2-icons-l bg-primary"> <i class="fa fa-car"></i></a> <a class="item-card2-icons-r wishlist active"><i class="fa fa fa-heart"></i></a> </div>
                     </div>
                     <div class="card-body pb-0">
                       <div class="item-card2">
                         <div class="item-card2-desc">
-                          <div class="item-card2-text"> <a href="#" class="text-dark">
+                          <div class="item-card2-text"> <a <?php if($mb['status'] == '1') echo 'href="#"' ?> class="text-dark">
                               <h4 class="mb-0"><?php echo $mb['merk']; ?></h4>
                             </a> </div>
-                          <div class="d-flex pb-0 pt-0"> <a href="">
-                              <p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i>Madiun, Indonesia</p>
+                          <div class="d-flex pb-0 pt-0"> <a <?php if($mb['status'] == '1') echo 'href="#"' ?>>
+                              <p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i><?php echo $mb['lokasi'] ?>, Indonesia</p>
                             </a> <span class="ml-3 pb-0 pt-0 mb-2 mt-2 font-weight-bold"><?php echo $mb['no_plat']; ?></span> </div>
-                         <!-- <p class="">Lorem Ipsum available, quis int nostrum exercitationem </p> -->
+                         <p class="">Kendaraan tahun produksi <?php echo $mb['tahun']; ?> dengan transmission <?php echo $mb['transmission']; ?>, warna kendaraan <?php echo $mb['warna']; ?>. </p> 
                         </div>
                       </div>
                       <div class="item-card2-footer mt-4 mb-4">
                         <div class="item-card2-footer-u">
-                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">4.0/5</span>
+                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">Rp <?php echo $mb['harga']; ?></span>
                             <div class="rating-stars d-inline-flex ml-auto"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
                               <div class="rating-stars-container">
                                 <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
@@ -89,10 +90,15 @@
                               </div> (5 Reviews)
                             </div>
                           </div>
-                        </div> <a class="btn btn-danger mt-3 d-block" href="#">Pesan Sekarang</a>
+                        </div> <a class="btn btn-primary btn-block mt-3 <?php if($mb['status'] == '0') echo 'disabled' ?>" href="#">Pesan Sekarang</a>
                       </div>
                     </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Automatic"><i class="fa fa-car text-muted"></i> <span class="text-default">Auto</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">4000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
+                    <div class="card-footer"> 
+                    <?php if($mb['ac']  == '1' ) echo '<a class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="AC"><i class="fa fa-car text-muted"></i> <span class="text-default">AC</span></a>'; ?>  
+                     <a class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="<?php echo $mb['kilometer']; ?> Kilometers"><i class="fa fa-road text-muted"></i> <span class="text-default"><?php echo $mb['kilometer']; ?></span></a> 
+                     <a class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="<?php echo $mb['transmission']; ?>"><i class="fa fa-tachometer text-muted"></i> <span class="text-default"><?php echo $mb['transmission']; ?></span></a>
+                     <?php if($mb['video_player']  == '1' ) echo '<a class="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video Player"><i class="fa fa-film text-muted"></i> <span class="text-default">Video Player</span></a>'; ?>  
+                    </div>
                   </div>
                 </div>
               </div>
@@ -341,39 +347,44 @@
     <section class="sptb bg-patterns bg-white">
       <div class="container">
         <div class="section-title center-block text-center">
-          <h2>Mobil Terbaru</h2>
-          <p>Mobil terbaru yang kami sediakan, performa mobil maksimal.</p>
+          <h2>Mobil Terbaik</h2>
+          <p>Mobil terbaik yang kami sediakan, performa mobil maksimal.</p>
         </div>
         <div id="myCarousel2" class="owl-carousel owl-carousel-icons5 owl-loaded owl-drag">
           <!-- Wrapper for carousel items -->
           <div class="owl-stage-outer">
             <div class="owl-stage" style="transform: translate3d(-1801px, 0px, 0px); transition: all 0.25s ease 0s; width: 3904px;">
-            <?php foreach($data['mobil'] as $mb) : ?> 
-              <div class="owl-item cloned" style="width: 275.25px; margin-right: 25px;">
-                <div class="item">
+            <?php foreach($data['mobil'] as $mb) : ?>
+              <div class="owl-item" style="width: 275.25px; margin-right: 25px;">
+                <div class="item <?php if($mb['status'] == '0') echo 'sold-out' ?>">
+                  <?php if($mb['status'] == '0') echo '<div class="ribbon ribbon-top-left text-danger"><span class="bg-danger">Dipesan</span></div>' ?>
                   <div class="card mb-0">
-                    <div class="arrow-ribbon bg-secondary">Tersedia</div>
-                    <div class="item-card7-imgs"> <a class="link" href="#"></a> <img height="170px" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>" alt="img" class="cover-image">
+                  <?php if($mb['status'] == '1') echo '<div class="arrow-ribbon bg-secondary">'.$mb['warna'].'</div>'; ?>
+                    <div class="item-card7-imgs"> <a class="link" <?php if($mb['status'] == '1') echo 'href="#"' ?>></a> <img height="170px" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>" alt="img" class="cover-image">
                       <div class="item-tag">
-                        <h4 class="mb-0 fs-13"><?php echo $mb['no_plat'] ?></h4>
+                        <h4 class="mb-0 fs-13"><?php echo $mb['harga'] ?></h4>
                       </div>
                     </div>
                     <div class="card-body">
                       <div class="item-card7-desc">
-                        <div class="item-card7-text  d-flex"> <a href="#" class="text-dark">
+                        <div class="item-card7-text  d-flex"> <a <?php if($mb['status'] == '1') echo 'href="#"' ?> class="text-dark">
                             <h4 class=""><?php echo $mb['merk'] ?></h4>
                           </a> </div>
                         <ul class="item-cards7-ic mb-0 mt-2">
-                          <li><a href="#"><span class="text-muted"><i class="icon icon-eye mr-1"></i><?php echo $mb['warna'] ?></span></a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> Madiun</a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-event text-muted mr-1"></i> <?php echo $mb['tahun'] ?></a></li>
-                          <li><a href="#" class="icons"><i class="icon icon-phone text-muted mr-1"></i> 14 675 65430</a></li>
+                        <li><a class="icons"><i class="ti-car text-muted mr-1"></i><?php echo $mb['no_plat'] ?></a></li>
+                          <li><a><span class="text-muted"><i class="icon icon-eye mr-1"></i><?php echo $mb['warna'] ?></span></a></li>
+                          <li><a class="icons"><i class="icon icon-location-pin text-muted mr-1"></i> <?php echo $mb['lokasi'] ?></a></li>
+                          <li><a class="icons"><i class="icon icon-event text-muted mr-1"></i> <?php echo $mb['tahun'] ?></a></li>
                         </ul>
-                        <!-- <p class="mb-0">Mobil terbaik dengan performa luar biasa dan maksimal.</p> -->
+                        <p class="mb-0">Kendaran terbaik diproduksi tahun <?php echo $mb['tahun'] ?> kilometer <?php echo $mb['kilometer'] ?>.</p>
                       </div>
-                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block" href="#"> Pesan Sekarang</a> </div>
+                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block <?php if($mb['status'] == '0') echo 'disabled' ?>" href="#"> Pesan Sekarang</a> </div>
                     </div>
-                    <div class="card-footer"> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="Manual"><i class="fa fa-car text-muted"></i> <span class="text-default">Manual</span></a> <a href="#" class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="2300 Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default">4000</span></a> <a href="#" class="" data-toggle="tooltip" data-placement="bottom" data-original-title="FuelType"><i class="fa fa-tachometer text-muted"></i> <span class="text-default">Petrol</span></a> </div>
+                    <div class="card-footer"> 
+                    <?php if($mb['ac']  == '1' ) echo '<a class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="AC"><i class="fa fa-car text-muted"></i> <span class="text-default">AC</span></a>'; ?> 
+                      <a class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="<?php echo $mb['kilometer'] ?> Kilometrs"><i class="fa fa-road text-muted"></i> <span class="text-default"><?php echo $mb['kilometer'] ?></span></a> 
+                      <a class="" data-toggle="tooltip" data-placement="bottom" data-original-title="<?php echo $mb['transmission'] ?>"><i class="fa fa-tachometer text-muted"></i> <span class="text-default"><?php echo $mb['transmission'] ?></span></a>  
+                    </div>
                   </div>
                 </div>
               </div>
