@@ -119,4 +119,11 @@ class Rental_model {
         $this->db->query($q);
         return $this->db->single();
     }
+
+    public function detailMobil($id)
+    {
+        $q = "SELECT * FROM mobil mb, type tp WHERE mb.kode_type = tp.kode_type AND mb.id_mobil ='$id'";
+        $this->db->query($q);
+        return $this->db->resultSet();
+    }
 }

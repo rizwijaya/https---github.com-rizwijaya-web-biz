@@ -74,12 +74,12 @@
                           <div class="d-flex pb-0 pt-0"> <a <?php if($mb['status'] == '1') echo 'href="#"' ?>>
                               <p class="pb-0 pt-0 mb-2 mt-2"><i class="fa fa-map-marker text-danger mr-2"></i><?php echo $mb['lokasi'] ?>, Indonesia</p>
                             </a> <span class="ml-3 pb-0 pt-0 mb-2 mt-2 font-weight-bold"><?php echo $mb['no_plat']; ?></span> </div>
-                         <p class="">Kendaraan tahun produksi <?php echo $mb['tahun']; ?> dengan transmission <?php echo $mb['transmission']; ?>, warna kendaraan <?php echo $mb['warna']; ?>. </p> 
+                         <p class="">Kendaraan tahun produksi <?php echo $mb['tahun']; ?> dengan transmisi <?php echo $mb['transmission']; ?>, warna kendaraan <?php echo $mb['warna']; ?>. </p> 
                         </div>
                       </div>
                       <div class="item-card2-footer mt-4 mb-4">
                         <div class="item-card2-footer-u">
-                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">Rp <?php echo $mb['harga']; ?></span>
+                          <div class="d-md-flex"> <span class="review_score mr-2 badge badge-primary">Rp. <?php echo number_format($mb['harga'],0,',','.'); ?></span>
                             <div class="rating-stars d-inline-flex ml-auto"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="3">
                               <div class="rating-stars-container">
                                 <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
@@ -362,7 +362,7 @@
                   <?php if($mb['status'] == '1') echo '<div class="arrow-ribbon bg-secondary">'.$mb['warna'].'</div>'; ?>
                     <div class="item-card7-imgs"> <a class="link" <?php if($mb['status'] == '1') echo 'href="#"' ?>></a> <img width="273.25px" height="162.46px" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>" alt="img" class="cover-image">
                       <div class="item-tag">
-                        <h4 class="mb-0 fs-13">Rp <?php echo $mb['harga'] ?></h4>
+                        <h4 class="mb-0 fs-13">Rp. <?php echo number_format($mb['harga'],0,',','.'); ?></h4>
                       </div>
                     </div>
                     <div class="card-body">

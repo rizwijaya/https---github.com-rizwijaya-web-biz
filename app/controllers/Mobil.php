@@ -70,7 +70,15 @@ class mobil extends Controller
 
     public function detail($id)
     {
-
+        $data['id_grup'] = $_SESSION['id_grup'];
+        $data['title'] = "Detail Kendaraan";
+        $data['menu'] = "Kendaraan";
+        $data['submenu'] = "Detail Kendaraan";
+        $data['detail'] = $this->model('Rental_model')->detailMobil($id);
+        $this->view('templates/admin/header');
+        $this->view('templates/admin/sidebar',$data);
+        $this->view('admin/detail_mobil', $data);
+        $this->view('templates/admin/footer');
     }
 
     public function delete($id)

@@ -45,7 +45,7 @@
                      <td><?= $mb['kode_type'] ?></td>
                      <td><?= $mb['merk'] ?></td>
                      <td><?= $mb['no_plat'] ?></td>
-                     <td>Rp <?= $mb['harga'] ?></td>
+                     <td>Rp. <?php echo number_format($mb['harga'],0,',','.'); ?></td>
                      <td><?php
                           if ($mb['status'] == "0") {
                             echo "<span class='badge badge-dot mr-4'><i class='bg-warning'></i><span class='status'>Tidak Tersedia</span></span>";
