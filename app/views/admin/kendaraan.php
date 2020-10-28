@@ -54,8 +54,8 @@
                           }
                           ?></td>
                      <td>
-                       <a href="<?= BASEURL; ?>/mobil/detail/<?= $mb['id_mobil']; ?>" class="btn btn-sm btn-success"><i class="fas fa-eye"></i></a>
-                       <a href="<?= BASEURL; ?>/mobil/delete/<?= $mb['id_mobil']; ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash" onclick="return confirm('Yakin untuk menghapus?')"></i></a>
+                       <a href="<?= BASEURL; ?>/kendaraan/detail/<?= $mb['id_mobil']; ?>" class="btn btn-sm btn-success"><i class="fas fa-eye"></i></a>
+                       <a href="<?= BASEURL; ?>/kendaraan/delete/<?= $mb['id_mobil']; ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash" onclick="return confirm('Yakin untuk menghapus?')"></i></a>
                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#update_modal<?= $mb['id_mobil']; ?>"><i class="fas fa-edit"></i></button>
                      </td>
                    </tr>
@@ -75,7 +75,7 @@
                    </button>
                  </div>
                  <div class="modal-body">
-                   <form action="<?= BASEURL; ?>/mobil/tambah_mobil" method="post" enctype="multipart/form-data">
+                   <form action="<?= BASEURL; ?>/kendaraan/tambah_kendaraan" method="post" enctype="multipart/form-data">
                      <div class="form-group">
                        <label class="form-control-label" for="merk">Merk</label>
                        <input type="text" class="form-control" id="merk" name="merk" required="">
@@ -201,7 +201,7 @@
                                               $data['update_mobil'] = $this->model('rental_model')->update($id);
                                               $data['update_type'] = $this->model('rental_model')->getalltype('type');
                                               foreach ($data['update_mobil'] as $upmb) : ?>>
-                       <form action="<?= BASEURL; ?>/mobil/update" method="post" enctype="multipart/form-data">
+                       <form action="<?= BASEURL; ?>/kendaraan/update" method="post" enctype="multipart/form-data">
                          <input type="hidden" class="form-control" id="id_mobil" name="id_mobil" value="<?= $upmb['id_mobil'] ?>">
                          <div class="form-group">
                            <label class="form-control-label" for="merk"">Merk</label>
@@ -239,7 +239,7 @@
                            </div>
                            <div class="col-md-6">
                              <div class="form-group">
-                               <label class="form-control-label" for="warna"">Warna</label>
+                               <label class="form-control-label" for="warna">Warna</label>
                            <input type=" text" class="form-control" id="warna" name="warna" value="<?= $upmb['warna'] ?>" required="">
                              </div>
                              <div class="form-group">

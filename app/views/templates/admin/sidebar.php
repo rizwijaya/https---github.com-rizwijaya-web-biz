@@ -30,16 +30,16 @@
               </a>
             </li>     
             <li class="nav-item">
-              <a class="nav-link" href="<?= BASEURL; ?>/mobil/data_mobil">
+              <a class="nav-link" href="<?= BASEURL; ?>/kendaraan">
                 <i class="ni ni-ui-04 text-info"></i>
-                <span class="nav-link-text">Data Mobil</span>
+                <span class="nav-link-text">Daftar Kendaraan</span>
               </a>
             </li>
             <?php if($data['id_grup'] == '1') { ?>
             <li class="nav-item">
-              <a class="nav-link" href="<?= BASEURL; ?>/mobil/data_type">
+              <a class="nav-link" href="<?= BASEURL; ?>/kendaraan/data_type">
                 <i class="ni ni-single-copy-04 text-pink"></i>
-                <span class="nav-link-text">Data Type</span>
+                <span class="nav-link-text">Tipe Kendaraan</span>
               </a>
             </li>
             <li class="nav-item">
@@ -176,13 +176,13 @@
                     <span class="shortcut-media avatar rounded-circle bg-gradient-purple">
                       <i class="ni ni-pin-3"></i>
                     </span>
-                    <small>Data Type</small>
+                    <small>Tipe Kendaraan</small>
                   </a>
                   <a href="#!" class="col-4 shortcut-item">
                     <span class="shortcut-media avatar rounded-circle bg-gradient-yellow">
                       <i class="ni ni-basket"></i>
                     </span>
-                    <small>Data Mobil</small>
+                    <small>Daftar Kendaraan</small>
                   </a>
                 </div>
               </div>

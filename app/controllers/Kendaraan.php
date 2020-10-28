@@ -1,6 +1,6 @@
 <?php
 
-class mobil extends Controller 
+class kendaraan extends Controller 
 {
     public function __construct()
     {
@@ -18,29 +18,15 @@ class mobil extends Controller
         $data['title'] = "Data Kendaraan";
         $data['menu'] = "Kendaraan";
         $data['submenu'] = "Data Kendaraan";
-        $data['mobil'] = $this->model('rental_model')->getallmobil();
+        $data['mobil'] = $this->model('rental_model')->getallkendaraan();
         $data['type'] = $this->model('rental_model')->getalltype();
         $this->view('templates/admin/header');
         $this->view('templates/admin/sidebar',$data);
-        $this->view('admin/data_mobil',$data);
+        $this->view('admin/kendaraan',$data);
         $this->view('templates/admin/footer');
     }
-    public function data_mobil() 
-    {
-        $data['id_grup'] = $_SESSION['id_grup'];
-        $data['title'] = "Data Kendaraan";
-        $data['menu'] = "Kendaraan";
-        $data['submenu'] = "Data Kendaraan";
-        $data['mobil'] = $this->model('rental_model')->getallmobil();
-        $data['type'] = $this->model('rental_model')->getalltype();
-        $this->view('templates/admin/header');
-        $this->view('templates/admin/sidebar',$data);
-        $this->view('admin/data_mobil',$data);
-        $this->view('templates/admin/footer');
-       //echo 'Ini halaman admin/data_mobil';
-    }
-
-    public function tambah_mobil()
+    
+    public function tambah_Kendaraan()
     {
         //Inisialisasi Data Gambar
         $temp = $_FILES['gambar']['tmp_name'];
@@ -52,18 +38,18 @@ class mobil extends Controller
         if ($size < 2048000 and ($type =='image/jpeg' or $type == 'image/png' or $type == 'image/jpg')) {
             move_uploaded_file($temp, $folder . $name); //Melakukan upload ke folder/nama
             //Input ke database
-            if ($this->model('Rental_model')->tambah_mobil($_POST, $name) > 0) {    //Menambahkan ke database
+            if ($this->model('Rental_model')->tambah_kendaraan($_POST, $name) > 0) {    //Menambahkan ke database
                 Flasher::setFlash_modal('Data Kendaraan telah berhasil ditambahkan.', 'Data Kendaraan Ditambahkan!', 'success');
-                    header('location: ' . BASEURL . '/mobil/data_mobil');
+                    header('location: ' . BASEURL . '/kendaraan');
                     exit;
                 } else {
                     Flasher::setFlash_modal('Kesalahan, data Kendaraan gagal untuk ditambahkan.', 'Data Kendaraan gagal ditambahkan!', 'danger');
-                    header('location: ' . BASEURL . '/mobil/data_mobil');
+                    header('location: ' . BASEURL . '/kendaraan');
                     exit;
                 } 
         }else{
             Flasher::setFlash_modal('Kesalahan, data Kendaraan gagal untuk ditambahkan.', 'Data Kendaraan gagal ditambahkan!', 'danger');
-            header('location: ' . BASEURL . '/mobil/data_mobil');
+            header('location: ' . BASEURL . '/kendaraan');
             exit;
         }
     }
@@ -74,10 +60,10 @@ class mobil extends Controller
         $data['title'] = "Detail Kendaraan";
         $data['menu'] = "Kendaraan";
         $data['submenu'] = "Detail Kendaraan";
-        $data['detail'] = $this->model('Rental_model')->detailMobil($id);
+        $data['detail'] = $this->model('Rental_model')->detailKendaraan($id);
         $this->view('templates/admin/header');
         $this->view('templates/admin/sidebar',$data);
-        $this->view('admin/detail_mobil', $data);
+        $this->view('admin/detail_kendaraan', $data);
         $this->view('templates/admin/footer');
     }
 
@@ -90,13 +76,13 @@ class mobil extends Controller
             unlink("foto_mobil/".$data['gambar']); //Hapus jika ada foto
         }
         //Ambil data mobil dari database gambar, selanjutnya hapus
-        if ($this->model('rental_model')->hapusDataMobil($id) > 0) {
+        if ($this->model('rental_model')->hapusDataKendaraan($id) > 0) {
             Flasher::setFlash_modal('Data Kendaraan telah berhasil dihapus.', 'Data Kendaraan Dihapus!', 'success');
-            header('location: ' . BASEURL . '/mobil/data_mobil');
+            header('location: ' . BASEURL . '/kendaraan');
             exit;
         } else {
             Flasher::setFlash_modal('Kesalahan, data Kendaraan gagal untuk dihapus.', 'Data Kendaraan gagal gagas dihapus!', 'danger');
-            header('location: ' . BASEURL . '/mobil/data_mobil');
+            header('location: ' . BASEURL . '/kendaraan');
             exit;
         }
     }
@@ -119,25 +105,25 @@ class mobil extends Controller
                 if(is_file("foto_mobil/".$oldgambar['gambar'])) {
                     unlink("foto_mobil/".$oldgambar['gambar']); //Hapus foto kendaraan lama
                 }
-                $this->model('Rental_model')->update_foto_mobil($name, $_POST); //Input ke database foto mobil
+                $this->model('Rental_model')->update_foto_kendaraan($name, $_POST); //Input ke database foto mobil
                 //Notifikasi sukses update
                 Flasher::setFlash_modal('Data Kendaraan telah berhasil diperbarui.', 'Data Kendaraan Diperbarui!', 'success');
-                header('location: ' . BASEURL . '/mobil/data_mobil');
+                header('location: ' . BASEURL . '/kendaraan');
                 exit;
             }
             else{
                 Flasher::setFlash_modal('Kesalahan, data Kendaraan gagal untuk diperbarui.', 'Data Kendaraan gagal ditambahkan!', 'danger');
-                header('location: ' . BASEURL . '/mobil/data_mobil');
+                header('location: ' . BASEURL . '/kendaraan');
                 exit;
             } 
         }
         //Input ke database
-        if ($this->model('Rental_model')->update_mobil($_POST)) {
+        if ($this->model('Rental_model')->update_kendaraan($_POST)) {
             Flasher::setFlash_modal('Data Kendaraan telah berhasil diperbarui.', 'Data Kendaraan Diperbarui!', 'success');
-            header('location: ' . BASEURL . '/mobil/data_mobil');
+            header('location: ' . BASEURL . '/kendaraan');
             exit;
         }
-        header('location: ' . BASEURL . '/mobil/data_mobil');
+        header('location: ' . BASEURL . '/kendaraan');
     }
 /*
     public function data_type()

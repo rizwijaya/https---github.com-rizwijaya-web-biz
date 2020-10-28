@@ -10,7 +10,7 @@ class Rental_model {
         $this->db = new Database;
     }
 
-    public function getallmobil()
+    public function getallkendaraan()
     {
         $this->db->query('SELECT * FROM ' . $this->mobilget);
         return $this->db->resultSet();
@@ -20,7 +20,7 @@ class Rental_model {
         $this->db->query('SELECT * FROM ' . $this->type);
         return $this->db->resultSet();
     }
-    public function tambah_mobil($data, $name)
+    public function tambah_kendaraan($data, $name)
     {
         $query = "INSERT INTO mobil
                     VALUES
@@ -54,7 +54,7 @@ class Rental_model {
         return $this->db->resultSet();
     }
 
-    public function update_mobil($data)
+    public function update_kendaraan($data)
     {
         $query = "UPDATE mobil SET
                     kode_type = :kode_type, 
@@ -93,7 +93,7 @@ class Rental_model {
         return $this->db->rowCount();
     }
 
-    public function update_foto_mobil($name, $data)
+    public function update_foto_kendaraan($name, $data)
     {
         $this->db->query("UPDATE mobil SET gambar = :gambar WHERE id_mobil= :id_mobil");
         $this->db->bind('gambar', $name);
@@ -102,7 +102,7 @@ class Rental_model {
         return $this->db->rowCount();
     }
 
-    public function hapusDataMobil($id)
+    public function hapusDataKendaraan($id)
     {
         $query = "DELETE FROM mobil WHERE id_mobil = :id_mobil";
         $this->db->query($query);
@@ -120,7 +120,7 @@ class Rental_model {
         return $this->db->single();
     }
 
-    public function detailMobil($id)
+    public function detailKendaraan($id)
     {
         $q = "SELECT * FROM mobil mb, type tp WHERE mb.kode_type = tp.kode_type AND mb.id_mobil ='$id'";
         $this->db->query($q);

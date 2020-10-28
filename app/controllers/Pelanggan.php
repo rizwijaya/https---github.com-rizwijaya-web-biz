@@ -16,6 +16,7 @@ class Pelanggan extends Controller
         $this->view('home/index', $data);
         $this->view('templates/pelanggan/footer');
     }
+    
     public function dashboard() 
     {
        //echo 'Ini halaman admin';
