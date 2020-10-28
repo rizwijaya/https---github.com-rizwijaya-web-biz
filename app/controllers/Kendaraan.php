@@ -81,7 +81,7 @@ class kendaraan extends Controller
             header('location: ' . BASEURL . '/kendaraan');
             exit;
         } else {
-            Flasher::setFlash_modal('Kesalahan, data Kendaraan gagal untuk dihapus.', 'Data Kendaraan gagal gagas dihapus!', 'danger');
+            Flasher::setFlash_modal('Kesalahan, data Kendaraan gagal untuk dihapus.', 'Data Kendaraan gagal dihapus!', 'danger');
             header('location: ' . BASEURL . '/kendaraan');
             exit;
         }
@@ -125,9 +125,59 @@ class kendaraan extends Controller
         }
         header('location: ' . BASEURL . '/kendaraan');
     }
-/*
+
     public function data_type()
     {
-        echo 'Ini halaman admin/data_type';
-    } */
+        $data['id_grup'] = $_SESSION['id_grup'];
+        $data['title'] = "Tipe Kendaraan";
+        $data['menu'] = "Kendaraan";
+        $data['submenu'] = "Tipe Kendaraan";
+        $data['type'] = $this->model('rental_model')->getalltype();
+        $this->view('templates/admin/header');
+        $this->view('templates/admin/sidebar',$data);
+        $this->view('admin/tipe_kendaraan',$data);
+        $this->view('templates/admin/footer');
+    }
+
+    public function tambah_tipe()
+    {
+            if ($this->model('Rental_model')->tambah_tipe($_POST) > 0) {    //Menambahkan ke database
+                Flasher::setFlash_modal('Data Tipe Kendaraan telah berhasil ditambahkan.', 'Data Tipe Kendaraan Ditambahkan!', 'success');
+                    header('location: ' . BASEURL . '/kendaraan/data_type');
+                    exit;
+                } else {
+                    Flasher::setFlash_modal('Kesalahan, data tipe Kendaraan gagal untuk ditambahkan.', 'Data tipe Kendaraan gagal ditambahkan!', 'danger');
+                    header('location: ' . BASEURL . '/kendaraan/data_type');
+                    exit;
+                }
+    }
+
+    public function update_tipe()
+    {
+            //Input ke database 
+            if ($this->model('Rental_model')->update_tipe($_POST)) {
+                Flasher::setFlash_modal('Data Tipe Kendaraan telah berhasil diperbarui.', 'Data Tipe Kendaraan diperbarui!', 'success');
+                    header('location: ' . BASEURL . '/kendaraan/data_type');
+                    exit;
+                } else {
+                    Flasher::setFlash_modal('Kesalahan, data tipe Kendaraan gagal untuk diperbarui.', 'Data tipe Kendaraan gagal diperbarui!', 'danger');
+                    header('location: ' . BASEURL . '/kendaraan/data_type');
+                    exit;
+                }
+    }
+
+    public function deletetipe($id)
+    {
+            //var_dump($_POST); die;
+            //Input ke database 
+        if ($this->model('rental_model')->deletetipe($id) > 0) {
+            Flasher::setFlash_modal('Data Tipe Kendaraan telah berhasil dihapus.', 'Data Tipe Kendaraan Dihapus!', 'success');
+            header('location: ' . BASEURL . '/kendaraan/data_type');
+            exit;
+        } else {
+            Flasher::setFlash_modal('Kesalahan, data tipe Kendaraan gagal untuk dihapus.', 'Data Tipe Kendaraan gagal dihapus!', 'danger');
+            header('location: ' . BASEURL . '/kendaraan/data_type');
+            exit;
+        }
+    }
 }

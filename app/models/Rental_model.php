@@ -126,4 +126,43 @@ class Rental_model {
         $this->db->query($q);
         return $this->db->resultSet();
     }
+
+    public function tambah_tipe($data)
+    {
+        $query = "INSERT INTO type
+                    VALUES
+                ('', :kode_type, :nama_type)";
+
+        $this->db->query($query);
+        $this->db->bind('kode_type', $data['kode_type']);
+        $this->db->bind('nama_type', $data['nama_type']);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
+    public function update_tipe($data)
+    {
+        $this->db->query("UPDATE type 
+                    SET kode_type = :kode_type, 
+                    nama_type = :nama_type 
+                    WHERE id_type= :id_type");
+        $this->db->bind('kode_type', $data['kode_type']);
+        $this->db->bind('nama_type', $data['nama_type']);
+        $this->db->bind('id_type', $data['id_type']);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
+    public function deletetipe($id)
+    {
+        $query = "DELETE FROM type WHERE id_type = :id_type";
+        $this->db->query($query);
+        $this->db->bind('id_type', $id);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }

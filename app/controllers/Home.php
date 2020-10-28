@@ -7,7 +7,7 @@ class Home extends Controller {
        if($_SESSION) {
             $this->redirecting();
         }
-        $data['mobil'] = $this->model('rental_model')->getallmobil();
+        $data['mobil'] = $this->model('rental_model')->getallkendaraan();
         $this->view('templates/pelanggan/header');
         $this->view('home/index', $data);
         $this->view('templates/pelanggan/footer');

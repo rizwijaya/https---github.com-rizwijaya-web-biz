@@ -30,7 +30,7 @@
                    <th scope="col" class="sort" data-sort="no_plat">Plat Nomor</th>
                    <th scope="col" class="sort" data-sort="harga">Harga</th>
                    <th scope="col" class="sort" data-sort="status">Status</th>
-                   <th scope="col" class="sort" data-sort="aksi">Aksi</th>
+                   <th scope="col" class="sort" data-sort="kelola">Kelola</th>
                  </tr>
                </thead>
                <tbody class="list">
