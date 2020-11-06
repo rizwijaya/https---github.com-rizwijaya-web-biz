@@ -165,4 +165,11 @@ class Rental_model {
 
         return $this->db->rowCount();
     }
+
+    public function getdetailkendaraan($id)
+    {
+        $q = "SELECT * FROM mobil mb, type tp WHERE mb.kode_type = tp.kode_type AND mb.id_mobil ='$id'";
+        $this->db->query($q);
+        return $this->db->resultSet();
+    }
 }
