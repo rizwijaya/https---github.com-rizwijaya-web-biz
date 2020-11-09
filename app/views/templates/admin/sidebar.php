@@ -48,6 +48,13 @@
                 <span class="nav-link-text">Data Pelanggan</span>
               </a>
             </li>
+            <?php } if($data['id_grup'] == '2') { ?>
+              <li class="nav-item">
+              <a class="nav-link" href="">
+                <i class="ni ni-single-copy-04 text-pink"></i>
+                <span class="nav-link-text">Pembayaran</span>
+              </a>
+            </li>
             <?php } ?>
             <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/payment">
@@ -172,12 +179,14 @@
                     </span>
                     <small>Laporan</small>
                   </a>
+                  <?php if($data['id_grup'] == '1') { ?>
                   <a href="#!" class="col-4 shortcut-item">
                     <span class="shortcut-media avatar rounded-circle bg-gradient-purple">
                       <i class="ni ni-pin-3"></i>
                     </span>
                     <small>Tipe Kendaraan</small>
                   </a>
+                  <?php } ?>
                   <a href="#!" class="col-4 shortcut-item">
                     <span class="shortcut-media avatar rounded-circle bg-gradient-yellow">
                       <i class="ni ni-basket"></i>
