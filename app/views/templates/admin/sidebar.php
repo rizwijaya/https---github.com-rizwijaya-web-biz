@@ -23,12 +23,22 @@
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
           <!-- Nav items -->
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="<?= BASEURL; ?>/dashboard">
+          <li class="nav-item">
+              <a class="nav-link" href="#navbar-dashboards" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-dashboards">
                 <i class="ni ni-shop text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
-            </li>     
+              <div class="collapse show" id="navbar-dashboards">
+                <ul class="nav nav-sm flex-column">
+                  <li class="nav-item">
+                    <a href="<?= BASEURL; ?>/dashboard" class="nav-link">Dashboard</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= BASEURL; ?>/home/depan" class="nav-link">Beranda Pelanggan</a>
+                  </li>
+                </ul>
+              </div>
+            </li>      
             <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/kendaraan">
                 <i class="ni ni-ui-04 text-info"></i>
@@ -48,7 +58,15 @@
                 <span class="nav-link-text">Data Pelanggan</span>
               </a>
             </li>
-            <?php } if($data['id_grup'] == '2') { ?>
+            <?php } if($data['id_grup'] == '1') { ?>
+              <li class="nav-item">
+              <a class="nav-link" href="">
+                <i class="ni ni-single-copy-04 text-pink"></i>
+                <span class="nav-link-text">Data Pegawai</span>
+              </a>
+            </li>
+            <?php } ?>
+            <?php if($data['id_grup'] == '2') { ?>
               <li class="nav-item">
               <a class="nav-link" href="">
                 <i class="ni ni-single-copy-04 text-pink"></i>
@@ -62,12 +80,14 @@
                 <span class="nav-link-text">Laporan</span>
               </a>
             </li>
+            <?php if($data['id_grup'] == '2') { ?>
             <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/dashboard/laporan">
                 <i class="ni ni-chart-pie-35 text-info"></i>
                 <span class="nav-link-text">Transaksi</span>
               </a>
             </li>
+            <?php } ?>
             <?php if($data['id_grup'] == '1') { ?>
             <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/dashboard/tambah_user">
@@ -133,9 +153,11 @@
             </button>
           </form>
           <!-- Navbar links -->
+         
           <ul class="navbar-nav align-items-center ml-md-auto">
+            <!--
             <li class="nav-item d-xl-none">
-              <!-- Sidenav toggler -->
+              <-- Sidenav toggler ->
               <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
                 <div class="sidenav-toggler-inner">
                   <i class="sidenav-toggler-line"></i>
@@ -179,14 +201,14 @@
                     </span>
                     <small>Laporan</small>
                   </a>
-                  <?php if($data['id_grup'] == '1') { ?>
+                  <?php //if($data['id_grup'] == '1') { ?>
                   <a href="#!" class="col-4 shortcut-item">
                     <span class="shortcut-media avatar rounded-circle bg-gradient-purple">
                       <i class="ni ni-pin-3"></i>
                     </span>
                     <small>Tipe Kendaraan</small>
                   </a>
-                  <?php } ?>
+                  <?php //} ?>
                   <a href="#!" class="col-4 shortcut-item">
                     <span class="shortcut-media avatar rounded-circle bg-gradient-yellow">
                       <i class="ni ni-basket"></i>
@@ -196,7 +218,7 @@
                 </div>
               </div>
             </li>
-          </ul>
+          </ul> --->
           <ul class="navbar-nav align-items-center ml-auto ml-md-0">
             <li class="nav-item dropdown">
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

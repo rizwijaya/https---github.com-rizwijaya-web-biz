@@ -63,7 +63,14 @@
               <div class="outsidebg"></div>
               <ul class="horizontalMenu-list">
               <li aria-haspopup="true"><span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span><a href="<?= BASEURL ?>/home/">Home</a></li>
-               <!-- <li aria-haspopup="true"><a href="#">Sewa</a></li>
+              <?php if(isset($_SESSION['id_user'])) : ?>
+                <?php if($_SESSION['id_grup'] == '1') : ?>
+                  <li aria-haspopup="true"><a href="<?= BASEURL ?>/dashboard"> Admin <span class="horizontalarrow"></span></a></li>   
+                <?php elseif($_SESSION['id_grup'] == '2') : ?>
+                  <li aria-haspopup="true"><a href="<?= BASEURL ?>/dashboard"> Pegawai <span class="horizontalarrow"></span></a></li>    
+                <?php endif; ?> 
+              <?php endif; ?>
+                <!-- <li aria-haspopup="true"><a href="#">Sewa</a></li>
                 <li aria-haspopup="true"><span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span><a href="#">Type</a></li> -->
                 <li aria-haspopup="true"><span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span><a href="#">Kendaraan <span class="fa fa-caret-down m-0"></span></a>
                   <div class="horizontal-megamenu clearfix car-brands">
@@ -139,10 +146,9 @@
                       </div>
                     </div>
                   </div>
+                </li>
                 <?php if(!isset($_SESSION['id_user'])) : ?>
-                </li>
-                <li aria-haspopup="true"><span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span><a href="<?= BASEURL ?>/home/register">Register</a>
-                </li>
+                <li aria-haspopup="true"><span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span><a href="<?= BASEURL ?>/home/register">Register</a></li>
                 <li aria-haspopup="true"><a href="<?= BASEURL ?>/home/login"> Login <span class="horizontalarrow"></span></a></li>
                 <?php else : ?>
                   <li aria-haspopup="true"><a href="<?= BASEURL ?>/users/logout"> Logout <span class="horizontalarrow"></span></a></li>    

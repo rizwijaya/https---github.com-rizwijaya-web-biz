@@ -13,6 +13,14 @@ class Home extends Controller {
         $this->view('templates/pelanggan/footer');
     }
 
+    public function depan()
+    {
+        $data['mobil'] = $this->model('rental_model')->getallkendaraan();
+        $this->view('templates/pelanggan/header');
+        $this->view('home/index', $data);
+        $this->view('templates/pelanggan/footer');
+    }
+
     public function redirecting()
     {
         //var_dump($_SESSION); die;
@@ -58,5 +66,18 @@ class Home extends Controller {
         $this->view('templates/pelanggan/header');
         $this->view('home/register', $data);
         $this->view('templates/pelanggan/footer');
+    }
+
+    public function detail($id)
+    {
+        if($_SESSION) {
+            $this->redirecting();
+        }
+        $data['detail'] = $this->model('rental_model')->getdetailkendaraan($id);
+        $data['mobil'] = $this->model('rental_model')->getallkendaraan();
+        $this->view('templates/pelanggan/header');
+        $this->view('home/detailkendaraan', $data);
+        $this->view('templates/pelanggan/footer');
+
     }
 }

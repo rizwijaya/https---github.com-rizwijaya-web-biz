@@ -90,7 +90,7 @@
                               </div> (5 Reviews)
                             </div>
                           </div>
-                        </div> <a class="btn btn-primary btn-block mt-3 <?php if($mb['status'] == '0') echo 'disabled' ?>" href="#">Pesan Sekarang</a>
+                        </div> <a class="btn btn-primary btn-block mt-3 <?php if($mb['status'] == '0') echo 'disabled' ?>" href="<?= BASEURL; ?>/home/detail/<?= $mb['id_mobil'] ?>">Pesan Sekarang</a>
                       </div>
                     </div>
                     <div class="card-footer"> 
@@ -378,7 +378,7 @@
                         </ul>
                         <p class="mb-0">Kendaran terbaik diproduksi tahun <?php echo $mb['tahun'] ?> kilometer <?php echo $mb['kilometer'] ?>.</p>
                       </div>
-                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block <?php if($mb['status'] == '0') echo 'disabled' ?>" href="#"> Pesan Sekarang</a> </div>
+                      <div class="item-card2-footer mt-4 mb-0"> <a class="btn btn-primary btn-block <?php if($mb['status'] == '0') echo 'disabled' ?>" href="<?= BASEURL; ?>/home/detail/<?= $mb['id_mobil'] ?>"> Pesan Sekarang</a> </div>
                     </div>
                     <div class="card-footer"> 
                     <?php if($mb['ac']  == '1' ) echo '<a class="mr-2" data-toggle="tooltip" data-placement="bottom" data-original-title="AC"><i class="fa fa-car text-muted"></i> <span class="text-default">AC</span></a>'; ?> 
