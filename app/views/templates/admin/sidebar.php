@@ -34,7 +34,7 @@
                     <a href="<?= BASEURL; ?>/dashboard" class="nav-link">Dashboard</a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= BASEURL; ?>/home/depan" class="nav-link">Beranda Pelanggan</a>
+                    <a href="<?= BASEURL; ?>/home/landing" class="nav-link">Beranda Pelanggan</a>
                   </li>
                 </ul>
               </div>

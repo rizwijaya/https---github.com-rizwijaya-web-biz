@@ -28,6 +28,11 @@ class kendaraan extends Controller
     
     public function tambah_Kendaraan()
     {
+        //Konversi input fitur ke variabel fitur
+        $fitur['ac'] = isset($_POST['1']) ? 1 : 0;  //Inisialisasi terdapat fitur atau tidak
+        $fitur['anti_lock'] = isset($_POST['2']) ? 1 : 0;
+        $fitur['music_player'] = isset($_POST['3']) ? 1 : 0;
+        $fitur['video_player'] = isset($_POST['4']) ? 1 : 0;
         //Inisialisasi Data Gambar
         $temp = $_FILES['gambar']['tmp_name'];
         $name = rand(0,9999).$_FILES['gambar']['name'];
@@ -38,7 +43,7 @@ class kendaraan extends Controller
         if ($size < 2048000 and ($type =='image/jpeg' or $type == 'image/png' or $type == 'image/jpg')) {
             move_uploaded_file($temp, $folder . $name); //Melakukan upload ke folder/nama
             //Input ke database
-            if ($this->model('Rental_model')->tambah_kendaraan($_POST, $name) > 0) {    //Menambahkan ke database
+            if ($this->model('Rental_model')->tambah_kendaraan($_POST, $name, $fitur) > 0) {    //Menambahkan ke database
                 Flasher::setFlash_modal('Data Kendaraan telah berhasil ditambahkan.', 'Data Kendaraan Ditambahkan!', 'success');
                     header('location: ' . BASEURL . '/kendaraan');
                     exit;

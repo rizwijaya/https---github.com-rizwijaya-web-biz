@@ -62,7 +62,7 @@
             <nav class="horizontalMenu clearfix d-md-flex">
               <div class="outsidebg"></div>
               <ul class="horizontalMenu-list">
-              <li aria-haspopup="true"><span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span><a href="<?= BASEURL ?>/home/">Home</a></li>
+              <li aria-haspopup="true"><span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span><a href="<?= BASEURL ?>/home/landing">Home</a></li>
               <?php if(isset($_SESSION['id_user'])) : ?>
                 <?php if($_SESSION['id_grup'] == '1') : ?>
                   <li aria-haspopup="true"><a href="<?= BASEURL ?>/dashboard"> Admin <span class="horizontalarrow"></span></a></li>   

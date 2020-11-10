@@ -13,7 +13,7 @@ class Home extends Controller {
         $this->view('templates/pelanggan/footer');
     }
 
-    public function depan()
+    public function landing()
     {
         $data['mobil'] = $this->model('rental_model')->getallkendaraan();
         $this->view('templates/pelanggan/header');
@@ -70,9 +70,6 @@ class Home extends Controller {
 
     public function detail($id)
     {
-        if($_SESSION) {
-            $this->redirecting();
-        }
         $data['detail'] = $this->model('rental_model')->getdetailkendaraan($id);
         $data['mobil'] = $this->model('rental_model')->getallkendaraan();
         $this->view('templates/pelanggan/header');
