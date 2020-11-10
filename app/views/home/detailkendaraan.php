@@ -150,19 +150,19 @@
                                                         </tr>
                                                         <tr>
                                                             <td>Air Conditioner</td>
-                                                            <td><i class="icon icon-check text-<?php if($dt['ac'] == 1)  { 
-                                                                echo 'success';
+                                                            <td><i class="icon icon-<?php if($dt['ac'] == 1)  { 
+                                                                echo 'check text-success';
                                                             } else {
-                                                                echo 'danger';
+                                                                echo 'close text-danger';
                                                             } ?>"></i></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Passenger Airbag</td>
-                                                            <td><i class="icon icon-close text-success"></i></td>
+                                                            <td><i class="icon icon-check text-success"></i></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Fog Lights - Front</td>
-                                                            <td><i class="icon icon-close text-success"></i></td>
+                                                            <td><i class="icon icon-check text-success"></i></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -174,7 +174,11 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>Anti Lock Braking System</td>
-                                                            <td><i class="icon icon-check text-success"></i></td>
+                                                            <td><i class="icon icon-<?php if($dt['anti_lock'] == 1)  { 
+                                                                echo 'check text-success';
+                                                            } else {
+                                                                echo 'close text-danger';
+                                                            } ?>"></i></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Driver Airbag</td>
@@ -182,14 +186,18 @@
                                                         </tr>
                                                         <tr>
                                                             <td>Music Player</td>
-                                                            <td><i class="icon icon-check text-success"></i></td>
+                                                            <td><i class="icon icon-<?php if($dt['music_player'] == 1)  { 
+                                                                echo 'check text-success';
+                                                            } else {
+                                                                echo 'close text-danger';
+                                                            } ?>"></i></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Video Player</td>
-                                                            <td><i class="icon icon-close text-<?php if($dt['video_player'] == 1)  { 
-                                                                echo 'success';
+                                                            <td><i class="icon icon-<?php if($dt['video_player'] == 1)  { 
+                                                                echo 'check text-success';
                                                             } else {
-                                                                echo 'danger';
+                                                                echo 'close text-danger';
                                                             } ?>"></i></td>
                                                         </tr>
                                                     </tbody>
