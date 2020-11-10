@@ -52,41 +52,41 @@
                 <span class="nav-link-text">Tipe Kendaraan</span>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/dashboard/data_pelanggan">
                 <i class="ni ni-archive-2 text-green"></i>
                 <span class="nav-link-text">Data Pelanggan</span>
               </a>
-            </li>
+            </li> -->
             <?php } if($data['id_grup'] == '1') { ?>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
               <a class="nav-link" href="">
                 <i class="ni ni-single-copy-04 text-pink"></i>
                 <span class="nav-link-text">Data Pegawai</span>
               </a>
-            </li>
-            <?php } ?>
+            </li> -->
+            <?php } ?> 
             <?php if($data['id_grup'] == '2') { ?>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
               <a class="nav-link" href="">
                 <i class="ni ni-single-copy-04 text-pink"></i>
                 <span class="nav-link-text">Pembayaran</span>
               </a>
-            </li>
+            </li> -->
             <?php } ?>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/payment">
                 <i class="ni ni-align-left-2 text-default"></i>
                 <span class="nav-link-text">Laporan</span>
               </a>
-            </li>
+            </li> -->
             <?php if($data['id_grup'] == '2') { ?>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/dashboard/laporan">
                 <i class="ni ni-chart-pie-35 text-info"></i>
                 <span class="nav-link-text">Transaksi</span>
               </a>
-            </li>
+            </li> -->
             <?php } ?>
             <?php if($data['id_grup'] == '1') { ?>
             <li class="nav-item">
@@ -103,7 +103,7 @@
           <h6 class="navbar-heading p-0 text-muted">Setelan</h6>
           <!-- Navigation -->
           <ul class="navbar-nav mb-md-3">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="#" target="_blank">
                 <i class="ni ni-spaceship"></i>
                 <span class="nav-link-text">Profile Saya</span>
@@ -120,7 +120,7 @@
                 <i class="ni ni-ui-04"></i>
                 <span class="nav-link-text">Reset Password</span>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/users/logout">
                 <i class="ni ni-chart-pie-35"></i>
