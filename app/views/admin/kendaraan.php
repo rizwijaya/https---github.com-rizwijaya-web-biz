@@ -123,95 +123,95 @@
                          </div>
                        </div>
                      </div>
-                     <div class="row">
-                       <div class="col-md-4">
-                         <label>Upload Gambar</label>
-                         <div class="custom-file">
-                           <input type="file" class="custom-file-input form-control" id="gambar" name="gambar" required="">
-                           <label class="custom-file-label" for="gambar">Pilih File</label>
-                         </div>
-                       </div>
-                       <div class="col-md-4">
-                         <div class="form-group">
-                           <label class="form-control-label" for="harga">Harga</label>
-                           <input type="number" class="form-control" id="harga" name="harga" required="">
-                         </div>
-                       </div>
-                       <div class="col-md-4">
-                         <div class="form-group">
-                           <label class="form-control-label" for="denda">Denda</label>
-                           <input type="number" class="form-control" id="denda" name="denda" required="">
-                         </div>
-                       </div>
+                 <div class="row">
+                   <div class="col-md-4">
+                     <label>Upload Gambar</label>
+                     <div class="custom-file">
+                       <input type="file" class="custom-file-input form-control" id="gambar" name="gambar" required="">
+                       <label class="custom-file-label" for="gambar">Pilih File</label>
                      </div>
-                     <div class="row">
-                       <div class="col-md-4">
-                         <div class="form-group">
-                           <label class="form-control-label" for="lokasi">Lokasi</label>
-                           <input type="text" class="form-control" id="lokasi" name="lokasi" required="">
-                         </div>
-                       </div>
-                       <div class="col-md-4">
-                         <div class="form-group">
-                           <label class="form-control-label" for="transmission">Transmission</label>
-                           <input type="text" class="form-control" id="transmission" name="transmission" required="" placeholder="Auto/Manual">
-                         </div>
-                       </div>
-                       <div class="col-md-4">
-                         <div class="form-group">
-                           <label class="form-control-label" for="kilometer">Kilometer</label>
-                           <input type="number" class="form-control" id="kilometer" name="kilometer" required="">
-                         </div>
-                       </div>
+                   </div>
+                   <div class="col-md-4">
+                     <div class="form-group">
+                       <label class="form-control-label" for="harga">Harga</label>
+                       <input type="number" class="form-control" id="harga" name="harga" required="">
                      </div>
-                     <label class="form-control-label" for="video_player">Fitur Kendaraan</label>
-                     <div class="row">
-                       <div class="col-md-1"></div>
-                       <div class="custom-control custom-checkbox col-md-3">
-                         <input class="custom-control-input" value="1" id="1" name="1" type="checkbox">
-                         <label class="custom-control-label" for="1">Air Conditioner (AC)</label>
-                       </div>
-                       <div class="custom-control custom-checkbox col-md-3">
-                         <input class="custom-control-input" value="2" id="2" name="2" type="checkbox">
-                         <label class="custom-control-label" for="2">Anti Lock Breaking</label>
-                       </div>
-                       <div class="custom-control custom-checkbox col-md-2">
-                         <input class="custom-control-input" value="3" id="3" name="3" type="checkbox">
-                         <label class="custom-control-label" for="3">Music Player</label>
-                       </div>
-                       <div class="custom-control custom-checkbox col-md-2">
-                         <input class="custom-control-input" value="4" id="4" name="4" type="checkbox">
-                         <label class="custom-control-label" for="4">Video Player</label>
-                       </div>
+                   </div>
+                   <div class="col-md-4">
+                     <div class="form-group">
+                       <label class="form-control-label" for="denda">Denda</label>
+                       <input type="number" class="form-control" id="denda" name="denda" required="">
                      </div>
-                     <div class="modal-footer">
-                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                       <button type="reset" class="btn btn-danger">reset</button>
-                       <button type="submit" name="submit" id="submit" class="btn btn-primary">Tambah Data</button>
-                     </div>
-                   </form>
+                   </div>
                  </div>
+                 <div class="row">
+                   <div class="col-md-4">
+                     <div class="form-group">
+                       <label class="form-control-label" for="lokasi">Lokasi</label>
+                       <input type="text" class="form-control" id="lokasi" name="lokasi" required="">
+                     </div>
+                   </div>
+                   <div class="col-md-4">
+                     <div class="form-group">
+                       <label class="form-control-label" for="transmission">Transmission</label>
+                       <input type="text" class="form-control" id="transmission" name="transmission" required="" placeholder="Auto/Manual">
+                     </div>
+                   </div>
+                   <div class="col-md-4">
+                     <div class="form-group">
+                       <label class="form-control-label" for="kilometer">Kilometer</label>
+                       <input type="number" class="form-control" id="kilometer" name="kilometer" required="">
+                     </div>
+                   </div>
+                 </div>
+                   <label class="form-control-label" for="video_player">Fitur Kendaraan</label>
+                   <div class="row">
+                     <div class="col-md-1"></div>
+                     <div class="form-group custom-control custom-checkbox col-md-3">
+                       <input class="custom-control-input" value="1" id="1" name="1" type="checkbox">
+                       <label class="custom-control-label" for="1">Air Conditioner (AC)</label>
+                     </div>
+                     <div class="form-group custom-control custom-checkbox col-md-3">
+                       <input class="custom-control-input" value="2" id="2" name="2" type="checkbox">
+                       <label class="custom-control-label" for="2">Anti Lock Breaking</label>
+                     </div>
+                     <div class="form-group custom-control custom-checkbox col-md-2">
+                       <input class="custom-control-input" value="3" id="3" name="3" type="checkbox">
+                       <label class="custom-control-label" for="3">Music Player</label>
+                     </div>
+                     <div class="form-group custom-control custom-checkbox col-md-2">
+                       <input class="custom-control-input" value="4" id="4" name="4" type="checkbox">
+                       <label class="custom-control-label" for="4">Video Player</label>
+                     </div>
+                   </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                   <button type="reset" class="btn btn-danger">reset</button>
+                   <button type="submit" name="submit" id="submit" class="btn btn-primary">Tambah Data</button>
+                 </div>
+                 </form>
                </div>
              </div>
            </div>
-           <!--End Modal Tambah -->
-           <!-- Modal Update Data -->
-           <?php foreach ($data['mobil'] as $mb) : ?>
-             <div class="modal fade" id="update_modal<?= $mb['id_mobil']; ?>" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
-               <div class="modal-dialog modal-lg">
-                 <div class="modal-content">
-                   <div class="modal-header">
-                     <h5 class="modal-title" id="judulModal">Update Data Kendaraan</h5>
-                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                       <span aria-hidden="true">&times;</span>
-                     </button>
-                   </div>
-                   <div class="modal-body">
-                     <div aria-hidden="true" <?= $id = $mb['id_mobil'];
-                                              $data['update_mobil'] = $this->model('rental_model')->update($id);
-                                              $data['update_type'] = $this->model('rental_model')->getalltype('type');
-                                              foreach ($data['update_mobil'] as $upmb) : ?>>
-                       <form action="<?= BASEURL; ?>/kendaraan/update" method="post" enctype="multipart/form-data">
+         </div>
+         <!--End Modal Tambah -->
+         <!-- Modal Update Data -->
+         <?php foreach ($data['mobil'] as $mb) : ?>
+           <div class="modal fade" id="update_modal<?= $mb['id_mobil']; ?>" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+             <div class="modal-dialog modal-lg">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="judulModal">Update Data Kendaraan</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                   </button>
+                 </div>
+                 <div class="modal-body">
+                   <div aria-hidden="true" <?= $id = $mb['id_mobil'];
+                                            $data['update_mobil'] = $this->model('rental_model')->update($id);
+                                            $data['update_type'] = $this->model('rental_model')->getalltype('type');
+                                            foreach ($data['update_mobil'] as $upmb) : ?>>
+                      <form action="<?= BASEURL; ?>/kendaraan/update" method="post" enctype="multipart/form-data">
                          <input type="hidden" class="form-control" id="id_mobil" name="id_mobil" value="<?= $upmb['id_mobil'] ?>">
                          <div class="form-group">
                            <label class="form-control-label" for="merk">Merk</label>
@@ -334,11 +334,11 @@
                          </div>
                        </form>
                      <?php endforeach; ?>
-                     </div>
                    </div>
                  </div>
                </div>
              </div>
-           <?php endforeach; ?>
-           <!--End Update Modal -->
-         </div> <!-- Div Class Container Content-->
+           </div>
+         <?php endforeach; ?>
+         <!--End Update Modal -->
+       </div> <!-- Div Class Container Content-->

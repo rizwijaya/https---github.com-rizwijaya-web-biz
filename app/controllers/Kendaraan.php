@@ -94,6 +94,12 @@ class kendaraan extends Controller
 
     public function update()
     {
+        //Konversi input fitur ke variabel fitur
+        $fitur['ac'] = isset($_POST['1']) ? 1 : 0;  //Inisialisasi terdapat fitur atau tidak
+        $fitur['anti_lock'] = isset($_POST['2']) ? 1 : 0;
+        $fitur['music_player'] = isset($_POST['3']) ? 1 : 0;
+        $fitur['video_player'] = isset($_POST['4']) ? 1 : 0;
+        
         $temp = $_FILES['gambar']['tmp_name'];
         if($temp) { //Mengecek apakah form terdapat gambar
             //Inisialisasi Data Gambar
@@ -123,7 +129,7 @@ class kendaraan extends Controller
             } 
         }
         //Input ke database
-        if ($this->model('Rental_model')->update_kendaraan($_POST)) {
+        if ($this->model('Rental_model')->update_kendaraan($_POST, $fitur)) {
             Flasher::setFlash_modal('Data Kendaraan telah berhasil diperbarui.', 'Data Kendaraan Diperbarui!', 'success');
             header('location: ' . BASEURL . '/kendaraan');
             exit;

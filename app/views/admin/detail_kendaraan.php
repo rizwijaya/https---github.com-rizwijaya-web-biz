@@ -43,7 +43,7 @@
                                                                                                                                                         echo 'Music Player ,';
                                                                                                                                                       }
                                                                                                                                                       if ($dt['video_player'] == '1') {
-                                                                                                                                                        echo 'Video Player';
+                                                                                                                                                        echo 'Video Player, ';
                                                                                                                                                       } ?>Transmisi <?php echo $dt['transmission']; ?>, dan Kilometer <?php echo $dt['kilometer']; ?>.</p>
                    <div class="col text-right">
                      <a class="btn btn-danger mb-0" href="<?= BASEURL; ?>/kendaraan">Kembali</a>
@@ -170,19 +170,19 @@
                          <div class="row">
                            <div class="col-md-1"></div>
                            <div class="custom-control custom-checkbox col-md-3">
-                             <input class="custom-control-input" value="1" id="1" name="1" type="checkbox" disabled <?php if ($upmb['ac'] == "1") echo 'checked'; ?>>
+                             <input class="custom-control-input" value="1" id="1" name="1" type="checkbox" <?php if ($upmb['ac'] == "1") echo 'checked'; ?>>
                              <label class="custom-control-label" for="1">Air Conditioner (AC)</label>
                            </div>
                            <div class="custom-control custom-checkbox col-md-3">
-                             <input class="custom-control-input" value="2" id="2" name="2" type="checkbox" disabled <?php if ($upmb['anti_lock'] == "1") echo 'checked'; ?>>
+                             <input class="custom-control-input" value="2" id="2" name="2" type="checkbox"<?php if ($upmb['anti_lock'] == "1") echo 'checked'; ?>>
                              <label class="custom-control-label" for="2">Anti Lock Breaking</label>
                            </div>
                            <div class="custom-control custom-checkbox col-md-2">
-                             <input class="custom-control-input" value="3" id="3" name="3" type="checkbox" disabled <?php if ($upmb['music_player'] == "1") echo 'checked'; ?>>
+                             <input class="custom-control-input" value="3" id="3" name="3" type="checkbox" <?php if ($upmb['music_player'] == "1") echo 'checked'; ?>>
                              <label class="custom-control-label" for="3">Music Player</label>
                            </div>
                            <div class="custom-control custom-checkbox col-md-2">
-                             <input class="custom-control-input" value="4" id="4" name="4" type="checkbox" disabled <?php if ($upmb['video_player'] == "1") echo 'checked'; ?>>
+                             <input class="custom-control-input" value="4" id="4" name="4" type="checkbox" <?php if ($upmb['video_player'] == "1") echo 'checked'; ?>>
                              <label class="custom-control-label" for="4">Video Player</label>
                            </div>
                          </div>

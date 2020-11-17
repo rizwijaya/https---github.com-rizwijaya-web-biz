@@ -56,7 +56,7 @@ class Rental_model {
         return $this->db->resultSet();
     }
 
-    public function update_kendaraan($data)
+    public function update_kendaraan($data, $fitur)
     {
         $query = "UPDATE mobil SET
                     kode_type = :kode_type, 
@@ -69,7 +69,11 @@ class Rental_model {
                     lokasi = :lokasi,
                     denda = :denda,
                     transmission = :transmission,
-                    kilometer = :kilometer
+                    kilometer = :kilometer,
+                    ac = :ac,
+                    anti_lock = :anti_lock,
+                    music_player = :music_player,
+                    video_player = :video_player
                 WHERE id_mobil= :id_mobil";
 
         $this->db->query($query);
@@ -85,6 +89,10 @@ class Rental_model {
         $this->db->bind('transmission', $data['transmission']);
         $this->db->bind('kilometer', $data['kilometer']);
         $this->db->bind('id_mobil', $data['id_mobil']);
+        $this->db->bind('ac', $fitur['ac']);
+        $this->db->bind('anti_lock', $fitur['anti_lock']);
+        $this->db->bind('music_player', $fitur['music_player']);
+        $this->db->bind('video_player', $fitur['video_player']);
 
         $this->db->execute();
 
