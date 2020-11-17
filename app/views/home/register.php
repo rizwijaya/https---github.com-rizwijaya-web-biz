@@ -43,7 +43,8 @@
                             <span class="invalidFeedback" style="color: red">
                               <?php echo $data['passwordError']; ?>
                             </span></div>
-                            <div class="passwd"> <input type="password" name="confirmPassword" id="confirmPassword"> <label>Confirm Password</label> <span class="invalidFeedback" style="color: red">
+                            <div class="passwd"> <input type="password" name="confirmPassword" id="confirmPassword"> <label>Confirm Password</label> 
+                            <span class="invalidFeedback" style="color: red">
                               <?php echo $data['confirmPasswordError']; ?>
                             </span></div>
                             <button id="submit" type="submit" value="submit" class="submit btn btn-primary btn-block">Daftar</button>

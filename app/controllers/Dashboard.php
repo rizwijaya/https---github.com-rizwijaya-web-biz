@@ -31,13 +31,14 @@ class Dashboard extends Controller
 
     public function tambah_user()
     {
-        $data['id_grup'] = $_SESSION['id_grup'];
-        $data['title'] = "Tambah Pengguna";
-        $data['menu'] = "Pengguna";
-        $data['submenu'] = "Tambah Pengguna";
+        $dt['id_grup'] = $_SESSION['id_grup'];
+        $dt['title'] = "Tambah Pengguna";
+        $dt['menu'] = "Pengguna";
+        $dt['submenu'] = "Tambah Pengguna";
+        $data = NULL;
         $this->view('templates/admin/header');
-        $this->view('templates/admin/sidebar', $data);
-        $this->view('admin/tambah_user');
+        $this->view('templates/admin/sidebar', $dt);
+        $this->view('admin/tambah_user', $data);
         $this->view('templates/admin/footer');
     }
 }
