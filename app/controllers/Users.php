@@ -244,6 +244,6 @@ class Users extends Controller
         unset($_SESSION['id_grup']);
         unset($_SESSION['username']);
         unset($_SESSION['email']);
-        header('location:' . BASEURL . '/home/index');
+        header('location:' . BASEURL . '/home');
     }
 }

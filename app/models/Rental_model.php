@@ -178,4 +178,40 @@ class Rental_model {
         $this->db->query($q);
         return $this->db->resultSet();
     }
+
+    public function tambah_sewa($data, $id)
+    {
+        $query = "INSERT INTO payment
+                    VALUES
+                ('', :id_pelanggan, :id_mobil, :tanggal_rental, :tanggal_kembali, :harga, :denda, '', :status_pengembalian, :status_rental)";
+
+        $this->db->query($query);
+        $this->db->bind('id_pelanggan', $id['id_pelanggan']);
+        $this->db->bind('id_mobil', $data['id_mobil']);
+        $this->db->bind('tanggal_rental', $data['tanggal_sewa']);
+        $this->db->bind('tanggal_kembali', $data['tanggal_kembali']);
+        $this->db->bind('harga', $data['harga']);
+        $this->db->bind('denda', $data['denda']);
+        $this->db->bind('status_pengembalian', 0);
+        $this->db->bind('status_rental', 0);
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
+    public function getIdPelanggan($id)
+    {
+        $q = "SELECT id_pelanggan FROM pelanggan WHERE id_user ='$id'";
+        $this->db->query($q);
+        return $this->db->single();
+    }
+
+    public function updateStatus($sts, $id)
+    {
+        $this->db->query("UPDATE mobil SET status = :status WHERE id_mobil= :id_mobil");
+        $this->db->bind('status', $sts);
+        $this->db->bind('id_mobil', $id);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
 }

@@ -77,4 +77,25 @@ class Home extends Controller {
         $this->view('templates/pelanggan/footer');
 
     }
+
+    public function sewa()
+    {
+        if(!$_SESSION) {
+            Flasher::setFlash('Kendaraan gagal ditambahkan!', ' Silahkan login terlebih dahulu.', 'danger');
+            $this->detail($_POST['id_mobil']);
+            exit;
+        }
+        $getId = $this->model('rental_model')->getIdPelanggan($_SESSION['id_user']); //Get Id Pelanggan
+       
+        if($this->model('rental_model')->tambah_sewa($_POST, $getId) > 0)
+        {
+            $sts = 0; //Status Mobil tidak tersedia
+            $this->model('rental_model')->updateStatus($sts, $_POST['id_mobil']);
+            Flasher::setFlash('Kendaraan berhasil ditambahkan!', ' Silahkan Checkout.', 'success');
+            $this->detail($_POST['id_mobil']);
+            exit;
+        }
+        Flasher::setFlash('Kesalahan,', ' kendaraan gagal ditambahkan!', 'danger');
+        $this->detail($_POST['id_mobil']);
+    }
 }

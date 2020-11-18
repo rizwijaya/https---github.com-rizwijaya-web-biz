@@ -50,171 +50,180 @@
         <div class="row" data-select2-id="62">
             <div class="col-xl-8 col-lg-8 col-md-12">
                 <!--Classified Description-->
+                <?php Flasher::flash(); ?>
                 <?php foreach ($data['detail'] as $dt) : ?>
-                <div class="card overflow-hidden">
-                    <div class="ribbon ribbon-top-right text-danger"><span class="bg-danger">Tersedia</span></div>
-                    <div class="card-body">
-                        <div class="item-det mb-4"> <a href="#" class="text-dark">
-                                <h3><?php echo $dt['merk'] ?></h3>
-                            </a>
-                            <div class=" d-flex">
-                                <ul class="d-flex mb-0">
-                                    <li class="mr-5"><a href="#" class="icons"><i class="ti-car text-muted mr-1 fs-18"></i> <?php echo $dt['no_plat'] ?></a></li>
-                                    <li class="mr-5"><a href="#" class="icons"><i class="ti-location-pin text-muted mr-1"></i> <?php echo $dt['lokasi'] ?></a></li>
-                                    <li class="mr-5"><a href="#" class="icons"><i class="ti-calendar text-muted mr-1"></i> <?php echo $dt['tahun'] ?></a></li>
-                                    <li class="mr-5"><a href="#" class="icons"><i class="ti-eye text-muted mr-1 fs-15"></i> <?php echo $dt['warna'] ?></a></li>
-                                </ul>
-                                <div class="rating-stars d-flex mr-5"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" id="rating-stars-value" value="4">
-                                    <div class="rating-stars-container mr-2">
-                                        <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                        <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                        <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                        <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
-                                        <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
-                                    </div> Rating
-                                </div>
-                                <div class="rating-stars d-flex">
-                                    <div class="rating-stars-container mr-2">
-                                        <div class="rating-star sm"> <i class="fa fa-heart"></i> </div>
-                                    </div> Likes
+                    <div class="card overflow-hidden">
+                        <div class="ribbon ribbon-top-right text-danger"><span class="bg-danger"><?php if($dt['status'] == 1) {echo'Tersedia';} else {echo 'Dipesan';}?></span></div>
+                        <div class="card-body">
+                            <div class="item-det mb-4"> <a href="#" class="text-dark">
+                                    <h3><?php echo $dt['merk'] ?></h3>
+                                </a>
+                                <div class=" d-flex">
+                                    <ul class="d-flex mb-0">
+                                        <li class="mr-5"><a href="#" class="icons"><i class="ti-car text-muted mr-1 fs-18"></i> <?php echo $dt['no_plat'] ?></a></li>
+                                        <li class="mr-5"><a href="#" class="icons"><i class="ti-location-pin text-muted mr-1"></i> <?php echo $dt['lokasi'] ?></a></li>
+                                        <li class="mr-5"><a href="#" class="icons"><i class="ti-calendar text-muted mr-1"></i> <?php echo $dt['tahun'] ?></a></li>
+                                        <li class="mr-5"><a href="#" class="icons"><i class="ti-eye text-muted mr-1 fs-15"></i> <?php echo $dt['warna'] ?></a></li>
+                                    </ul>
+                                    <div class="rating-stars d-flex mr-5"> <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" id="rating-stars-value" value="4">
+                                        <div class="rating-stars-container mr-2">
+                                            <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
+                                            <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
+                                            <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
+                                            <div class="rating-star sm is--active"> <i class="fa fa-star"></i> </div>
+                                            <div class="rating-star sm"> <i class="fa fa-star"></i> </div>
+                                        </div> Rating
+                                    </div>
+                                    <div class="rating-stars d-flex">
+                                        <div class="rating-stars-container mr-2">
+                                            <div class="rating-star sm"> <i class="fa fa-heart"></i> </div>
+                                        </div> Likes
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active"> <img width="726px" src="<?= BASEURL . '/foto_mobil/' . $dt['gambar'] ?>" alt="img"> </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"> <img width="726px" src="<?= BASEURL . '/foto_mobil/' . $dt['gambar'] ?>" alt="img"> </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!--Deskripsi Kendaraan--->
-                <div class="">
+                    <!--Deskripsi Kendaraan--->
                     <div class="">
-                        <div class="border-0">
-                            <div class="wideget-user-tab wideget-user-tab3">
-                                <div class="tab-menu-heading">
-                                    <div class="tabs-menu1">
-                                        <ul class="nav">
-                                            <li class=""><a href="#tab-1" class="active" data-toggle="tab">Informasi</a></li>
-                                            <li><a href="#tab-3" data-toggle="tab" class="">Fasilitas</a></li>
-                                        </ul>
+                        <div class="">
+                            <div class="border-0">
+                                <div class="wideget-user-tab wideget-user-tab3">
+                                    <div class="tab-menu-heading">
+                                        <div class="tabs-menu1">
+                                            <ul class="nav">
+                                                <li class=""><a href="#tab-1" class="active" data-toggle="tab">Informasi</a></li>
+                                                <li><a href="#tab-3" data-toggle="tab" class="">Fasilitas</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="tab-content border-left border-right border-top br-tr-3 p-5 bg-white">
-                                <div class="tab-pane active" id="tab-1">
-                                    <h3 class="card-title mb-3 font-weight-semibold">Informasi Kendaraan</h3>
-                                    <div class="mb-4">
-                                        <p>Mobil <?php echo $dt['merk'] ?> merupakan kendaraan tipe <?php echo $dt['nama_type'] ?> memiliki peforma yang luar biasa, cocok digunakan dengan keluarga. Kondisi mesin terawat dengan perawatan dan pengecekan yang rutin dan tentunya pajak aktif beserta surat yang lengkap.</p>
-                                        <p><?php echo $dt['merk'] ?> diproduksi pada tahun <?php echo $dt['tahun'] ?> dilengkapi dengan berbagai fasilitas yang lengkap dan pastinya aman, memberikan anda perjalanan yang aman dan nyaman serta tidak perlu khawatir bila kendaraan macet ditengah jalan, karena pada kendaraan selalu dilakukan pengecekan sebelum berangkat.</p>
+                                <div class="tab-content border-left border-right border-top br-tr-3 p-5 bg-white">
+                                    <div class="tab-pane active" id="tab-1">
+                                        <h3 class="card-title mb-3 font-weight-semibold">Informasi Kendaraan</h3>
+                                        <div class="mb-4">
+                                            <p>Mobil <?php echo $dt['merk'] ?> merupakan kendaraan tipe <?php echo $dt['nama_type'] ?> memiliki peforma yang luar biasa, cocok digunakan dengan keluarga. Kondisi mesin terawat dengan perawatan dan pengecekan yang rutin dan tentunya pajak aktif beserta surat yang lengkap.</p>
+                                            <p><?php echo $dt['merk'] ?> diproduksi pada tahun <?php echo $dt['tahun'] ?> dilengkapi dengan berbagai fasilitas yang lengkap dan pastinya aman, memberikan anda perjalanan yang aman dan nyaman serta tidak perlu khawatir bila kendaraan macet ditengah jalan, karena pada kendaraan selalu dilakukan pengecekan sebelum berangkat.</p>
+                                        </div>
+                                        <h4 class="mb-4">Spesifikasi</h4>
+                                        <div class="row">
+                                            <div class="col-xl-12 col-md-12">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered w-100 m-0 text-nowrap ">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><span class="font-weight-bold">Transmisi :</span> <?php echo $dt['transmission'] ?></td>
+                                                                <td><span class="font-weight-bold">Rem :</span> Depan , Belakang</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><span class="font-weight-bold">Kapasitas :</span> 5 - 8 Orang</td>
+                                                                <td><span class="font-weight-bold">Nomor Plat :</span> <?php echo $dt['no_plat'] ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><span class="font-weight-bold">Tipe Kendaraan :</span> <?php echo $dt['nama_type'] ?></td>
+                                                                <td><span class="font-weight-bold">Warna :</span> <?php echo $dt['warna'] ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><span class="font-weight-bold">Tahun Produksi :</span> <?php echo $dt['tahun'] ?> </td>
+                                                                <td><span class="font-weight-bold">Jarak Tempuh :</span> <?php echo $dt['kilometer'] ?> Km</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h4 class="mb-4">Spesifikasi</h4>
-                                    <div class="row">
-                                        <div class="col-xl-12 col-md-12">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered w-100 m-0 text-nowrap ">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td><span class="font-weight-bold">Transmisi :</span> <?php echo $dt['transmission'] ?></td>
-                                                            <td><span class="font-weight-bold">Rem :</span> Depan , Belakang</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><span class="font-weight-bold">Kapasitas :</span> 5 - 8 Orang</td>
-                                                            <td><span class="font-weight-bold">Nomor Plat :</span> <?php echo $dt['no_plat'] ?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><span class="font-weight-bold">Tipe Kendaraan :</span> <?php echo $dt['nama_type'] ?></td>
-                                                            <td><span class="font-weight-bold">Warna :</span> <?php echo $dt['warna'] ?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><span class="font-weight-bold">Tahun Produksi :</span> <?php echo $dt['tahun'] ?> </td>
-                                                            <td><span class="font-weight-bold">Jarak Tempuh :</span> <?php echo $dt['kilometer'] ?> Km</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                    <div class="tab-pane" id="tab-3">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered border-top mb-0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Power Steering</td>
+                                                                <td><i class="icon icon-check text-success"></i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Power Windows Front</td>
+                                                                <td><i class="icon icon-check text-success"></i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Air Conditioner</td>
+                                                                <td><i class="icon icon-<?php if ($dt['ac'] == 1) {
+                                                                                            echo 'check text-success';
+                                                                                        } else {
+                                                                                            echo 'close text-danger';
+                                                                                        } ?>"></i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Passenger Airbag</td>
+                                                                <td><i class="icon icon-check text-success"></i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Fog Lights - Front</td>
+                                                                <td><i class="icon icon-check text-success"></i></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered border-top mb-0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Anti Lock Braking System</td>
+                                                                <td><i class="icon icon-<?php if ($dt['anti_lock'] == 1) {
+                                                                                            echo 'check text-success';
+                                                                                        } else {
+                                                                                            echo 'close text-danger';
+                                                                                        } ?>"></i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Driver Airbag</td>
+                                                                <td><i class="icon icon-check text-success"></i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Music Player</td>
+                                                                <td><i class="icon icon-<?php if ($dt['music_player'] == 1) {
+                                                                                            echo 'check text-success';
+                                                                                        } else {
+                                                                                            echo 'close text-danger';
+                                                                                        } ?>"></i></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Video Player</td>
+                                                                <td><i class="icon icon-<?php if ($dt['video_player'] == 1) {
+                                                                                            echo 'check text-success';
+                                                                                        } else {
+                                                                                            echo 'close text-danger';
+                                                                                        } ?>"></i></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="tab-3">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered border-top mb-0">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Power Steering</td>
-                                                            <td><i class="icon icon-check text-success"></i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Power Windows Front</td>
-                                                            <td><i class="icon icon-check text-success"></i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Air Conditioner</td>
-                                                            <td><i class="icon icon-<?php if($dt['ac'] == 1)  { 
-                                                                echo 'check text-success';
-                                                            } else {
-                                                                echo 'close text-danger';
-                                                            } ?>"></i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Passenger Airbag</td>
-                                                            <td><i class="icon icon-check text-success"></i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Fog Lights - Front</td>
-                                                            <td><i class="icon icon-check text-success"></i></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered border-top mb-0">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Anti Lock Braking System</td>
-                                                            <td><i class="icon icon-<?php if($dt['anti_lock'] == 1)  { 
-                                                                echo 'check text-success';
-                                                            } else {
-                                                                echo 'close text-danger';
-                                                            } ?>"></i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Driver Airbag</td>
-                                                            <td><i class="icon icon-check text-success"></i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Music Player</td>
-                                                            <td><i class="icon icon-<?php if($dt['music_player'] == 1)  { 
-                                                                echo 'check text-success';
-                                                            } else {
-                                                                echo 'close text-danger';
-                                                            } ?>"></i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Video Player</td>
-                                                            <td><i class="icon icon-<?php if($dt['video_player'] == 1)  { 
-                                                                echo 'check text-success';
-                                                            } else {
-                                                                echo 'close text-danger';
-                                                            } ?>"></i></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                <div class="pt-4 pb-4 pl-5 pr-5 border-top border-left border-right bg-white">
+                                    <div class="list-id">
+                                        <div class="row">
+                                            <div class="col"> <a class="mb-0">Sewa : Rp. <?php echo number_format($dt['harga'],0,',','.'); ?> /Hari</a> </div>
+                                            <div class="col col-auto text-primary"> Denda : Rp. <?php echo number_format($dt['denda'],0,',','.'); ?> /Hari </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card-footer bg-white border-left border-right border-bottom br-br-3 br-bl-3">
-                                <div class="icons"> <a href="#" class="btn btn-danger icons"><i class="icon icon-cloud-download mr-1"></i> Pesan Sekarang</a> 
-                                <a href="#" class="btn btn-info icons"><i class="icon icon-share mr-1"></i> Share Ad</a> 
-                                <a href="#" class="btn btn-secondary icons"><i class="icon icon-printer  mr-1"></i> Print</a> </div>
+                                <div class="card-footer bg-white border-left border-right border-bottom br-br-3 br-bl-3">
+                                    <div class="icons"> <button type="button" class="btn btn-danger icons" data-toggle="modal" data-target="#update_modal<?= $dt['id_mobil']; ?>"<?php if($dt['status'] == 1) {echo'><i class="icon icon-cloud-download mr-1"></i> Pesan Sekarang';} else {echo 'disabled ><i class="icon icon-cloud-download mr-1"></i> Tidak Tersedia';}?></button>
+                                        <a href="#" class="btn btn-info icons"><i class="icon icon-share mr-1"></i> Share Ad</a>
+                                        <a href="#" class="btn btn-secondary icons"><i class="icon icon-printer  mr-1"></i> Print</a> </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <?php endforeach; ?>
                 <!--/Classified Description-->
                 <h3 class="mb-5 mt-6">Produk Pilihan</h3>
@@ -277,7 +286,7 @@
                         <button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div>
                     <div class="owl-dots disabled"></div>
                 </div>
-                <!--/Related Posts-->  
+                <!--/Related Posts-->
             </div>
             <!--Right Side Content-->
             <div class="col-xl-4 col-lg-4 col-md-12" data-select2-id="61">
@@ -292,7 +301,7 @@
                                     <option value="2" data-select2-id="26">Tarragon</option>
                                 </optgroup>
                             </select>
-                            </div>
+                        </div>
                         <div class="input-group mb-4">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"> <i class="fa fa-map-marker fs-16 lh-0 op-6"></i> </div>
@@ -316,20 +325,20 @@
                         <h3 class="card-title">Kata Kunci</h3>
                     </div>
                     <?php foreach ($data['detail'] as $dt) : ?>
-                    <div class="card-body product-filter-desc">
-                        <div class="product-tags clearfix">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href=""><?php echo $dt['merk'] ?></a></li>
-                                <li><a href=""><?php echo $dt['warna'] ?></a></li>
-                                <li><a href=""><?php echo $dt['nama_type'] ?></a></li>
-                                <li><a href=""><?php echo $dt['transmission'] ?></a></li>
-                                <li><a href=""><?php echo $dt['tahun'] ?></a></li>
-                                <?php if($mb['ac']  == '1' ) echo '<li><a href="">AC</a></li>' ?>
-                                <li><a href="">Vehicles</a></li>
-                                <?php if($mb['video_player']  == '1' ) echo '<li><a href="">Video Player</a></li>' ?>
-                            </ul>
+                        <div class="card-body product-filter-desc">
+                            <div class="product-tags clearfix">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href=""><?php echo $dt['merk'] ?></a></li>
+                                    <li><a href=""><?php echo $dt['warna'] ?></a></li>
+                                    <li><a href=""><?php echo $dt['nama_type'] ?></a></li>
+                                    <li><a href=""><?php echo $dt['transmission'] ?></a></li>
+                                    <li><a href=""><?php echo $dt['tahun'] ?></a></li>
+                                    <?php if ($mb['ac']  == '1') echo '<li><a href="">AC</a></li>' ?>
+                                    <li><a href="">Vehicles</a></li>
+                                    <?php if ($mb['video_player']  == '1') echo '<li><a href="">Video Player</a></li>' ?>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
                     <?php endforeach; ?>
                 </div>
 
@@ -339,20 +348,20 @@
                     </div>
                     <div class="card-body ">
                         <ul class="vertical-scroll" style="overflow-y: hidden; height: 264px;">
-                        <?php foreach ($data['mobil'] as $mb) : ?>
-                            <li class="news-item">
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td><img width="64px" height="53.66px" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>" alt="mobil" class="w-8 border"></td>
-                                            <td class="pl-3">
-                                                <h5 class="mb-1 "><?php echo $mb['merk']; ?></h5><a href="<?= BASEURL; ?>/home/detail/<?= $mb['id_mobil'] ?>" class="btn-link">View Details</a><span class="float-right font-weight-bold">Rp. <?php echo number_format($mb['harga'],0,',','.'); ?></span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </li>
-                        <?php endforeach; ?>
+                            <?php foreach ($data['mobil'] as $mb) : ?>
+                                <li class="news-item">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td><img width="64px" height="53.66px" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>" alt="mobil" class="w-8 border"></td>
+                                                <td class="pl-3">
+                                                    <h5 class="mb-1 "><?php echo $mb['merk']; ?></h5><a href="<?= BASEURL; ?>/home/detail/<?= $mb['id_mobil'] ?>" class="btn-link">View Details</a><span class="float-right font-weight-bold">Rp. <?php echo number_format($mb['harga'], 0, ',', '.'); ?></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
                 </div>
@@ -363,23 +372,23 @@
                     <div class="card-body">
                         <div class="rated-products">
                             <ul class="vertical-scroll" style="overflow-y: hidden; height: 488px;">
-                            <?php foreach ($data['mobil'] as $mb) : ?>
-                                <li class="item">
-                                    <div class="media  mb-0 p-5 mt-0"> <img class=" mr-4" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>" alt="mobil">
-                                        <div class="media-body">
-                                            <h4 class="mt-2 mb-1"><?php echo $mb['merk']; ?></h4> 
-                                            <span class="rated-products-ratings"> 
-                                                <i class="fa fa-star text-warning"> </i> 
-                                                <i class="fa fa-star text-warning"> </i> 
-                                                <i class="fa fa-star text-warning"> </i> 
-                                                <i class="fa fa-star-o text-warning"> </i> 
-                                                <i class="fa fa-star-o text-warning"> </i> 
-                                            </span>
-                                            <div class="h5 mb-0 font-weight-semibold mt-1">Rp. <?php echo number_format($mb['harga'],0,',','.'); ?></div>
+                                <?php foreach ($data['mobil'] as $mb) : ?>
+                                    <li class="item">
+                                        <div class="media  mb-0 p-5 mt-0"> <img class=" mr-4" src="<?= BASEURL . '/foto_mobil/' . $mb['gambar'] ?>" alt="mobil">
+                                            <div class="media-body">
+                                                <h4 class="mt-2 mb-1"><?php echo $mb['merk']; ?></h4>
+                                                <span class="rated-products-ratings">
+                                                    <i class="fa fa-star text-warning"> </i>
+                                                    <i class="fa fa-star text-warning"> </i>
+                                                    <i class="fa fa-star text-warning"> </i>
+                                                    <i class="fa fa-star-o text-warning"> </i>
+                                                    <i class="fa fa-star-o text-warning"> </i>
+                                                </span>
+                                                <div class="h5 mb-0 font-weight-semibold mt-1">Rp. <?php echo number_format($mb['harga'], 0, ',', '.'); ?></div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                            <?php endforeach; ?>
+                                    </li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
@@ -390,3 +399,50 @@
     </div>
 </section>
 <!--End Image Detail--->
+<!-- Modal Pesan Sekarang-->
+<?php foreach ($data['detail'] as $dt) : ?>
+    <div class="modal fade" id="update_modal<?= $dt['id_mobil']; ?>" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="judulModal">Rental Kendaraan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div aria-hidden="true">
+                        <form action="<?= BASEURL; ?>/home/sewa" method="post">
+                            <input type="hidden" class="form-control" id="id_mobil" name="id_mobil" value="<?= $dt['id_mobil'] ?>">
+                            <div class="form-group">
+                                <label class="form-control-label" for="merk">Merk</label>
+                                <input type="text" class="form-control" id="merk" name="merk" value="<?= $dt['merk'] ?>" readonly >
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label" for="harga">Harga Sewa/Hari</label>
+                                <input type="number" class="form-control" id="harga" name="harga" value="<?= $dt['harga'] ?>" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label" for="denda">Denda/Hari</label>
+                                <input type="number" class="form-control" id="denda" name="denda" value="<?= $dt['denda'] ?>" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label" for="tanggal_sewa">Tanggal Sewa</label>
+                                <input type="date" class="form-control" id="tanggal_sewa" name="tanggal_sewa">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label" for="tanggal_kembali">Tanggal Kembali</label>
+                                <input type="date" class="form-control" id="tanggal_kembali" name="tanggal_kembali">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" name="submit" id="submit" class="btn btn-primary">Sewa Kendaraan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+<!--End Pesan Sekarang-->
