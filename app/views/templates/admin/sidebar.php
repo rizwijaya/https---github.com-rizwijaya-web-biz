@@ -52,19 +52,20 @@
                 <span class="nav-link-text">Tipe Kendaraan</span>
               </a>
             </li>
-            <!-- <li class="nav-item">
+            <?php } ?>
+            <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/dashboard/data_pelanggan">
                 <i class="ni ni-archive-2 text-green"></i>
                 <span class="nav-link-text">Data Pelanggan</span>
               </a>
-            </li> -->
-            <?php } if($data['id_grup'] == '1') { ?>
-              <!-- <li class="nav-item">
-              <a class="nav-link" href="">
-                <i class="ni ni-single-copy-04 text-pink"></i>
+            </li>
+            <?php if($data['id_grup'] == '1') { ?>
+              <li class="nav-item">
+              <a class="nav-link" href="<?= BASEURL; ?>/dashboard/data_pegawai">
+                <i class="ni ni-archive-2 text-green"></i>
                 <span class="nav-link-text">Data Pegawai</span>
               </a>
-            </li> -->
+            </li>
             <?php } ?> 
             <?php if($data['id_grup'] == '2') { ?>
               <!-- <li class="nav-item">

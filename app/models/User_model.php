@@ -18,7 +18,7 @@ class User_model {
 
     public function findUserByUsername($username) 
     {
-        $q = "SELECT * FROM users WHERE username ='$username'";
+        $q = "SELECT nama, email FROM users WHERE username ='$username'";
         $this->db->query($q);
         return $this->db->single();
     }
@@ -87,5 +87,16 @@ class User_model {
         } else {
             return false;
         }
+    }
+
+    public function getallpelanggan()
+    {
+        $this->db->query('SELECT t1.nama, t1.email, t2.photo, t2.no_telepon, t2.alamat, t2.gender, t2.no_ktp FROM users t1 INNER JOIN pelanggan t2 ON t1.id_user=t2.id_user');
+        return $this->db->resultSet();
+    }
+    public function getallpegawai()
+    {
+        $this->db->query('SELECT username, nama, email FROM users WHERE id_grup=2');
+        return $this->db->resultSet();
     }
 }

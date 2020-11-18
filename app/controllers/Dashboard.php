@@ -41,4 +41,31 @@ class Dashboard extends Controller
         $this->view('admin/tambah_user', $data);
         $this->view('templates/admin/footer');
     }
+
+    public function data_pelanggan() 
+    {
+        $data['id_grup'] = $_SESSION['id_grup'];
+        $data['title'] = "Data Pelanggan";
+        $data['menu'] = "Pelanggan";
+        $data['submenu'] = "Data Pelanggan";
+        $data['pelanggan'] = $this->model('User_model')->getallpelanggan();
+        $this->view('templates/admin/header');
+        $this->view('templates/admin/sidebar',$data);
+        $this->view('admin/pelanggan', $data);
+        $this->view('templates/admin/footer');
+    }
+
+    public function data_pegawai() 
+    {
+        $data['id_grup'] = $_SESSION['id_grup'];
+        $data['title'] = "Data Pegawai";
+        $data['menu'] = "Pegawai";
+        $data['submenu'] = "Data Pegawai";
+        $data['pegawai'] = $this->model('User_model')->getallpegawai();
+        //var_dump($data); die;
+        $this->view('templates/admin/header');
+        $this->view('templates/admin/sidebar',$data);
+        $this->view('admin/pegawai', $data);
+        $this->view('templates/admin/footer');
+    }
 }
