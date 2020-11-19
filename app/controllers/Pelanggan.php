@@ -24,4 +24,14 @@ class Pelanggan extends Controller
         $this->view('home/index');
         $this->view('templates/pelanggan/footer');
     }
+
+    public function checkout()
+    {
+        $getId = $this->model('rental_model')->getIdPelanggan($_SESSION['id_user']); //Get Id Pelanggan
+        $data['transaksi'] = $this->model('pelanggan_model')->userCheckout($getId['id_pelanggan']);
+        $data['mobil'] = $this->model('rental_model')->getallkendaraan();
+        $this->view('templates/pelanggan/header');
+        $this->view('pelanggan/checkout', $data);
+        $this->view('templates/pelanggan/footer');
+    }
 }
