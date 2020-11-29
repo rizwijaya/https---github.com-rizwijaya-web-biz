@@ -181,9 +181,9 @@ class Rental_model {
 
     public function tambah_sewa($data, $id)
     {
-        $query = "INSERT INTO payment
+        $query = "INSERT INTO rental
                     VALUES
-                ('', :id_pelanggan, :id_mobil, :tanggal_rental, :tanggal_kembali, :harga, :denda, '', :status_pengembalian, :status_rental)";
+                ('', :id_pelanggan, :id_mobil, :tanggal_rental, :tanggal_kembali, :harga, :denda, '', '', :status_rental)";
 
         $this->db->query($query);
         $this->db->bind('id_pelanggan', $id['id_pelanggan']);
@@ -192,7 +192,6 @@ class Rental_model {
         $this->db->bind('tanggal_kembali', $data['tanggal_kembali']);
         $this->db->bind('harga', $data['harga']);
         $this->db->bind('denda', $data['denda']);
-        $this->db->bind('status_pengembalian', 0);
         $this->db->bind('status_rental', 0);
         $this->db->execute();
 
@@ -214,4 +213,23 @@ class Rental_model {
         $this->db->execute();
         return $this->db->rowCount();
     }
+
+    public function dataPembayaran()
+    {
+        $this->db->query("SELECT t1.merk, t1.no_plat, t1.status, t2.*, t3.no_telepon, t4.nama 
+                            FROM mobil t1 JOIN rental t2 ON t1.id_mobil = t2.id_mobil
+                            JOIN pelanggan t3 ON t2.id_pelanggan = t3.id_pelanggan
+                            JOIN users t4 ON t3.id_user = t4.id_user WHERE t2.status_rental=1 ORDER BY id_rental DESC");
+        return $this->db->resultSet();
+    }
+
+    public function trans($id, $sts)
+    {
+        $this->db->query("UPDATE rental SET status_rental = :status_rental WHERE id_rental= :id_rental");
+        $this->db->bind('status_rental', $sts);
+        $this->db->bind('id_rental', $id);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
 }
