@@ -11,7 +11,19 @@
             }
         }
 
-        
+        public function index()
+        {
+            $data['id_grup'] = $_SESSION['id_grup'];
+            $data['title'] = "Transaksi Pelanggan";
+            $data['menu'] = "Transaksi";
+            $data['submenu'] = "Data Transaksi";
+            $data['transaksi'] = $this->model('rental_model')->dataTransaksi();
+            //var_dump($data['transaksi']); die;
+            $this->view('templates/admin/header');
+            $this->view('templates/admin/sidebar',$data);
+            $this->view('pegawai/transaksi', $data);
+            $this->view('templates/admin/footer');
+        }
 
         public function pembayaran()
         {
@@ -41,6 +53,31 @@
             $this->model('rental_model')->trans($id, $sts);
             Flasher::setFlash_modal('Transaksi telah berhasil untuk diterima.', 'Transaksi diterima!', 'success');
             $this->index();
+        }
+
+        public function laporan()
+        {
+            $data['id_grup'] = $_SESSION['id_grup'];
+            $data['title'] = "Laporan";
+            $data['menu'] = "Transaksi";
+            $data['submenu'] = "Transaksi Selesai";
+            $data['transaksi'] = $this->model('rental_model')->dataLaporan();
+            //var_dump($data['transaksi']); die;
+            $this->view('templates/admin/header');
+            $this->view('templates/admin/sidebar',$data);
+            $this->view('pegawai/laporan', $data);
+            $this->view('templates/admin/footer');
+        }
+
+        public function cetak_laporan()
+        {
+            $data['id_grup'] = $_SESSION['id_grup'];
+            $data['title'] = "Laporan";
+            $data['menu'] = "Transaksi";
+            $data['submenu'] = "Transaksi Selesai";
+            $data['transaksi'] = $this->model('rental_model')->dataLaporan();
+            //var_dump($data['transaksi']); die;
+            $this->view('pegawai/cetak_laporan', $data);
         }
     }
     

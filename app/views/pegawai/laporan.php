@@ -12,6 +12,9 @@
                            <h3 class="mb-0">Laporan Transaksi</h3>
                            <?php Flasher::flash_modal(); ?>
                        </div>
+                       <div class="col text-right">
+                           <a class="btn btn-primary mb-0" href="<?= BASEURL; ?>/transaksi/cetak_laporan"><i class="fa fa-print"></i> Cetak Laporan</a>
+                       </div>
                    </div>
                </div>
                <!-- Isi Tabel -->
@@ -44,17 +47,19 @@
                                    <td><?php echo date('d/m/Y', strtotime($tk['tanggal_pengembalian'])); ?></td>
                                    <td><?php
                                         $rental = strtotime($tk['tanggal_rental']);
-                                        $kembali = strtotime($tk['tanggal_kembali']);
-                                        $jml = abs(($rental - $kembali) / (60 * 60 * 24));
+                                        $dikembalikan = strtotime($tk['tanggal_pengembalian']);
+                                        $jml = abs(($rental - $dikembalikan) / (60 * 60 * 24));
                                         echo "$jml Hari"
                                         ?></td>
-                                   <td><?php 
-                                            $kem = strtotime($tk['tanggal_kembali']);
-                                            $dikembalikan = strtotime($tk['tanggal_pengembalian']);
-                                            $jml_dikem = abs(($kem - $dikembalikan) / (60 * 60 * 24));
-                                        ?> Rp. <?php echo number_format($jml_dikem*$tk['denda'], 0, ',', '.'); ?></td>
-                                   <td>Rp. <?php echo number_format($jml * $tk['harga'], 0, ',', '.'); ?></td>
-                                   <td>Rp. <?php echo number_format(($jml_dikem*$tk['denda']) + ($jml * $tk['harga']), 0, ',', '.'); ?></td>
+                                   <td><?php
+                                        $kembali = strtotime($tk['tanggal_kembali']);
+                                        $jml_dikem = abs(($kembali - $dikembalikan) / (60 * 60 * 24));
+                                        ?> Rp. <?php echo number_format($jml_dikem * $tk['denda'], 0, ',', '.'); ?></td>
+                                   <td>
+                                       <?php
+                                        $jml_bayar = abs(($rental - $kembali) / (60 * 60 * 24));
+                                        ?> Rp. <?php echo number_format($jml_bayar * $tk['harga'], 0, ',', '.'); ?></td>
+                                   <td>Rp. <?php echo number_format(($jml_dikem * $tk['denda']) + ($jml_bayar * $tk['harga']), 0, ',', '.'); ?></td>
                                </tr>
                            <?php endforeach; ?>
                        </tbody>
