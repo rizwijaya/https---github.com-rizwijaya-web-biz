@@ -1,6 +1,7 @@
 <?php
 
-class Rental_model {
+class Rental_model
+{
     private $mobilget = 'mobil';
     private $type = 'type';
     private $db;
@@ -232,4 +233,21 @@ class Rental_model {
         return $this->db->rowCount();
     }
 
+    public function dataTransaksi()
+    {
+        $this->db->query("SELECT t1.merk, t1.no_plat, t1.status, t2.*, t3.no_telepon, t4.nama, t5.nama_status 
+                            FROM mobil t1 JOIN rental t2 ON t1.id_mobil = t2.id_mobil
+                            JOIN pelanggan t3 ON t2.id_pelanggan = t3.id_pelanggan
+                            JOIN users t4 ON t3.id_user = t4.id_user JOIN status t5 ON t2.status_rental = t5.status_rental WHERE t2.status_rental != 1 ORDER BY id_rental DESC");
+        return $this->db->resultSet();
+    }
+
+    public function dataLaporan()
+    {
+        $this->db->query("SELECT t1.merk, t1.no_plat, t1.status, t2.*, t3.no_telepon, t4.nama, t5.nama_status 
+                            FROM mobil t1 JOIN rental t2 ON t1.id_mobil = t2.id_mobil
+                            JOIN pelanggan t3 ON t2.id_pelanggan = t3.id_pelanggan
+                            JOIN users t4 ON t3.id_user = t4.id_user JOIN status t5 ON t2.status_rental = t5.status_rental WHERE t2.status_rental = 7 ORDER BY id_rental DESC");
+        return $this->db->resultSet();
+    }
 }

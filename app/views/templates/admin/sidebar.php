@@ -68,26 +68,26 @@
             </li>
             <?php } ?> 
             <?php if($data['id_grup'] == '2') { ?>
-              <!-- <li class="nav-item">
-              <a class="nav-link" href="">
+              <li class="nav-item">
+              <a class="nav-link" href="<?= BASEURL; ?>/transaksi/pembayaran">
                 <i class="ni ni-single-copy-04 text-pink"></i>
                 <span class="nav-link-text">Pembayaran</span>
               </a>
-            </li> -->
+            </li>
             <?php } ?>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="<?= BASEURL; ?>/payment">
+            <li class="nav-item">
+              <a class="nav-link" href="<?= BASEURL; ?>/transaksi/laporan">
                 <i class="ni ni-align-left-2 text-default"></i>
                 <span class="nav-link-text">Laporan</span>
               </a>
-            </li> -->
+            </li>
             <?php if($data['id_grup'] == '2') { ?>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="<?= BASEURL; ?>/dashboard/laporan">
+            <li class="nav-item">
+              <a class="nav-link" href="<?= BASEURL; ?>/transaksi">
                 <i class="ni ni-chart-pie-35 text-info"></i>
                 <span class="nav-link-text">Transaksi</span>
               </a>
-            </li> -->
+            </li>
             <?php } ?>
             <?php if($data['id_grup'] == '1') { ?>
             <li class="nav-item">
@@ -104,7 +104,7 @@
           <h6 class="navbar-heading p-0 text-muted">Setelan</h6>
           <!-- Navigation -->
           <ul class="navbar-nav mb-md-3">
-            <!-- <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="#" target="_blank">
                 <i class="ni ni-spaceship"></i>
                 <span class="nav-link-text">Profile Saya</span>
@@ -121,7 +121,7 @@
                 <i class="ni ni-ui-04"></i>
                 <span class="nav-link-text">Reset Password</span>
               </a>
-            </li> -->
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/users/logout">
                 <i class="ni ni-chart-pie-35"></i>
@@ -156,9 +156,9 @@
           <!-- Navbar links -->
          
           <ul class="navbar-nav align-items-center ml-md-auto">
-            <!--
+            
             <li class="nav-item d-xl-none">
-              <-- Sidenav toggler ->
+              <!-- Sidenav toggler -->
               <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
                 <div class="sidenav-toggler-inner">
                   <i class="sidenav-toggler-line"></i>
@@ -202,14 +202,14 @@
                     </span>
                     <small>Laporan</small>
                   </a>
-                  <?php //if($data['id_grup'] == '1') { ?>
+                  <?php if($data['id_grup'] == '1') { ?>
                   <a href="#!" class="col-4 shortcut-item">
                     <span class="shortcut-media avatar rounded-circle bg-gradient-purple">
                       <i class="ni ni-pin-3"></i>
                     </span>
                     <small>Tipe Kendaraan</small>
                   </a>
-                  <?php //} ?>
+                  <?php } ?>
                   <a href="#!" class="col-4 shortcut-item">
                     <span class="shortcut-media avatar rounded-circle bg-gradient-yellow">
                       <i class="ni ni-basket"></i>
@@ -219,7 +219,7 @@
                 </div>
               </div>
             </li>
-          </ul> --->
+          </ul>
           <ul class="navbar-nav align-items-center ml-auto ml-md-0">
             <li class="nav-item dropdown">
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -283,5 +283,3 @@
             </div>
 
           </div>
-        
-        
