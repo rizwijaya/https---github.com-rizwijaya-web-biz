@@ -238,7 +238,7 @@ class Rental_model
         $this->db->query("SELECT t1.merk, t1.no_plat, t1.status, t2.*, t3.no_telepon, t4.nama, t5.nama_status 
                             FROM mobil t1 JOIN rental t2 ON t1.id_mobil = t2.id_mobil
                             JOIN pelanggan t3 ON t2.id_pelanggan = t3.id_pelanggan
-                            JOIN users t4 ON t3.id_user = t4.id_user JOIN status t5 ON t2.status_rental = t5.status_rental WHERE t2.status_rental != 1 ORDER BY id_rental DESC");
+                            JOIN users t4 ON t3.id_user = t4.id_user JOIN status t5 ON t2.status_rental = t5.status_rental WHERE t2.status_rental != 1 AND t2.status_rental != 6 ORDER BY status_rental ASC");
         return $this->db->resultSet();
     }
 
@@ -247,7 +247,25 @@ class Rental_model
         $this->db->query("SELECT t1.merk, t1.no_plat, t1.status, t2.*, t3.no_telepon, t4.nama, t5.nama_status 
                             FROM mobil t1 JOIN rental t2 ON t1.id_mobil = t2.id_mobil
                             JOIN pelanggan t3 ON t2.id_pelanggan = t3.id_pelanggan
-                            JOIN users t4 ON t3.id_user = t4.id_user JOIN status t5 ON t2.status_rental = t5.status_rental WHERE t2.status_rental = 7 ORDER BY id_rental DESC");
+                            JOIN users t4 ON t3.id_user = t4.id_user JOIN status t5 ON t2.status_rental = t5.status_rental WHERE t2.status_rental = 6 ORDER BY id_rental DESC");
         return $this->db->resultSet();
+    }
+
+    public function update_transaksi($data)
+    {
+        $this->db->query("UPDATE rental SET status_rental = :status_rental WHERE id_rental= :id_rental");
+        $this->db->bind('status_rental', $data['status_rental']);
+        $this->db->bind('id_rental', $data['id_rental']);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
+    public function update_pengembalian($data)
+    {
+        $this->db->query("UPDATE rental SET tanggal_pengembalian = :tanggal_pengembalian WHERE id_rental= :id_rental");
+        $this->db->bind('tanggal_pengembalian', $data['tanggal_pengembalian']);
+        $this->db->bind('id_rental', $data['id_rental']);
+        $this->db->execute();
+        return $this->db->rowCount();
     }
 }

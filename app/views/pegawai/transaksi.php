@@ -26,9 +26,8 @@
                    <th scope="col" class="sort" data-sort="denda">Denda/hari</th>
                    <th scope="col" class="sort" data-sort="tanggal_rental">Tgl. Sewa</th>
                    <th scope="col" class="sort" data-sort="tanggal_kembali">Tgl. Kembali</th>
-                   <th scope="col" class="sort" data-sort="tanggal_pengembali">Tgl. Pengembalian</th>
-                   <th scope="col" class="sort" data-sort="total_pembayaran">Total Denda</th>
                    <th scope="col" class="sort" data-sort="status_rental">Progress</th>
+                   <th scope="col" class="sort" data-sort="action">Action</th>
                  </tr>
                </thead>
                <tbody class="list">
@@ -43,31 +42,90 @@
                      <td>Rp. <?php echo number_format($tk['denda'], 0, ',', '.'); ?></td>
                      <td><?php echo date('d/m/Y', strtotime($tk['tanggal_rental'])); ?></td>
                      <td><?php echo date('d/m/Y', strtotime($tk['tanggal_kembali'])); ?></td>
-                     <td><?= $tk['nama_status']; ?></td>
-                     <td><?= $tk['nama_status']; ?></td>
+                     <td><?php
+                          if ($tk['status_rental'] == 2) {
+                            echo 'Belum Diambil';
+                          } else {
+                            echo $tk['nama_status'];
+                          }; ?></td>
+                     <td>
+                       <strong><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#update_modal<?php echo $tk['id_rental']; ?>"><i> Update</i></button></strong>
+                     </td>
                    </tr>
                  <?php endforeach; ?>
                </tbody>
              </table>
            </div>
            <!-- Ini table nya -->
-            <!-- Modal Tambah Data -->
-            <?php  foreach ($data['transaksi'] as $tk) : ?>
-               <div class="modal fade" id="update_modal<?php echo $tk['id_rental']; ?>" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
-                   <div class="modal-dialog modal-lg">
-                       <div class="modal-content">
-                           <div class="modal-header">
-                               <h5 class="modal-title" id="judulModal">Bukti Pembayaran</h5>
-                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                   <span aria-hidden="true">&times;</span>
-                               </button>
-                           </div>
-                           <div class="modal-body">
-                           <img width="100%" height="100%" src="<?= BASEURL . '/foto_bukti/' . $tk['bukti_bayar'] ?>">
-                           </div>
-                       </div>
+           <!-- Modal Tambah Data -->
+           <?php foreach ($data['transaksi'] as $tk) : ?>
+             <div class="modal fade" id="update_modal<?php echo $tk['id_rental']; ?>" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+               <div class="modal-dialog">
+                 <div class="modal-content">
+                   <div class="modal-header">
+                     <h5 class="modal-title" id="judulModal">Perbarui Progress Sewa</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                     </button>
                    </div>
+                   <div class="modal-body">
+                     <div aria-hidden="true">
+                       <form action="<?= BASEURL; ?>/transaksi/update" method="post">
+                         <input type="hidden" class="form-control" id="id_rental" name="id_rental" value="<?= $tk['id_rental'] ?>">
+                         <div class="form-group">
+                           <label class="form-control-label" for="nama">Pelanggan</label>
+                           <input type=" text" class="form-control" id="nama" name="nama" value="<?= $tk['nama'] ?>" readonly>
+                         </div>
+                         <div class="form-group">
+                           <label class="form-control-label" for="merk">Merk</label>
+                           <input type=" text" class="form-control" id="merk" name="merk" value="<?= $tk['merk'] ?>" readonly>
+                         </div>
+                         <div class="form-group">
+                           <label class="form-control-label" for="status_rental">Progres Sekarang</label>
+                           <select class="form-control" name="status_rental" id="status_rental">
+                             <?php if ($tk['status_rental'] != "5") { ?>
+                               <option <?php if ($tk['status_rental'] == "2") {
+                                          echo "selected='selected'";
+                                        }
+                                        echo $tk['status_rental']; ?> value="2">
+                                 <?php if ($tk['status_rental'] == "3") { ?>
+                                   Konfirmasi Pembayaran
+                                 <?php } else { ?>
+                                   Belum Diambil</option>
+                             <?php } ?>
+                             <?php if ($tk['status_rental'] != "2") { ?>
+                               <option <?php if ($tk['status_rental'] == "3") {
+                                          echo "selected='selected'";
+                                        }
+                                        echo $tk['status_rental']; ?> value="3">Pembayaran Ditolak</option>
+                             <?php } ?>
+                           <?php } ?>
+                           <option <?php if ($tk['status_rental'] == "5") {
+                                      echo "selected='selected'";
+                                    }
+                                    echo $tk['status_rental']; ?> value="5">Sedang Disewa</option>
+                           <option <?php if ($tk['status_rental'] == "6") {
+                                      echo "selected='selected'";
+                                    }
+                                    echo $tk['status_rental']; ?> value="6">Mobil Dikembalikan</option>
+                           </select>
+                         </div>
+                         <?php if ($tk['status_rental'] == "5") { ?>
+                           <div class="form-group">
+                             <label class="form-control-label" for="tanggal_pengembalian">Tanggal Pengembalian</label>
+                             <input type="date" class="form-control" id="tanggal_pengembalian" name="tanggal_pengembalian" value="<?= $tk['tanggal_pengembalian'] ?>" required="">
+                           </div>
+                         <?php } ?>
+                         <div class="modal-footer">
+                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                           <button type="submit" name="submit" id="submit" class="btn btn-primary">Update Data</button>
+                         </div>
+                       </form>
+                     </div>
+                   </div>
+                 </div>
                </div>
-               <?php endforeach; ?>
-               <!--End Modal Tambah -->
+             </div>
+           <?php endforeach; ?>
+           <!--End Modal Tambah -->
          </div>
