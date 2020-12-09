@@ -11,22 +11,21 @@ class Dashboard extends Controller
             header('location:' . BASEURL . '/home/redirecting');
         }
     }
+
     public function index() 
     {
-       //echo 'Ini halaman admin';
-       //echo $_SESSION['id_grup'];
         $data['id_grup'] = $_SESSION['id_grup'];
-       //$data['title'] = " - Admin";
+        $data = array(
+			'total_transaksi'       => $this->model('Rental_model')->totaltransaksi(),
+			'total_user'            => $this->model('Rental_model')->totaluser(),
+			'total_pegawai'         => $this->model('Rental_model')->totalpegawai(),
+			'total_kendaraan'       => $this->model('Rental_model')->totalkendaraan()
+        );
         $data['title'] = "Dashboard";
         $this->view('templates/admin/header');
         $this->view('templates/admin/sidebar', $data);
-        $this->view('admin/dashboard');
+        $this->view('admin/dashboard', $data);
         $this->view('templates/admin/footer');
-    }
-    
-    public function laporan()
-    {
-        echo 'Ini halaman admin/laporan';
     }
 
     public function tambah_user()

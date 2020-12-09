@@ -268,4 +268,28 @@ class Rental_model
         $this->db->execute();
         return $this->db->rowCount();
     }
+
+    public function totaltransaksi()
+    {
+        $this->db->query("SELECT COUNT(id_rental) FROM rental WHERE status_rental=6");
+        return $this->db->single();
+    }
+
+    public function totaluser()
+    {
+        $this->db->query("SELECT COUNT(id_pelanggan) FROM pelanggan");
+        return $this->db->single();
+    }
+
+    public function totalpegawai()
+    {
+        $this->db->query("SELECT COUNT(id_pegawai) FROM pegawai");
+        return $this->db->single();
+    }
+
+    public function totalkendaraan()
+    {
+        $this->db->query("SELECT COUNT(id_mobil) FROM mobil");
+        return $this->db->single();
+    }
 }

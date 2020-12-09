@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
           <!-- Nav items -->
           <ul class="navbar-nav">
-          <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="#navbar-dashboards" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-dashboards">
                 <i class="ni ni-shop text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
@@ -38,20 +38,20 @@
                   </li>
                 </ul>
               </div>
-            </li>      
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/kendaraan">
                 <i class="ni ni-ui-04 text-info"></i>
                 <span class="nav-link-text">Daftar Kendaraan</span>
               </a>
             </li>
-            <?php if($data['id_grup'] == '1') { ?>
-            <li class="nav-item">
-              <a class="nav-link" href="<?= BASEURL; ?>/kendaraan/data_type">
-                <i class="ni ni-single-copy-04 text-pink"></i>
-                <span class="nav-link-text">Tipe Kendaraan</span>
-              </a>
-            </li>
+            <?php if ($_SESSION['id_grup'] == '1') { ?>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= BASEURL; ?>/kendaraan/data_type">
+                  <i class="ni ni-single-copy-04 text-pink"></i>
+                  <span class="nav-link-text">Tipe Kendaraan</span>
+                </a>
+              </li>
             <?php } ?>
             <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/dashboard/data_pelanggan">
@@ -59,21 +59,29 @@
                 <span class="nav-link-text">Data Pelanggan</span>
               </a>
             </li>
-            <?php if($data['id_grup'] == '1') { ?>
+            <?php if ($_SESSION['id_grup'] == '1') { ?>
               <li class="nav-item">
-              <a class="nav-link" href="<?= BASEURL; ?>/dashboard/data_pegawai">
-                <i class="ni ni-archive-2 text-green"></i>
-                <span class="nav-link-text">Data Pegawai</span>
-              </a>
-            </li>
-            <?php } ?> 
-            <?php if($data['id_grup'] == '2') { ?>
+                <a class="nav-link" href="<?= BASEURL; ?>/dashboard/data_pegawai">
+                  <i class="ni ni-archive-2 text-green"></i>
+                  <span class="nav-link-text">Data Pegawai</span>
+                </a>
+              </li>
+            <?php } ?>
+            <?php if ($_SESSION['id_grup'] == '2') { ?>
               <li class="nav-item">
-              <a class="nav-link" href="<?= BASEURL; ?>/transaksi/pembayaran">
-                <i class="ni ni-single-copy-04 text-pink"></i>
-                <span class="nav-link-text">Pembayaran</span>
-              </a>
-            </li>
+                <a class="nav-link" href="<?= BASEURL; ?>/transaksi/pembayaran">
+                  <i class="ni ni-single-copy-04 text-pink"></i>
+                  <span class="nav-link-text">Pembayaran</span>
+                </a>
+              </li>
+            <?php } ?>
+            <?php if ($_SESSION['id_grup'] == '2') { ?>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= BASEURL; ?>/transaksi">
+                  <i class="ni ni-chart-pie-35 text-info"></i>
+                  <span class="nav-link-text">Transaksi</span>
+                </a>
+              </li>
             <?php } ?>
             <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/transaksi/laporan">
@@ -81,21 +89,13 @@
                 <span class="nav-link-text">Laporan</span>
               </a>
             </li>
-            <?php if($data['id_grup'] == '2') { ?>
-            <li class="nav-item">
-              <a class="nav-link" href="<?= BASEURL; ?>/transaksi">
-                <i class="ni ni-chart-pie-35 text-info"></i>
-                <span class="nav-link-text">Transaksi</span>
-              </a>
-            </li>
-            <?php } ?>
-            <?php if($data['id_grup'] == '1') { ?>
-            <li class="nav-item">
-              <a class="nav-link" href="<?= BASEURL; ?>/dashboard/tambah_user">
-                <i class="ni ni-ungroup text-orange"></i>
-                <span class="nav-link-text">Tambah Pengguna</span>
-              </a>
-            </li>
+            <?php if ($_SESSION['id_grup'] == '1') { ?>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= BASEURL; ?>/dashboard/tambah_user">
+                  <i class="ni ni-ungroup text-orange"></i>
+                  <span class="nav-link-text">Tambah Pengguna</span>
+                </a>
+              </li>
             <?php } ?>
           </ul>
           <!-- Divider -->
@@ -104,24 +104,6 @@
           <h6 class="navbar-heading p-0 text-muted">Setelan</h6>
           <!-- Navigation -->
           <ul class="navbar-nav mb-md-3">
-            <li class="nav-item">
-              <a class="nav-link" href="#" target="_blank">
-                <i class="ni ni-spaceship"></i>
-                <span class="nav-link-text">Profile Saya</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" target="_blank">
-                <i class="ni ni-palette"></i>
-                <span class="nav-link-text">Edit Profile</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" target="_blank">
-                <i class="ni ni-ui-04"></i>
-                <span class="nav-link-text">Reset Password</span>
-              </a>
-            </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= BASEURL; ?>/users/logout">
                 <i class="ni ni-chart-pie-35"></i>
@@ -133,8 +115,8 @@
       </div>
     </div>
   </nav>
-   <!-- Main content -->
-   <div class="main-content" id="panel">
+  <!-- Main content -->
+  <div class="main-content" id="panel">
     <!-- Topnav -->
     <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
       <div class="container-fluid">
@@ -154,9 +136,9 @@
             </button>
           </form>
           <!-- Navbar links -->
-         
+
           <ul class="navbar-nav align-items-center ml-md-auto">
-            
+
             <li class="nav-item d-xl-none">
               <!-- Sidenav toggler -->
               <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
@@ -178,44 +160,50 @@
               </a>
               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default dropdown-menu-right">
                 <div class="row shortcuts px-4">
-                  <a href="#!" class="col-4 shortcut-item">
-                    <span class="shortcut-media avatar rounded-circle bg-gradient-red">
-                      <i class="ni ni-calendar-grid-58"></i>
-                    </span>
-                    <small>Riwayat</small>
-                  </a>
-                  <a href="#!" class="col-4 shortcut-item">
-                    <span class="shortcut-media avatar rounded-circle bg-gradient-orange">
-                      <i class="ni ni-email-83"></i>
-                    </span>
-                    <small>Pesanan</small>
-                  </a>
-                  <a href="#!" class="col-4 shortcut-item">
-                    <span class="shortcut-media avatar rounded-circle bg-gradient-info">
-                      <i class="ni ni-credit-card"></i>
-                    </span>
-                    <small>Pembayaran</small>
-                  </a>
-                  <a href="#!" class="col-4 shortcut-item">
-                    <span class="shortcut-media avatar rounded-circle bg-gradient-green">
-                      <i class="ni ni-books"></i>
-                    </span>
-                    <small>Laporan</small>
-                  </a>
-                  <?php if($data['id_grup'] == '1') { ?>
-                  <a href="#!" class="col-4 shortcut-item">
-                    <span class="shortcut-media avatar rounded-circle bg-gradient-purple">
-                      <i class="ni ni-pin-3"></i>
-                    </span>
-                    <small>Tipe Kendaraan</small>
-                  </a>
+                  <?php if ($_SESSION['id_grup'] == '2') { ?>
+                    <a href="<?= BASEURL; ?>/transaksi" class="col-4 shortcut-item">
+                      <span class="shortcut-media avatar rounded-circle bg-gradient-red">
+                        <i class="ni ni-calendar-grid-58"></i>
+                      </span>
+                      <small>Transaksi</small>
+                    </a>
                   <?php } ?>
-                  <a href="#!" class="col-4 shortcut-item">
-                    <span class="shortcut-media avatar rounded-circle bg-gradient-yellow">
-                      <i class="ni ni-basket"></i>
-                    </span>
-                    <small>Daftar Kendaraan</small>
-                  </a>
+                  <?php if ($_SESSION['id_grup'] == '1') { ?>
+                    <a href="<?= BASEURL; ?>/dashboard/data_pegawai" class="col-4 shortcut-item">
+                      <span class="shortcut-media avatar rounded-circle bg-gradient-orange">
+                        <i class="ni ni-email-83"></i>
+                      </span>
+                      <small>Data Pegawai</small>
+                    </a>
+                  <?php } ?>
+                  <?php if ($_SESSION['id_grup'] == '2') { ?>
+                    <a href="<?= BASEURL; ?>/transaksi/pembayaran" class="col-4 shortcut-item">
+                      <span class="shortcut-media avatar rounded-circle bg-gradient-info">
+                        <i class="ni ni-credit-card"></i>
+                      </span>
+                      <small>Pembayaran</small>
+                    </a>
+                    <a href="<?= BASEURL; ?>/transaksi/laporan" class="col-4 shortcut-item">
+                      <span class="shortcut-media avatar rounded-circle bg-gradient-green">
+                        <i class="ni ni-books"></i>
+                      </span>
+                      <small>Laporan</small>
+                    </a>
+                  <?php } ?>
+                  <?php if ($_SESSION['id_grup'] == '1') { ?>
+                    <a href="<?= BASEURL; ?>/kendaraan/data_type" class="col-4 shortcut-item">
+                      <span class="shortcut-media avatar rounded-circle bg-gradient-purple">
+                        <i class="ni ni-pin-3"></i>
+                      </span>
+                      <small>Tipe Kendaraan</small>
+                    </a>
+                    <a href="<?= BASEURL; ?>/kendaraan" class="col-4 shortcut-item">
+                      <span class="shortcut-media avatar rounded-circle bg-gradient-yellow">
+                        <i class="ni ni-basket"></i>
+                      </span>
+                      <small>Daftar Kendaraan</small>
+                    </a>
+                  <?php } ?>
                 </div>
               </div>
             </li>
@@ -228,7 +216,13 @@
                     <img alt="Image placeholder" src="<?= BASEURL; ?>/assets_manage/img/theme/team-4.jpg">
                   </span>
                   <div class="media-body ml-2 d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">Rizwijaya</span>
+                    <span class="mb-0 text-sm  font-weight-bold">
+                      <?php if ($_SESSION['id_grup'] == '1') { ?>
+                        Admin
+                      <?php } else { ?>
+                        Pegawai
+                      <?php } ?>
+                    </span>
                   </div>
                 </div>
               </a>
@@ -236,22 +230,6 @@
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Selamat Datang!</h6>
                 </div>
-                <a href="#!" class="dropdown-item">
-                  <i class="ni ni-single-02"></i>
-                  <span>Profile Saya</span>
-                </a>
-                <a href="#!" class="dropdown-item">
-                  <i class="ni ni-settings-gear-65"></i>
-                  <span>Setelan</span>
-                </a>
-                <a href="#!" class="dropdown-item">
-                  <i class="ni ni-calendar-grid-58"></i>
-                  <span>Reset Password</span>
-                </a>
-                <a href="#!" class="dropdown-item">
-                  <i class="ni ni-support-16"></i>
-                  <span>Layanan</span>
-                </a>
                 <div class="dropdown-divider"></div>
                 <a href="<?= BASEURL ?>/users/logout" class="dropdown-item">
                   <i class="ni ni-user-run"></i>
@@ -271,15 +249,15 @@
           <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
               <h6 class="h2 text-white d-inline-block mb-0"><?php echo $data['title']; ?></h6>
-            <?php if($data['title'] != 'Dashboard') { 
-              echo '<nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+              <?php if ($data['title'] != 'Dashboard') {
+                echo '<nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                <li class="breadcrumb-item"><a href="#">'. $data['menu'] .'</a></li>
-                <li class="breadcrumb-item active" aria-current="page">'. $data['submenu'].'</li>
+                <li class="breadcrumb-item"><a href="#">' . $data['menu'] . '</a></li>
+                <li class="breadcrumb-item active" aria-current="page">' . $data['submenu'] . '</li>
               </ol>
             </nav>';
-            } ?>
+              } ?>
             </div>
 
           </div>

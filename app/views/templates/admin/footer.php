@@ -9,16 +9,16 @@
           <div class="col-lg-6">
             <ul class="nav nav-footer justify-content-center justify-content-lg-end">
               <li class="nav-item">
-                <a href="#" class="nav-link" target="_blank">MurphyTech</a>
+                <a href="" class="nav-link">MurphyTech</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link" target="_blank">About Us</a>
+                <a href="" class="nav-link">About Us</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link" target="_blank">Blog</a>
+                <a href="" class="nav-link">Blog</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link" target="_blank">License</a>
+                <a href="" class="nav-link">License</a>
               </li>
             </ul>
           </div>
