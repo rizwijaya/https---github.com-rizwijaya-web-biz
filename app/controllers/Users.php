@@ -233,7 +233,12 @@ class Users extends Controller
         } elseif ($_SESSION['id_grup'] == '2') { //Redirect Ke halaman Pegawai
             header('location:' . BASEURL . '/dashboard');
         } else { //Redirect Ke halaman Pelanggan
-            header('location:' . BASEURL . '/pelanggan');
+            $cek = $this->model('user_model')->getlengkap($_SESSION['id_user']);
+            if ($cek['no_ktp'] == NULL) {
+                header('location:' . BASEURL . '/home/lengkap_profile');
+            } else {
+                header('location:' . BASEURL . '/pelanggan');
+            }
         }
     }
 
