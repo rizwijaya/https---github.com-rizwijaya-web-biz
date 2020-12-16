@@ -72,6 +72,7 @@
                      <div aria-hidden="true">
                        <form action="<?= BASEURL; ?>/transaksi/update" method="post">
                          <input type="hidden" class="form-control" id="id_rental" name="id_rental" value="<?= $tk['id_rental'] ?>">
+                         <input type="hidden" class="form-control" id="id_mobil" name="id_mobil" value="<?= $tk['id_mobil'] ?>">
                          <div class="form-group">
                            <label class="form-control-label" for="nama">Pelanggan</label>
                            <input type=" text" class="form-control" id="nama" name="nama" value="<?= $tk['nama'] ?>" readonly>

@@ -86,6 +86,7 @@ class Transaksi extends Controller
         //Notifikasi sukses update
         if (!empty($_POST['tanggal_pengembalian'])) {
             $this->model('Rental_model')->update_pengembalian($_POST); //Input ke database foto mobil
+            $this->model('Rental_model')->updateStatus(1, $_POST['id_mobil']); //Update Status Mobil menjadi Tersedia
         }
 
         Flasher::setFlash_modal('Data Transaksi telah berhasil diperbarui.', 'Data Transaksi Diperbarui!', 'success');

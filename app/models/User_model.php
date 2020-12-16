@@ -106,7 +106,7 @@ class User_model
     {
         $q = "SELECT no_ktp FROM pelanggan WHERE id_user ='$id'";
         $this->db->query($q);
-        return $this->db->single();
+        return $this->db->resultSet();
     }
 
     public function getNama($id)

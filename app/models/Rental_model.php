@@ -235,10 +235,10 @@ class Rental_model
 
     public function dataTransaksi()
     {
-        $this->db->query("SELECT t1.merk, t1.no_plat, t1.status, t2.*, t3.no_telepon, t4.nama, t5.nama_status 
+        $this->db->query("SELECT t1.id_mobil, t1.merk, t1.no_plat, t1.status, t2.*, t3.no_telepon, t4.nama, t5.nama_status 
                             FROM mobil t1 JOIN rental t2 ON t1.id_mobil = t2.id_mobil
                             JOIN pelanggan t3 ON t2.id_pelanggan = t3.id_pelanggan
-                            JOIN users t4 ON t3.id_user = t4.id_user JOIN status t5 ON t2.status_rental = t5.status_rental WHERE t2.status_rental != 1 AND t2.status_rental != 6 ORDER BY status_rental ASC");
+                            JOIN users t4 ON t3.id_user = t4.id_user JOIN status t5 ON t2.status_rental = t5.status_rental WHERE t2.status_rental != 1 AND t2.status_rental != 6 AND t2.status_rental != 0 ORDER BY status_rental ASC");
         return $this->db->resultSet();
     }
 
