@@ -74,15 +74,15 @@ class Home extends Controller
         $data['detail'] = $this->model('rental_model')->getdetailkendaraan($id);
         $data['mobil'] = $this->model('rental_model')->getallkendaraan();
         if (!empty($_SESSION['id_user'])) {
-            if ($_SESSION['id_grup'] === 3) {
+            if ($_SESSION['id_grup'] == 3) {
                 $data['getlengkap'] = $this->model('user_model')->getlengkap($_SESSION['id_user']);
             } else {
-                $data['getlengkap'] = NULL;
+                $data['getlengkap'][0]['no_ktp'] = NULL;
             }
         } else {
-            $data['getlengkap'] = NULL;
+            $data['getlengkap'][0]['no_ktp']= NULL;
         }
-
+        //var_dump($data['getlengkap']); die;
         $this->view('templates/pelanggan/header');
         $this->view('home/detailkendaraan', $data);
         $this->view('templates/pelanggan/footer');
@@ -118,16 +118,16 @@ class Home extends Controller
 
     public function lengkap_profile()
     {
-        if (!$_SESSION) {
+        if (empty($_SESSION)) {
             $this->redirecting();
         } elseif ($_SESSION['id_grup'] == 1) {
-            $this->redirecting();
+             $this->redirecting();
         } elseif ($_SESSION['id_grup'] == 2) {
             $this->redirecting();
         }
 
         $cek = $this->model('user_model')->getlengkap($_SESSION['id_user']);
-        if ($cek['no_ktp'] != NULL) {
+        if ($cek[0]['no_ktp'] != NULL) {
             $this->redirecting();
         }
 
@@ -187,5 +187,14 @@ class Home extends Controller
             header('location: ' . BASEURL . '/home');
             exit;
         }
+    }
+
+    public function daftarkendaraan()
+    {
+        $data['mobil'] = $this->model('rental_model')->getallkendaraan();
+        
+        $this->view('templates/pelanggan/header');
+        $this->view('home/daftarkendaraan', $data);
+        $this->view('templates/pelanggan/footer');
     }
 }
