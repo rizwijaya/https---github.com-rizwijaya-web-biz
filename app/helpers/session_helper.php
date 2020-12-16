@@ -1,6 +1,6 @@
 <?php
-    if (!isset($_SESSION)) {
-        session_start();
+    if (!isset($_SESSION)) {    //Jika tidak terdapat session
+        session_start();        //Melakukan start session
         }
 
     function isLoggedIn() {

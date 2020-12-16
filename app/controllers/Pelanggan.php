@@ -1,10 +1,10 @@
 <?php
 
-class Pelanggan extends Controller 
+class Pelanggan extends Controller
 {
     public function __construct()
     {
-        if(!$_SESSION) {
+        if (!$_SESSION) {
             header('location:' . BASEURL . '/home/redirecting');
         }
     }
@@ -16,10 +16,10 @@ class Pelanggan extends Controller
         $this->view('home/index', $data);
         $this->view('templates/pelanggan/footer');
     }
-    
-    public function dashboard() 
+
+    public function dashboard()
     {
-       //echo 'Ini halaman admin';
+        //echo 'Ini halaman admin';
         $this->view('templates/pelanggan/header');
         $this->view('home/index');
         $this->view('templates/pelanggan/footer');
@@ -42,5 +42,35 @@ class Pelanggan extends Controller
         $this->view('templates/pelanggan/header');
         $this->view('pelanggan/payment', $data);
         $this->view('templates/pelanggan/footer');
+    }
+
+    public function upload_bukti()
+    {
+        // var_dump($_POST);
+        // die;
+        //Inisialisasi Data Gambar
+        $temp = $_FILES['gambar']['tmp_name'];
+        $name = rand(0, 9999) . $_FILES['gambar']['name'];
+        $size = $_FILES['gambar']['size'];
+        $type = $_FILES['gambar']['type'];
+        $folder = "foto_bukti/";
+        //Melakukan pengecekan ukuran file dan format
+        if ($size < 2048000 and ($type == 'image/jpeg' or $type == 'image/png' or $type == 'image/jpg')) {
+            move_uploaded_file($temp, $folder . $name); //Melakukan upload ke folder/nama
+            //Input ke database
+            if ($this->model('Pelanggan_model')->upload_bukti($_POST, $name) > 0) {    //Menambahkan ke database
+                Flasher::setFlash('Bukti Pembayaran berhasil diupload!', ' Tunggu konfirmasi pembayaran maksimal 1x24jam.', 'success');
+                $this->pembayaran($_POST['id_rental']);
+                exit;
+            } else {
+                Flasher::setFlash('Kesalahan,', ' Bukti Pembayaran gagal diupload!', 'danger');
+                $this->pembayaran($_POST['id_rental']);
+                exit;
+            }
+        } else {
+            Flasher::setFlash('Kesalahan,', ' Bukti Pembayaran gagal diupload!, Format upload tidak sesuai.', 'danger');
+            $this->pembayaran($_POST['id_rental']);
+            exit;
+        }
     }
 }

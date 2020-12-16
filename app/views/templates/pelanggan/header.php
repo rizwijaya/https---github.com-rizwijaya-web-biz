@@ -70,83 +70,7 @@
                   <li aria-haspopup="true"><a href="<?= BASEURL ?>/dashboard"> Pegawai <span class="horizontalarrow"></span></a></li>    
                 <?php endif; ?> 
               <?php endif; ?>
-                <!-- <li aria-haspopup="true"><a href="#">Sewa</a></li>
-                <li aria-haspopup="true"><span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span><a href="#">Type</a></li> -->
-                <li aria-haspopup="true"><span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span><a href="#">Kendaraan <span class="fa fa-caret-down m-0"></span></a>
-                  <div class="horizontal-megamenu clearfix car-brands">
-                    <div class="container">
-                      <div class="megamenu-content overflow-hidden">
-                        <div class="row">
-                          <ul class="col-lg-6 link-list">
-                            <li class="title">Car Body Shapes</li>
-                            <li>
-                              <div class="row">
-                                <div class="col-xl-4 col-md-6 text-center"> <a href="#"><img src="<?= BASEURL; ?>/assets_dashboard/images/CarHead/1.png" alt=""></a>
-                                  <h4 class="mb-0 font-weight-bold text-uppercase">Convertible</h4>
-                                </div>
-                                <div class="col-xl-4 col-md-6 text-center"> <a href="#"><img src="<?= BASEURL; ?>/assets_dashboard/images/CarHead/2.png" alt=""></a>
-                                  <h4 class="mb-0 font-weight-bold text-uppercase">Coupe</h4>
-                                </div>
-                                <div class="col-xl-4 col-md-6 text-center"> <a href="#"><img src="<?= BASEURL; ?>/assets_dashboard/images/CarHead/3.png" alt=""></a>
-                                  <h4 class="mb-0 font-weight-bold text-uppercase">Ringer Ace</h4>
-                                </div>
-                                <div class="col-xl-4 col-md-6 text-center"> <a href="#"><img src="<?= BASEURL; ?>/assets_dashboard/images/CarHead/4.png" alt=""></a>
-                                  <h4 class="mb-0 font-weight-bold text-uppercase">Van/minivan</h4>
-                                </div>
-                                <div class="col-xl-4 col-md-6 text-center"> <a href="#"><img src="<?= BASEURL; ?>/assets_dashboard/images/CarHead/5.png" alt=""></a>
-                                  <h4 class="mb-0 font-weight-bold text-uppercase">Truck</h4>
-                                </div>
-                                <div class="col-xl-4 col-md-6 text-center"> <a href="#"><img src="<?= BASEURL; ?>/assets_dashboard/images/CarHead/6.png" alt=""></a>
-                                  <div class="clearfix"></div>
-                                  <h4 class="mb-0 font-weight-bold text-uppercase">Hybrid</h4>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                          <ul class="col-lg-6 link-list mt-3 mt-md-0 top-brands">
-                            <li class="title">Top Car Brands</li>
-                            <li class="mt-4">
-                              <div class="row">
-                                <div class="col-lg col-sm-6">
-                                  <div class="card border-2 box-shadow2"> <a href="#" class="cat-img mx-auto text-center bg-transparent"><img src="<?= BASEURL; ?>/assets_dashboard/images/logosBrand/28.png" class="w-80" alt=""></a> </div>
-                                </div>
-                                <div class="col-lg col-sm-6">
-                                  <div class="card border-2 mx-auto box-shadow2"> <a href="#" class="cat-img mx-auto text-center bg-transparent"><img src="<?= BASEURL; ?>/assets_dashboard/images/logosBrand/53.png" class="w-80" alt=""></a> </div>
-                                </div>
-                                <div class="col-lg col-sm-6">
-                                  <div class="card border-2 mx-auto box-shadow2"> <a href="#" class="cat-img mx-auto text-center bg-transparent"><img src="<?= BASEURL; ?>/assets_dashboard/images/logosBrand/42.png" class="w-80" alt=""></a> </div>
-                                </div>
-                                <div class="col-lg col-sm-6">
-                                  <div class="card border-2 mx-auto box-shadow2"> <a href="#" class="cat-img mx-auto text-center bg-transparent"><img src="<?= BASEURL; ?>/assets_dashboard/images/logosBrand/34.png" class="w-80" alt=""></a> </div>
-                                </div>
-                                <div class="col-lg col-sm-12">
-                                  <div class="card border-2 mx-auto box-shadow2"> <a href="#" class="cat-img mx-auto text-center bg-transparent"><img src="<?= BASEURL; ?>/assets_dashboard/images/logosBrand/30.png" class="w-80" alt=""></a> </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-lg col-sm-6">
-                                  <div class="card border-2 d-block box-shadow2"> <a href="#" class="cat-img mx-auto text-center bg-transparent"><img src="<?= BASEURL; ?>/assets_dashboard/images/logosBrand/51.png" class="w-80" alt=""></a> </div>
-                                </div>
-                                <div class="col-lg col-sm-6">
-                                  <div class="card border-2 mx-auto box-shadow2"> <a href="#" class="cat-img mx-auto text-center bg-transparent"><img src="<?= BASEURL; ?>/assets_dashboard/images/logosBrand/26.png" class="w-80" alt=""></a> </div>
-                                </div>
-                                <div class="col-lg col-sm-6">
-                                  <div class="card border-2 mx-auto box-shadow2"> <a href="#" class="cat-img mx-auto text-center bg-transparent"><img src="<?= BASEURL; ?>/assets_dashboard/images/logosBrand/31.png" class="w-80" alt=""></a> </div>
-                                </div>
-                                <div class="col-lg col-sm-6">
-                                  <div class="card border-2 mx-auto box-shadow2"> <a href="#" class="cat-img mx-auto text-center bg-transparent"><img src="<?= BASEURL; ?>/assets_dashboard/images/logosBrand/01.png" class="w-80" alt=""></a> </div>
-                                </div>
-                                <div class="col-lg col-sm-12">
-                                  <div class="card border-2 mx-auto box-shadow2"> <a href="#" class="cat-img mx-auto text-center bg-transparent"><img src="<?= BASEURL; ?>/assets_dashboard/images/logosBrand/41.png" class="w-80" alt=""></a> </div>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
+              <li aria-haspopup="true"><a href="<?= BASEURL ?>/home/daftarkendaraan"> Daftar Kendaraan <span class="horizontalarrow"></span></a></li>    
                 <?php if(!isset($_SESSION['id_user'])) : ?>
                 <li aria-haspopup="true"><span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span><a href="<?= BASEURL ?>/home/register">Register</a></li>
                 <li aria-haspopup="true"><a href="<?= BASEURL ?>/home/login"> Login <span class="horizontalarrow"></span></a></li>
@@ -155,7 +79,7 @@
                 <?php endif; ?>
               </ul>
               <ul class="mb-0">
-                <li aria-haspopup="true" class="mt-5 d-none d-lg-block "> <span><a class="btn btn-green ad-post " href="#"><i class="fa fa-car text-white mr-1"></i> Cari Kendaraan</a></span> </li>
+                <li aria-haspopup="true" class="mt-5 d-none d-lg-block "> <span><a class="btn btn-green ad-post " href="<?= BASEURL ?>/pelanggan/checkout"><i class="fa fa-car text-white mr-1"></i> Checkout</a></span> </li>
               </ul>
             </nav>
             <!--Nav-->

@@ -1,37 +1,63 @@
-   <!--latest Posts-->
-   <section class="sptb2 border-top">
+    <!--Kelebihan-->
+    <section class="sptb2 border-top">
       <div class="container">
-        <h6 class="fs-18 mb-4">Posting Terbaru</h6>
-        <hr class="deep-purple  accent-2 mb-4 mt-0 d-inline-block mx-auto">
         <div class="row">
-          <div class="col-md-12 col-lg-4">
-            <div class="d-flex mt-0 mb-5 mb-lg-0 border bg-white p-4 box-shadow2"> <img class="w-8 h-8 mr-4" src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/4(2).png" alt="img">
-              <div class="media-body">
-                <h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">Mobil Baru Terbaik</a></h4> <span class="fs-12 text-muted"><i class="fa fa-calendar"></i> 20 Jun 2020</span>
-                <div class="h6 mb-0 mt-1 font-weight-normal"><span class="font-weight-semibold">Harga:</span> $245 <del>$354</del></div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="">
+              <div class="mb-lg-0 mb-4">
+                <div class="service-card text-center">
+                  <div class="bg-light icon-bg icon-service text-purple about box-shadow2"> <img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/badge.png" alt="img"> </div>
+                  <div class="servic-data mt-3">
+                    <h4 class="font-weight-semibold mb-2">Supir Berpengalaman</h4>
+                    <p class="text-muted mb-0">Supir yang kami berikan kepada Anda telah berpengalaman dan mengenal wilayah tujuan anda.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-12 col-lg-4">
-            <div class="d-flex mt-0 mb-5 mb-lg-0 border bg-white p-4 box-shadow2"> <img class="w-8 h-8 mr-4" src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/1(2).png" alt="img">
-              <div class="media-body">
-                <h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">Mobil Baru Unggulan</a></h4> <span class="fs-12 text-muted"><i class="fa fa-calendar"></i> 18 May 2020</span>
-                <div class="h6 mb-0 mt-1 font-weight-normal"><span class="font-weight-semibold">Harga:</span> $247 <del>$458</del></div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="">
+              <div class="mb-lg-0 mb-4">
+                <div class="service-card text-center">
+                  <div class="bg-light icon-bg icon-service text-purple about box-shadow2"> <img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/car.png" alt="img"> </div>
+                  <div class="servic-data mt-3">
+                    <h4 class="font-weight-semibold mb-2">Kondisi Mobil Terawat</h4>
+                    <p class="text-muted mb-0">Perawatan rutin selalu kami lakukan, yaitu perawatan mobil harian, mingguan bulanan.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-12 col-lg-4">
-            <div class="d-flex mt-0 mb-0 border bg-white p-4 box-shadow2"> <img class="w-8 h-8 mr-4" src="<?= BASEURL; ?>/assets_dashboard/images/CarMenu/2(2).png" alt="img">
-              <div class="media-body">
-                <h4 class="mt-0 mb-1 fs-16"><a class="text-body" href="#">Efisiensi Bahan Bakar Mobil</a></h4> <span class="fs-12 text-muted"><i class="fa fa-calendar"></i> 14 Aug 2020</span>
-                <div class="h6 mb-0 mt-1 font-weight-normal"><span class="font-weight-semibold">Harga:</span> $214 <del>$562</del></div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="">
+              <div class="mb-sm-0 mb-4">
+                <div class="service-card text-center">
+                  <div class="bg-light icon-bg icon-service text-purple about box-shadow2"> <img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/discount.png" alt="img"> </div>
+                  <div class="servic-data mt-3">
+                    <h4 class="font-weight-semibold mb-2">Harga Rental Murah</h4>
+                    <p class="text-muted mb-0">Kami menawarkan tarif murah dengan kualitas terbaik di golongannya.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="">
+              <div class="">
+                <div class="service-card text-center">
+                  <div class="bg-light icon-bg icon-service text-purple about box-shadow2"> <img src="<?= BASEURL; ?>/assets_dashboard/images/iconsType/double-arrow.png" alt="img"> </div>
+                  <div class="servic-data mt-3">
+                    <h4 class="font-weight-semibold mb-2">Proses Sewa Mudah</h4>
+                    <p class="text-muted mb-0">Proses sewa sangat mudah, dapat dilakukan melalui website resmi kami tanpa harus data ke tempat.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!--latest Posts-->
+    <!--Kelebihan-->
     <!--Footer Section-->
     <section>
       <footer class="bg-dark-purple text-white">
@@ -39,32 +65,30 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-2 col-md-12">
-                <h6>Resources</h6>
+                <h6>Daftar Halaman</h6>
                 <hr class="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
                 <ul class="list-unstyled mb-0">
-                  <li><a href="javascript:;">Our Team</a></li>
-                  <li><a href="javascript:;">Contact US</a></li>
-                  <li><a href="javascript:;">About</a></li>
-                  <li><a href="javascript:;">CrusaderRecusandae</a></li>
-                  <li><a href="javascript:;">Blog</a></li>
-                  <li><a href="javascript:;">Terms and Conditions</a></li>
+                  <li><a href="<?= BASEURL; ?>/home/">Home</a></li>
+                  <li><a href="<?= BASEURL; ?>/home/login">Masuk</a></li>
+                  <li><a href="<?= BASEURL; ?>/home/register">Daftar Sekarang</a></li>
+                  <li><a href="https://rizwijaya.blogspot.com">Pengembang</a></li>
                 </ul>
               </div>
               <div class="col-lg-3 col-md-12">
                 <h6>Contact</h6>
                 <hr class="deep-purple  text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
                 <ul class="list-unstyled mb-0">
-                  <li> <a href="#"><i class="fa fa-car mr-3 text-primary"></i> Madiun, Jawa Timur Indonesia</a> </li>
-                  <li> <a href="#"><i class="fa fa-envelope mr-3 text-primary"></i> bizcar@business.com</a></li>
-                  <li> <a href="#"><i class="fa fa-phone mr-3 text-primary"></i> + 628 122 342 2345</a> </li>
-                  <li> <a href="#"><i class="fa fa-print mr-3 text-primary"></i> + 628 234 222 3333</a> </li>
+                  <li> <a href="javascript:;"><i class="fa fa-car mr-3 text-primary"></i> Madiun, Jawa Timur Indonesia</a> </li>
+                  <li> <a href="javascript:;"><i class="fa fa-envelope mr-3 text-primary"></i> bizcar@business.com</a></li>
+                  <li> <a href="javascript:;"><i class="fa fa-phone mr-3 text-primary"></i> + 628 122 342 2345</a> </li>
+                  <li> <a href="javascript:;"><i class="fa fa-print mr-3 text-primary"></i> + 628 234 222 3333</a> </li>
                 </ul>
               </div>
               <div class="col-lg-4 col-md-12">
                 <h6>Download App</h6>
                 <hr class="deep-purple  accent-2 mb-4 mt-0 d-inline-block mx-auto">
                 <div class=""> <a class="btn bg-store fs-16" href=""><i class="fa fa-apple mr-2"></i> App Store</a> <a class="btn bg-store fs-16" href=""><i class="fa fa-android mr-2"></i> Google Pay</a> </div>
-                <h6 class="mb-0 mt-5">Payments</h6>
+                <h6 class="mb-0 mt-5">Pembayaran</h6>
                 <hr class="deep-purple  text-primary accent-2 mb-2 mt-3 d-inline-block mx-auto">
                 <div class="clearfix"></div>
                 <ul class="footer-payments">
@@ -82,7 +106,7 @@
                 <div class="input-group w-100"> <input type="text" class="form-control br-tl-3  br-bl-3 " placeholder="Email">
                   <div class="input-group-append "> <button type="button" class="btn btn-primary br-tr-3  br-br-3"> Subscribe </button> </div>
                 </div>
-                <h6 class="mt-5 mb-3">Follow Us</h6>
+                <h6 class="mt-5 mb-3">Ikuti Kami</h6>
                 <hr class="deep-purple  accent-2 mb-4 mt-0 d-inline-block mx-auto">
                 <ul class="list-unstyled list-inline">
                   <li class="list-inline-item"> <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light"> <i class="fa fa-facebook bg-facebook"></i> </a> </li>
@@ -97,7 +121,7 @@
         <div class="bg-dark-purple text-white p-0">
           <div class="container">
             <div class="row d-flex">
-              <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center "> Copyright © 2020 <a href="#" class="fs-14 text-primary">Bizcar</a>. Designed by <a href="#" class="fs-14 text-primary">Rizwijaya</a> All rights reserved. </div>
+              <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center "> Copyright © 2020 <a href="#" class="fs-14 text-primary">Bizcar</a>. Designed by <a href="https://rizwijaya.blogspot.com" class="fs-14 text-primary">Rizqi Wijaya</a> All rights reserved. </div>
             </div>
           </div>
         </div>
@@ -144,10 +168,6 @@
     <script src="<?= BASEURL; ?>/assets_dashboard/plugins/bootstrap-daterangepicker/date.js"></script>
 
     <script src="<?= BASEURL; ?>/assets_dashboard/js/sticky.js"></script>
-
-    <script src="<?= BASEURL; ?>/assets_dashboard/plugins/cookie/jquery.ihavecookies.js"></script>
-
-    <script src="<?= BASEURL; ?>/assets_dashboard/plugins/cookie/cookie.js"></script>
 
     <script src="<?= BASEURL; ?>/assets_dashboard/plugins/scroll-bar/jquery.mCustomScrollbar.js"></script>
 
