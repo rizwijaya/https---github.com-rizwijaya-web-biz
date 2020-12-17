@@ -1,12 +1,24 @@
 # Bizcar Venicle Rental
 ---
  
+ ## Daftar Isi
+- [Bizcar Venicle Rental](#bizcar-venicle-rental)
+- [Cara Menggunakan dan Memasang](#cara-menggunakan-dan-memasang-website-bizcar-venicle-rental)
+- [Fitur yang tersedia](#tersedia-juga-berbagai-fitur-menarik-yaitu-sebagai-berikut)
+    + [Fitur Admin](#fitur-admin-)
+    + [Fitur Pegawai](#fitur-pegawai-)
+    + [Fitur Pelanggan](#fitur-pelanggan-)
+- [Halaman Utama](#halaman-utama-bizcar)
+
+---
+## Deskripsi Bizcar
 BizCar adalah aplikasi pemesanan, pelayanan dan pengelolaan Rental kendaraan secara elektronik berbasis Website. 
 Dimana dalam aplikasi ini nantinya customer dapat melakukan pemesanan rental kendaraan secara online tanpa datang ketempat serta mempermudah pegawai dalam pengelolaan jasa rental.
 
 Pada Website Aplikasi Bizcar dibagi menjadi tiga user yaitu Admin, Pegawai, dan pelanggan yang menerapkan sistem login multiuser.
 
 ---
+
 ## Cara Menggunakan dan memasang Website Bizcar Venicle Rental
 
 1. Setting database yang terletak pada folder app/config/config.php
