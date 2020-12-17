@@ -44,10 +44,15 @@ class Pelanggan extends Controller
         $this->view('templates/pelanggan/footer');
     }
 
+    public function cetakpembayaran($id)
+    {
+        $data['transaksi'] = $this->model('pelanggan_model')->pembayaran($id);
+        $data['mobil'] = $this->model('rental_model')->getallkendaraan();
+        $this->view('pelanggan/cetakpayment', $data);
+    }
+
     public function upload_bukti()
     {
-        // var_dump($_POST);
-        // die;
         //Inisialisasi Data Gambar
         $temp = $_FILES['gambar']['tmp_name'];
         $name = rand(0, 9999) . $_FILES['gambar']['name'];

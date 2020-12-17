@@ -96,7 +96,7 @@
                                 <br>
                                 <div class="col text-right">
                                     <a class="btn btn-danger mb-0" href="<?= BASEURL; ?>/pelanggan/checkout">Kembali</a>
-                                    <a href="#" class="btn btn-secondary icons"><i class="icon icon-printer  mr-1"></i> Cetak Invoice</a>
+                                    <a href="<?= BASEURL; ?>/pelanggan/cetakpembayaran/<?= $tk['id_rental']; ?>" class="btn btn-secondary icons"><i class="icon icon-printer  mr-1"></i> Cetak Invoice</a>
                                 </div>
                             </div>
                         </div>
