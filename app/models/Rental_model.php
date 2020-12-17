@@ -2,7 +2,6 @@
 
 class Rental_model
 {
-    private $mobilget = 'mobil';
     private $type = 'type';
     private $db;
 
@@ -13,7 +12,7 @@ class Rental_model
 
     public function getallkendaraan()
     {
-        $this->db->query('SELECT * FROM ' . $this->mobilget);
+        $this->db->query('SELECT * FROM mobil ORDER BY status DESC');
         return $this->db->resultSet();
     }
     public function getalltype()
