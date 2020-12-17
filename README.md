@@ -3,6 +3,7 @@
  
  ## Daftar Isi
 - [Bizcar Venicle Rental](#bizcar-venicle-rental)
+- [Deskripsi Bizcar](#deskripsi-bizcar)
 - [Cara Menggunakan dan Memasang](#cara-menggunakan-dan-memasang-website-bizcar-venicle-rental)
 - [Fitur yang tersedia](#tersedia-juga-berbagai-fitur-menarik-yaitu-sebagai-berikut)
     + [Fitur Admin](#fitur-admin-)
