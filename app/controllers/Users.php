@@ -2,6 +2,15 @@
 
 class Users extends Controller
 {
+    public function index()
+    {
+        if(!$_SESSION) {
+            header('location:' . BASEURL . '/home/redirecting');
+        }
+        if($_SESSION['id_grup'] == 3) {
+            header('location:' . BASEURL . '/home/redirecting');
+        } 
+    }
 
     public function regist_pelanggan()
     {
